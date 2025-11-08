@@ -389,11 +389,13 @@ section {
     margin-bottom: 0.5rem;
 }
 
-/* Services Section */
+/* Services Section - Updated for 7 items with centered last item */
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .service-card {
@@ -404,6 +406,10 @@ section {
     position: relative;
     overflow: hidden;
     transition: all 0.3s ease;
+}
+
+.service-card:nth-child(7) {
+    grid-column: 2 / 3;
 }
 
 .service-card::before {
@@ -530,10 +536,12 @@ section {
     font-size: 1.75rem;
 }
 
+/* Updated use-cases-grid for symmetric 4x2 layout (8 items) */
 .use-cases-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1.5rem;
+    max-width: 100%;
 }
 
 .use-case {
@@ -542,11 +550,14 @@ section {
     background: var(--bg-darker);
     border-radius: 0.75rem;
     transition: all 0.3s ease;
+    border: 1px solid transparent;
 }
 
 .use-case:hover {
     transform: translateY(-5px);
     background: var(--bg-dark);
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-glow);
 }
 
 .use-case-icon {
@@ -564,113 +575,7 @@ section {
     margin: 0;
 }
 
-/* Team Section */
-.team-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    margin-bottom: 3rem;
-}
-
-.team-member.team-lead {
-    grid-column: 2 / 3;
-    grid-row: 1;
-}
-
-.team-member {
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: 1rem;
-    padding: 2rem;
-    text-align: center;
-    transition: all 0.3s ease;
-}
-
-.team-member:hover {
-    transform: translateY(-5px);
-    border-color: var(--primary-color);
-    box-shadow: var(--shadow-glow);
-}
-
-.member-avatar {
-    width: 120px;
-    height: 120px;
-    margin: 0 auto 1.5rem;
-}
-
-.avatar-placeholder {
-    width: 100%;
-    height: 100%;
-    background: var(--gradient-primary);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-    font-weight: 800;
-    color: white;
-}
-
-.team-member h3 {
-    color: var(--text-primary);
-    font-size: 1.25rem;
-    margin-bottom: 0.5rem;
-}
-
-.member-role {
-    color: var(--primary-light);
-    font-weight: 600;
-    margin-bottom: 0.25rem;
-}
-
-.member-id {
-    color: var(--text-muted);
-    font-size: 0.875rem;
-    margin-bottom: 1rem;
-}
-
-.member-bio {
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-    line-height: 1.6;
-    margin-bottom: 1rem;
-}
-
-.member-expertise {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    justify-content: center;
-}
-
-.tag {
-    padding: 0.25rem 0.75rem;
-    background: var(--bg-darker);
-    border: 1px solid var(--border-color);
-    border-radius: 1rem;
-    font-size: 0.8rem;
-    color: var(--text-secondary);
-}
-
-.supervisor-info {
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: 1rem;
-    padding: 2rem;
-    text-align: center;
-}
-
-.supervisor-info p {
-    margin: 0.5rem 0;
-    color: var(--text-secondary);
-}
-
-/* Contact Section */
-.contact {
-    background: var(--bg-dark);
-}
-
-/* Technology Section */
+/* Technology Architecture Section - Updated with card-based layout */
 .technology {
     background: var(--bg-darker);
     position: relative;
@@ -691,10 +596,11 @@ section {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
+    margin-bottom: 3rem;
 }
 
-.tech-layer {
-    background: linear-gradient(135deg, var(--bg-card) 0%, rgba(30, 41, 59, 0.8) 100%);
+.architecture-layer {
+    background: var(--bg-card);
     border: 1px solid var(--border-color);
     border-radius: 1rem;
     padding: 2.5rem;
@@ -703,7 +609,7 @@ section {
     overflow: hidden;
 }
 
-.tech-layer::before {
+.architecture-layer::before {
     content: '';
     position: absolute;
     top: 0;
@@ -716,13 +622,13 @@ section {
     transition: transform 0.3s ease;
 }
 
-.tech-layer:hover {
+.architecture-layer:hover {
     transform: translateY(-8px);
     border-color: var(--primary-color);
     box-shadow: 0 12px 40px rgba(99, 102, 241, 0.15);
 }
 
-.tech-layer:hover::before {
+.architecture-layer:hover::before {
     transform: scaleX(1);
 }
 
@@ -746,6 +652,179 @@ section {
     font-size: 1.5rem;
     margin: 0;
     font-weight: 700;
+}
+
+.layer-content {
+    position: relative;
+}
+
+.capability-grid {
+    display: grid;
+    gap: 1rem;
+}
+
+.capability {
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid var(--border-color);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+    backdrop-filter: blur(10px);
+}
+
+.capability::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 0;
+    background: var(--gradient-primary);
+    border-radius: 3px;
+    transition: height 0.3s ease;
+}
+
+.capability:hover {
+    transform: translateX(8px);
+    border-color: var(--primary-light);
+    background: rgba(30, 41, 59, 0.8);
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.1);
+}
+
+.capability:hover::before {
+    height: 100%;
+}
+
+.capability h4 {
+    color: var(--primary-light);
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.capability h4::before {
+    content: '▸';
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+.capability p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+/* Technology Highlights - Symmetric 4-column grid */
+.tech-highlights {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.highlight-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.highlight-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gradient-primary);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.highlight-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-glow);
+}
+
+.highlight-card:hover::before {
+    transform: scaleX(1);
+}
+
+.highlight-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: block;
+    animation: float 3s ease-in-out infinite;
+}
+
+.highlight-card:nth-child(2) .highlight-icon {
+    animation-delay: 0.5s;
+}
+
+.highlight-card:nth-child(3) .highlight-icon {
+    animation-delay: 1s;
+}
+
+.highlight-card:nth-child(4) .highlight-icon {
+    animation-delay: 1.5s;
+}
+
+.highlight-card h4 {
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.highlight-card p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+/* Duplicate Technology Section (keeping for backward compatibility) */
+.tech-layer {
+    background: linear-gradient(135deg, var(--bg-card) 0%, rgba(30, 41, 59, 0.8) 100%);
+    border: 1px solid var(--border-color);
+    border-radius: 1rem;
+    padding: 2.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+.tech-layer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--gradient-primary);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.tech-layer:hover {
+    transform: translateY(-8px);
+    border-color: var(--primary-color);
+    box-shadow: 0 12px 40px rgba(99, 102, 241, 0.15);
+}
+
+.tech-layer:hover::before {
+    transform: scaleX(1);
 }
 
 .tech-grid {
@@ -834,39 +913,6 @@ section {
     gap: 2rem;
 }
 
-.capability {
-    text-align: center;
-    padding: 2rem 1.5rem;
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: 1rem;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.capability::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: var(--gradient-primary);
-    transform: scaleX(0);
-    transition: transform 0.3s ease;
-}
-
-.capability:hover {
-    transform: translateY(-10px);
-    border-color: var(--primary-color);
-    box-shadow: 0 10px 30px rgba(99, 102, 241, 0.2);
-}
-
-.capability:hover::before {
-    transform: scaleX(1);
-}
-
 .cap-icon {
     display: block;
     font-size: 3rem;
@@ -874,37 +920,147 @@ section {
     animation: float 3s ease-in-out infinite;
 }
 
-.capability:nth-child(2) .cap-icon {
+.capabilities-grid .capability:nth-child(2) .cap-icon {
     animation-delay: 0.5s;
 }
 
-.capability:nth-child(3) .cap-icon {
+.capabilities-grid .capability:nth-child(3) .cap-icon {
     animation-delay: 1s;
 }
 
-.capability:nth-child(4) .cap-icon {
+.capabilities-grid .capability:nth-child(4) .cap-icon {
     animation-delay: 1.5s;
 }
 
-.capability:nth-child(5) .cap-icon {
+.capabilities-grid .capability:nth-child(5) .cap-icon {
     animation-delay: 2s;
 }
 
-.capability:nth-child(6) .cap-icon {
+.capabilities-grid .capability:nth-child(6) .cap-icon {
     animation-delay: 2.5s;
 }
 
-.capability h4 {
-    color: var(--text-primary);
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
+/* Team Section - Updated layout with centered positions */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 3rem;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.capability p {
-    font-size: 0.9rem;
+/* Muhammad Abdullah - centered on row 1 */
+.team-member.team-lead {
+    grid-column: 2 / 3;
+    grid-row: 1;
+}
+
+/* Yaseen - left on row 2 */
+.team-member:nth-child(2) {
+    grid-column: 1 / 2;
+    grid-row: 2;
+}
+
+/* Huzaifa - centered on row 2 */
+.team-member.team-center {
+    grid-column: 2 / 3;
+    grid-row: 2;
+}
+
+/* Asad - right on row 2 */
+.team-member:nth-child(4) {
+    grid-column: 3 / 4;
+    grid-row: 2;
+}
+
+.team-member {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-glow);
+}
+
+.member-avatar {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 1.5rem;
+}
+
+.avatar-placeholder {
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 800;
+    color: white;
+}
+
+.team-member h3 {
+    color: var(--text-primary);
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.member-role {
+    color: var(--primary-light);
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.member-id {
     color: var(--text-muted);
-    margin: 0;
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+}
+
+.member-bio {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.member-expertise {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.tag {
+    padding: 0.25rem 0.75rem;
+    background: var(--bg-darker);
+    border: 1px solid var(--border-color);
+    border-radius: 1rem;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.supervisor-info {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+}
+
+.supervisor-info p {
+    margin: 0.5rem 0;
+    color: var(--text-secondary);
 }
 
 /* Contact Section */
@@ -1092,6 +1248,10 @@ section {
         grid-template-columns: repeat(2, 1fr);
     }
 
+    .service-card:nth-child(7) {
+        grid-column: 1 / -1;
+    }
+
     .problem-solution {
         grid-template-columns: 1fr;
     }
@@ -1116,20 +1276,12 @@ section {
         grid-template-columns: 1fr;
     }
 
-    .tech-grid {
-        grid-template-columns: 1fr;
+    .tech-highlights {
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .capabilities-grid {
         grid-template-columns: repeat(2, 1fr);
-    }
-
-    .capability-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .tech-highlights {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
 
     .footer-content {
@@ -1159,11 +1311,28 @@ section {
         grid-template-columns: 1fr;
     }
 
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .use-cases-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .team-member.team-lead,
+    .team-member.team-center {
+        grid-column: 1 / -1;
+    }
+
     .contact-details {
         grid-template-columns: 1fr;
     }
 
-    .tech-layer {
+    .architecture-layer {
         padding: 1.5rem;
     }
 
@@ -1182,16 +1351,12 @@ section {
         font-size: 1.25rem;
     }
 
-    .tech-item {
+    .capability {
         padding: 1.25rem;
     }
 
     .capabilities-grid {
         grid-template-columns: 1fr;
-    }
-
-    .capability {
-        padding: 1.5rem;
     }
 
     .tech-highlights {
