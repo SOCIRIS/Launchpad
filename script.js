@@ -64,11 +64,11 @@ const observer = new IntersectionObserver((entries) => {
 
 // Add fade-in class to elements and observe them
 const animateOnScroll = () => {
-    const elements = document.querySelectorAll('.service-card, .feature-card, .team-member, .use-case, .problem-item, .solution-item, .contact-item');
+    const elements = document.querySelectorAll('.service-card, .feature-card, .team-member, .use-case, .problem-item, .solution-item, .contact-item, .architecture-layer, .highlight-card, .capability');
     
     elements.forEach((element, index) => {
         element.classList.add('fade-in');
-        element.style.transitionDelay = `${index * 0.1}s`;
+        element.style.transitionDelay = `${index * 0.05}s`;
         observer.observe(element);
     });
 };
@@ -136,33 +136,17 @@ if (heroBackground) {
 
 // Add hover effect to cards
 const addCardHoverEffect = () => {
-    const cards = document.querySelectorAll('.service-card, .feature-card, .team-member, .use-case');
+    const cards = document.querySelectorAll('.service-card, .feature-card, .team-member, .use-case, .architecture-layer, .highlight-card');
     
     cards.forEach(card => {
         card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-10px) scale(1.02)';
+            this.style.transform = 'translateY(-10px)';
         });
         
         card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0) scale(1)';
+            this.style.transform = 'translateY(0)';
         });
     });
-};
-
-// Typing effect for hero title (optional)
-const typeWriter = (element, text, speed = 50) => {
-    let i = 0;
-    element.textContent = '';
-    
-    const type = () => {
-        if (i < text.length) {
-            element.textContent += text.charAt(i);
-            i++;
-            setTimeout(type, speed);
-        }
-    };
-    
-    type();
 };
 
 // Loading animation
@@ -194,7 +178,7 @@ const lazyLoadImages = () => {
     images.forEach(img => imageObserver.observe(img));
 };
 
-// Scroll to top button (optional)
+// Scroll to top button
 const createScrollToTopButton = () => {
     const button = document.createElement('button');
     button.innerHTML = '↑';
@@ -386,12 +370,6 @@ let maxScroll = 0;
 window.addEventListener('scroll', () => {
     const scrollPercentage = (window.pageYOffset / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
     maxScroll = Math.max(maxScroll, scrollPercentage);
-    
-    // You can send this to analytics
-    // Example: if (scrollPercentage >= 25 && !window.scrollDepth25) {
-    //     window.scrollDepth25 = true;
-    //     // Send to analytics
-    // }
 });
 
 // Handle page visibility changes
@@ -405,7 +383,7 @@ document.addEventListener('visibilitychange', () => {
 
 // Add animation classes based on scroll position
 const addScrollBasedAnimations = () => {
-    const elements = document.querySelectorAll('.service-card, .feature-card, .team-member');
+    const elements = document.querySelectorAll('.service-card, .feature-card, .team-member, .architecture-layer');
     
     elements.forEach((element, index) => {
         const rect = element.getBoundingClientRect();
@@ -414,7 +392,7 @@ const addScrollBasedAnimations = () => {
         if (isVisible) {
             setTimeout(() => {
                 element.style.animation = `fadeInUp 0.6s ease forwards`;
-            }, index * 100);
+            }, index * 50);
         }
     });
 };
