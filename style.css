@@ -152,6 +152,21 @@ ul {
     font-weight: 800;
 }
 
+.logo-image {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+    filter: brightness(1.1);
+}
+
+.navbar .logo-image {
+    height: 35px;
+}
+
+.footer .logo-image {
+    height: 45px;
+}
+
 .logo-icon {
     font-size: 2rem;
 }
@@ -1422,6 +1437,18 @@ section {
 
     .hero-subtitle {
         font-size: 1rem;
+    }
+
+    .logo-image {
+        height: 30px;
+    }
+
+    .navbar .logo-image {
+        height: 28px;
+    }
+
+    .footer .logo-image {
+        height: 35px;
     }
 
     .about-features {
