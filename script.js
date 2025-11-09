@@ -64,7 +64,7 @@ const observer = new IntersectionObserver((entries) => {
 
 // Add fade-in class to elements and observe them
 const animateOnScroll = () => {
-    const elements = document.querySelectorAll('.service-card, .feature-card, .team-member, .use-case, .problem-item, .solution-item, .contact-item, .architecture-layer, .highlight-card, .capability');
+    const elements = document.querySelectorAll('.service-card, .feature-card, .team-member, .use-case, .problem-item, .solution-item, .contact-item, .architecture-layer, .highlight-card, .capability, .social-card');
     
     elements.forEach((element, index) => {
         element.classList.add('fade-in');
@@ -136,7 +136,7 @@ if (heroBackground) {
 
 // Add hover effect to cards
 const addCardHoverEffect = () => {
-    const cards = document.querySelectorAll('.service-card, .feature-card, .team-member, .use-case, .architecture-layer, .highlight-card');
+    const cards = document.querySelectorAll('.service-card, .feature-card, .team-member, .use-case, .architecture-layer, .highlight-card, .social-card');
     
     cards.forEach(card => {
         card.addEventListener('mouseenter', function() {
