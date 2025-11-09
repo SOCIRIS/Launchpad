@@ -1,3 +1,7 @@
+<div align="center">
+
+<img src="images/sociris-wide-logo-dark.jpeg" alt="SOCIRIS Logo" width="500">
+
 # SOCIRIS Website - Updated Version
 
 **AI-Powered Intrusion Detection, Prevention & Surveillance System**
@@ -5,6 +9,9 @@
 A modern, responsive landing page for SOCIRIS - showcasing our revolutionary security solution for Pakistan.
 
 [![Live Site](https://img.shields.io/badge/Live-sociris.com-6366f1?style=for-the-badge)](https://sociris.com)
+[![GitHub](https://img.shields.io/badge/GitHub-SOCIRIS-181717?style=for-the-badge&logo=github)](https://github.com/SOCIRIS)
+
+</div>
 
 ---
 
@@ -33,6 +40,27 @@ A modern, responsive landing page for SOCIRIS - showcasing our revolutionary sec
    - Row 1: Muhammad Abdullah (centered)
    - Row 2: Yaseen (left), Huzaifa (center), Asad (right)
    - Perfect symmetry with Huzaifa prominently centered
+
+---
+
+## 🎨 Brand Assets
+
+The SOCIRIS website now features our official logo in multiple formats:
+
+### Logo Files Available:
+```
+images/
+├── sociris-logo-dark.jpeg          # Square logo (dark theme)
+├── sociris-logo-light.jpeg         # Square logo (light theme)
+├── sociris-wide-logo-dark.jpeg     # Wide logo (dark theme) - Used in navbar
+└── sociris-wide-logo-light.jpeg    # Wide logo (light theme)
+```
+
+### Logo Usage:
+- **Navbar & Footer**: Wide logo (dark theme)
+- **Favicon**: Square logo
+- **Social Media**: Wide logo for Open Graph tags
+- All logos optimized for web performance
 
 ---
 
@@ -355,7 +383,15 @@ grid-template-columns: repeat(4, 1fr);
 
 ## 📝 Change Log
 
-### Version 2.1 (Latest Update)
+### Version 2.2 (Latest Update - Logo Integration)
+- ✅ Integrated official SOCIRIS logos (square and wide formats)
+- ✅ Replaced emoji logo with professional brand images
+- ✅ Added favicon using square logo
+- ✅ Added Open Graph and Twitter Card meta tags with logo
+- ✅ Responsive logo sizing for mobile, tablet, and desktop
+- ✅ Logo showcase in README with brand assets documentation
+
+### Version 2.1 (Previous Update)
 - ✅ Integrated LinkedIn Company Page
 - ✅ Integrated GitHub Organization
 - ✅ Added "Connect With Us" section with social cards
