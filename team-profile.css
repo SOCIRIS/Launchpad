@@ -1,0 +1,303 @@
+/* Team Profile Page Styles */
+
+.profile-header {
+    background: var(--gradient-dark);
+    color: var(--white);
+    padding: calc(var(--spacing-3xl) + 80px) 0 var(--spacing-2xl);
+}
+
+.profile-intro {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--spacing-xl);
+    align-items: center;
+    margin-top: var(--spacing-xl);
+}
+
+.profile-avatar-large {
+    width: 150px;
+    height: 150px;
+}
+
+.avatar-placeholder-large {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: var(--gradient-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-weight: 900;
+    font-size: 3rem;
+    font-family: var(--font-display);
+    box-shadow: var(--shadow-2xl);
+}
+
+.profile-details {
+    color: var(--white);
+}
+
+.profile-name {
+    color: var(--white);
+    margin-bottom: var(--spacing-xs);
+    font-size: 2.5rem;
+}
+
+.profile-title {
+    font-size: 1.5rem;
+    color: var(--gray-300);
+    margin-bottom: var(--spacing-xs);
+}
+
+.profile-id {
+    color: var(--gray-400);
+    margin-bottom: var(--spacing-md);
+}
+
+.profile-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
+}
+
+.badge {
+    padding: var(--spacing-xs) var(--spacing-md);
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: var(--radius-lg);
+    font-size: 0.875rem;
+    font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.profile-content {
+    padding: var(--spacing-3xl) 0;
+}
+
+.profile-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--spacing-2xl);
+}
+
+.profile-main {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-2xl);
+}
+
+.profile-section h2 {
+    color: var(--gray-900);
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 3px solid var(--primary);
+    display: inline-block;
+}
+
+.experience-item,
+.education-item {
+    margin-bottom: var(--spacing-xl);
+    padding: var(--spacing-lg);
+    background-color: var(--gray-100);
+    border-radius: var(--radius-lg);
+}
+
+.experience-item h3,
+.education-item h3 {
+    color: var(--gray-900);
+    margin-bottom: var(--spacing-xs);
+}
+
+.company,
+.institution {
+    color: var(--primary);
+    font-weight: 600;
+    margin-bottom: var(--spacing-xs);
+}
+
+.duration {
+    color: var(--gray-600);
+    font-size: 0.875rem;
+    margin-bottom: var(--spacing-md);
+}
+
+.experience-highlights {
+    list-style: none;
+    padding: 0;
+}
+
+.experience-highlights li {
+    padding-left: 1.5rem;
+    position: relative;
+    margin-bottom: var(--spacing-sm);
+    color: var(--gray-700);
+}
+
+.experience-highlights li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.certifications {
+    margin-top: var(--spacing-lg);
+}
+
+.cert-grid {
+    display: grid;
+    gap: var(--spacing-md);
+}
+
+.cert-badge {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+    background-color: var(--white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    border: 2px solid var(--primary-light);
+}
+
+.cert-icon {
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cert-badge h4 {
+    margin-bottom: var(--spacing-xs);
+    color: var(--gray-900);
+}
+
+.cert-badge p {
+    color: var(--gray-600);
+    font-size: 0.875rem;
+}
+
+.role-list {
+    list-style: none;
+    padding: 0;
+}
+
+.role-list li {
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
+    background-color: var(--gray-100);
+    border-radius: var(--radius-md);
+    border-left: 4px solid var(--primary);
+}
+
+.role-list strong {
+    color: var(--primary);
+}
+
+.profile-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.sidebar-card {
+    background-color: var(--white);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--gray-200);
+}
+
+.sidebar-card h3 {
+    color: var(--gray-900);
+    margin-bottom: var(--spacing-md);
+    font-size: 1.125rem;
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
+}
+
+.skill-tag {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background-color: var(--gray-100);
+    color: var(--gray-700);
+    border-radius: var(--radius-md);
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all var(--transition-base);
+}
+
+.skill-tag:hover {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+.languages-list,
+.interests-list,
+.facts-list {
+    list-style: none;
+    padding: 0;
+}
+
+.languages-list li,
+.interests-list li,
+.facts-list li {
+    padding: var(--spacing-sm) 0;
+    border-bottom: 1px solid var(--gray-200);
+    color: var(--gray-700);
+}
+
+.languages-list li:last-child,
+.interests-list li:last-child,
+.facts-list li:last-child {
+    border-bottom: none;
+}
+
+.facts-list strong {
+    color: var(--gray-900);
+    font-weight: 600;
+}
+
+.back-to-team {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--gray-100);
+    text-align: center;
+}
+
+@media (max-width: 1024px) {
+    .profile-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .profile-sidebar {
+        order: -1;
+    }
+}
+
+@media (max-width: 768px) {
+    .profile-intro {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .profile-avatar-large {
+        margin: 0 auto;
+    }
+    
+    .profile-name {
+        font-size: 2rem;
+    }
+    
+    .profile-title {
+        font-size: 1.25rem;
+    }
+    
+    .profile-badges {
+        justify-content: center;
+    }
+}
