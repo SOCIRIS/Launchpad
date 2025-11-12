@@ -1,0 +1,121 @@
+/* ====================================
+   ADDITIONAL STYLES FOR SOCIRIS
+   Missing Card & Animation Styles
+   ==================================== */
+
+/* Services Page - Detailed Grid */
+.services-main {
+    padding: 4rem 0;
+}
+
+.intro-content {
+    max-width: 900px;
+    margin: 0 auto 3rem;
+    text-align: center;
+}
+
+.services-detailed-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.service-detail-card {
+    background: #ffffff;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border: 2px solid #e2e8f0;
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.service-detail-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    border-color: #6366f1;
+}
+
+.service-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.service-number {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #e2e8f0;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.service-icon-xl {
+    font-size: 4rem;
+}
+
+.service-detail-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #0f172a;
+}
+
+.service-lead {
+    color: #475569;
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+}
+
+.service-features-list {
+    list-style: none;
+    padding: 0;
+}
+
+.service-features-list li {
+    padding: 0.5rem 0;
+    color: #334155;
+    font-size: 0.9375rem;
+}
+
+/* Integration Section */
+.services-integration {
+    background: #f1f5f9;
+    padding: 4rem 0;
+}
+
+.integration-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.integration-card {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.integration-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.integration-card h3 {
+    color: #6366f1;
+    margin-bottom: 1rem;
+    font-size: 1.125rem;
+}
+
+.integration-card p {
+    color: #475569;
+    line-height: 1.7;
+}
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+    .services-detailed-grid {
+        grid-template-columns: 1fr;
+    }
+}
