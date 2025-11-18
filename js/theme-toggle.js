@@ -98,9 +98,9 @@
             const footerLogo = document.getElementById('footer-logo');
             if (footerLogo) {
                 if (this.theme === LIGHT_THEME) {
-                    footerLogo.src = 'images/sociris-logo-light.jpeg';
+                    footerLogo.src = 'images/sociris-wide-logo-light.jpeg';
                 } else {
-                    footerLogo.src = 'images/sociris-logo-dark.jpeg';
+                    footerLogo.src = 'images/sociris-wide-logo-dark.jpeg';
                 }
             }
         }
