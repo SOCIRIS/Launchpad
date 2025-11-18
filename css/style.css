@@ -2836,3 +2836,22 @@ button:focus-visible {
     padding-top: 2rem;
     padding-bottom: 2rem;
 }
+
+.footer-logo {
+    max-height: 50px;
+    max-width: 200px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+/* Theme switching for footer logo */
+[data-theme="light"] .footer-logo {
+    content: url('images/sociris-wide-logo-light.jpeg');
+}
+
+[data-theme="dark"] .footer-logo {
+    content: url('images/sociris-wide-logo-dark.jpeg');
+}
