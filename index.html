@@ -1,387 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="SOCIRIS - Pakistan's first AI-powered autonomous security platform. Advanced intrusion detection, prevention & surveillance system revolutionizing security infrastructure.">
-    <meta name="keywords" content="AI Security, Surveillance System, Intrusion Detection, Pakistan Security, Smart Security, IoT Security, Computer Vision, Security Automation">
-    <meta name="author" content="SOCIRIS Team">
-    <meta name="robots" content="index, follow">
-    <meta name="theme-color" content="#6366f1">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://sociris.com/">
-    <meta property="og:title" content="SOCIRIS - AI-Powered Security Solutions for Pakistan">
-    <meta property="og:description" content="Pakistan's first AI-powered autonomous security platform with real-time threat detection and prevention">
-    <meta property="og:image" content="https://sociris.com/images/sociris-wide-logo-dark.jpeg">
-    
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://sociris.com/">
-    <meta name="twitter:title" content="SOCIRIS - AI-Powered Security Solutions">
-    <meta name="twitter:description" content="Pakistan's first AI-powered autonomous security platform">
-    <meta name="twitter:image" content="https://sociris.com/images/sociris-wide-logo-dark.jpeg">
-    
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://sociris.com/">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/jpeg" href="images/sociris-logo-dark.jpeg">
-    <link rel="apple-touch-icon" href="images/sociris-logo-dark.jpeg">
-    
-    <title>SOCIRIS - AI-Powered Security & Surveillance Platform | Pakistan</title>
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
-    <!-- Lucide Icons -->
-    
-    
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="css/style.css">
-    
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "SOCIRIS",
-      "url": "https://sociris.com",
-      "logo": "https://sociris.com/images/sociris-logo-dark.jpeg",
-      "description": "AI-Powered Intrusion Detection, Prevention & Surveillance System",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Karachi",
-        "addressCountry": "Pakistan"
-      },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "email": "info@sociris.com",
-        "contactType": "Customer Service"
-      },
-      "sameAs": [
-        "https://www.linkedin.com/company/sociris/",
-        "https://github.com/SOCIRIS"
-      ]
-    }
-    </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="SOCIRIS — AI-powered autonomous security intelligence platform. Context-driven threat detection, OSINT fusion, SOAR automation, and multi-tenant enterprise security.">
+<meta name="keywords" content="AI Security Platform, SOC, SIEM, SOAR, Threat Detection, OSINT, Intrusion Detection, Facial Recognition, Cybersecurity, Security Operations Center, Autonomous Security, Pakistan">
+<meta name="author" content="SOCIRIS">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name="theme-color" content="#6366f1">
+<meta name="apple-mobile-web-app-title" content="SOCIRIS">
+<meta name="application-name" content="SOCIRIS">
+<meta name="msapplication-TileColor" content="#6366f1">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sociris.com/">
+<meta property="og:title" content="SOCIRIS — AI-Powered Security Intelligence Platform">
+<meta property="og:description" content="Context-driven, AI-native security intelligence platform with real-time threat detection, OSINT fusion, and automated incident response.">
+<meta property="og:image" content="https://sociris.com/site/images/sociris-wide-logo-dark.jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="SOCIRIS">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://sociris.com/">
+<meta name="twitter:title" content="SOCIRIS — AI-Powered Security Intelligence Platform">
+<meta name="twitter:description" content="Context-driven, AI-native security intelligence platform with real-time threat detection, OSINT fusion, and automated incident response.">
+<meta name="twitter:image" content="https://sociris.com/site/images/sociris-wide-logo-dark.jpeg">
+<link rel="canonical" href="https://sociris.com/">
+<link rel="icon" type="image/jpeg" href="site/images/sociris-logo-dark.jpeg">
+<link rel="apple-touch-icon" href="site/images/sociris-logo-dark.jpeg">
+<title>SOCIRIS — AI-Powered Security Intelligence Platform</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site/css/variables.css">
+<link rel="stylesheet" href="site/css/base.css">
+<link rel="stylesheet" href="site/css/components.css">
+<link rel="stylesheet" href="site/css/sections.css">
+<link rel="stylesheet" href="site/css/responsive.css">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Organization",
+  "name":"SOCIRIS",
+  "url":"https://sociris.com",
+  "logo":"https://sociris.com/site/images/sociris-logo-dark.jpeg",
+  "description":"AI-Powered Autonomous Security Intelligence Platform — Context-driven threat detection, OSINT fusion, SOAR automation.",
+  "foundingDate":"2024",
+  "address":{"@type":"PostalAddress","addressLocality":"Karachi","addressCountry":"PK"},
+  "contactPoint":{"@type":"ContactPoint","email":"info@sociris.com","contactType":"sales"},
+  "sameAs":["https://www.linkedin.com/company/sociris/","https://github.com/SOCIRIS"],
+  "knowsAbout":["AI Security","Threat Detection","SOC","SIEM","SOAR","OSINT","Cybersecurity","Computer Vision","Facial Recognition"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"SOCIRIS",
+  "url":"https://sociris.com",
+  "potentialAction":{"@type":"SearchAction","target":"https://sociris.com/#/search?q={search_term_string}","query-input":"required name=search_term_string"}
+}
+</script>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="container">
-            <div class="nav-wrapper">
-                <a href="index.html" class="logo">
-                    <img src="images/sociris-logo-dark.jpeg" alt="SOCIRIS Logo" class="logo-image" id="logo-image">
-                    <span class="logo-text">SOCIRIS</span>
-                </a>
-                
-                <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-                
-                <ul class="nav-menu" id="nav-menu">
-                    <li><a href="index.html" class="nav-link active">Home</a></li>
-                    <li><a href="about.html" class="nav-link">About</a></li>
-                    <li><a href="services.html" class="nav-link">Services</a></li>
-                    <li><a href="solutions.html" class="nav-link">Solutions</a></li>
-                    <li><a href="technology.html" class="nav-link">Technology</a></li>
-                    <li><a href="team.html" class="nav-link">Team</a></li>
-                    <li><a href="contact.html" class="nav-link">Contact</a></li>
-                    <li>
-                        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
-                            <i data-lucide="sun" class="theme-icon"></i>
-                        </button>
-                    </li>
-                    <li><a href="https://www.linkedin.com/company/sociris/" target="_blank" class="btn btn-primary">Request Demo</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+<nav id="navbar"><div class="ctn"><div class="nw">
+<a href="#/" class="logo"><img src="site/images/sociris-logo-dark.jpeg" alt="SOCIRIS" id="logo-img"><span>SOCIRIS</span></a>
+<button class="mt" id="mt" aria-label="Menu"><span></span><span></span><span></span></button>
+<ul class="nm" id="nm">
+<li><a href="#/" class="nl ac">Home</a></li>
+<li><a href="#/about" class="nl">About</a></li>
+<li><a href="#/platform" class="nl">Platform</a></li>
+<li><a href="#/solutions" class="nl">Solutions</a></li>
+<li><a href="#/technology" class="nl">Technology</a></li>
+<li><a href="#/contact" class="nl">Contact</a></li>
+<li><button class="tt" id="tt" aria-label="Toggle theme"><i data-lucide="sun"></i></button></li>
+<li><a href="https://www.linkedin.com/company/sociris/" target="_blank" rel="noopener" class="btn bp">Request Demo</a></li>
+</ul>
+</div></div></nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-background"></div>
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-badge">
-                    <i data-lucide="zap" class="badge-icon"></i>
-                    <span>Pakistan's First AI-Powered Security Platform</span>
-                </div>
-                
-                <h1 class="hero-title">
-                    Intelligent <span class="gradient-text">Security</span><br>
-                    For a Safer Tomorrow
-                </h1>
-                
-                <p class="hero-subtitle">
-                    SOCIRIS combines artificial intelligence, IoT sensors, and real-time analytics to deliver 
-                    comprehensive security solutions. From intrusion detection to automated threat response, 
-                    we're revolutionizing how Pakistan protects what matters most.
-                </p>
-                
-                <div class="hero-cta">
-                    <a href="about.html" class="btn btn-primary btn-lg">
-                        <span>Discover SOCIRIS</span>
-                        <i data-lucide="arrow-right"></i>
-                    </a>
-                    <a href="contact.html" class="btn btn-secondary btn-lg">
-                        <span>Get in Touch</span>
-                        <i data-lucide="message-circle"></i>
-                    </a>
-                </div>
-                
-                <div class="hero-stats">
-                    <div class="stat-card">
-                        <div class="stat-icon">
-                            <i data-lucide="shield-check"></i>
-                        </div>
-                        <div class="stat-content">
-                            <span class="stat-number">24/7</span>
-                            <span class="stat-label">Real-Time Monitoring</span>
-                        </div>
-                    </div>
-                    
-                    <div class="stat-card">
-                        <div class="stat-icon">
-                            <i data-lucide="brain"></i>
-                        </div>
-                        <div class="stat-content">
-                            <span class="stat-number">AI-Driven</span>
-                            <span class="stat-label">Autonomous Decisions</span>
-                        </div>
-                    </div>
-                    
-                    <div class="stat-card">
-                        <div class="stat-icon">
-                            <i data-lucide="layers"></i>
-                        </div>
-                        <div class="stat-content">
-                            <span class="stat-number">7 Core</span>
-                            <span class="stat-label">Security Components</span>
-                        </div>
-                    </div>
-                    
-                    <div class="stat-card">
-                        <div class="stat-icon">
-                            <i data-lucide="globe"></i>
-                        </div>
-                        <div class="stat-content">
-                            <span class="stat-number">8+ Sectors</span>
-                            <span class="stat-label">Industry Coverage</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Scroll Indicator -->
-        <div class="scroll-indicator">
-            <i data-lucide="chevron-down"></i>
-        </div>
-    </section>
+<main id="app"></main>
 
-    <!-- Features Overview -->
-    <section class="features-overview">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">
-                    <i data-lucide="sparkles"></i>
-                    Why Choose SOCIRIS
-                </span>
-                <h2 class="section-title">
-                    Security Reimagined with <span class="gradient-text">Artificial Intelligence</span>
-                </h2>
-                <p class="section-subtitle">
-                    Comprehensive protection powered by cutting-edge AI, real-time analytics, and autonomous response systems
-                </p>
-            </div>
-            
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i data-lucide="eye"></i>
-                    </div>
-                    <h3>Smart Surveillance</h3>
-                    <p>AI-powered computer vision with facial recognition, behavior analysis, and intelligent video analytics</p>
-                    <a href="services.html#surveillance" class="feature-link">
-                        Learn more <i data-lucide="arrow-right"></i>
-                    </a>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i data-lucide="shield-alert"></i>
-                    </div>
-                    <h3>Threat Detection</h3>
-                    <p>Ensemble AI models combining LSTM networks and anomaly detection for proactive threat identification</p>
-                    <a href="services.html#threat-detection" class="feature-link">
-                        Learn more <i data-lucide="arrow-right"></i>
-                    </a>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i data-lucide="fingerprint"></i>
-                    </div>
-                    <h3>Access Control</h3>
-                    <p>Biometric authentication with dynamic ingress/egress management and automated door control</p>
-                    <a href="services.html#access-control" class="feature-link">
-                        Learn more <i data-lucide="arrow-right"></i>
-                    </a>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i data-lucide="activity"></i>
-                    </div>
-                    <h3>Real-Time Analytics</h3>
-                    <p>Comprehensive dashboards with actionable intelligence and automated reporting capabilities</p>
-                    <a href="technology.html" class="feature-link">
-                        Learn more <i data-lucide="arrow-right"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
+<button class="btt" id="btt" aria-label="Back to top"><i data-lucide="arrow-up"></i></button>
 
-    <!-- Quick Links -->
-    <section class="quick-links">
-        <div class="container">
-            <div class="quick-links-grid">
-                <a href="about.html" class="quick-link-card">
-                    <div class="quick-link-icon">
-                        <i data-lucide="info"></i>
-                    </div>
-                    <h3>About SOCIRIS</h3>
-                    <p>Learn about our vision to transform security in Pakistan</p>
-                    <span class="link-arrow"><i data-lucide="arrow-right"></i></span>
-                </a>
-                
-                <a href="services.html" class="quick-link-card">
-                    <div class="quick-link-icon">
-                        <i data-lucide="grid"></i>
-                    </div>
-                    <h3>Our Services</h3>
-                    <p>Explore our 7 core security components and capabilities</p>
-                    <span class="link-arrow"><i data-lucide="arrow-right"></i></span>
-                </a>
-                
-                <a href="solutions.html" class="quick-link-card">
-                    <div class="quick-link-icon">
-                        <i data-lucide="lightbulb"></i>
-                    </div>
-                    <h3>Solutions</h3>
-                    <p>Discover how SOCIRIS solves real-world security challenges</p>
-                    <span class="link-arrow"><i data-lucide="arrow-right"></i></span>
-                </a>
-                
-                <a href="team.html" class="quick-link-card">
-                    <div class="quick-link-icon">
-                        <i data-lucide="users"></i>
-                    </div>
-                    <h3>Our Team</h3>
-                    <p>Meet the innovators building Pakistan's security future</p>
-                    <span class="link-arrow"><i data-lucide="arrow-right"></i></span>
-                </a>
-            </div>
-        </div>
-    </section>
+<footer>
+<div class="ctn">
+<div class="fw">
+<div>
+<img src="site/images/sociris-wide-logo-dark.jpeg" alt="SOCIRIS" class="flg" id="footer-logo">
+<p>AI-powered autonomous security intelligence platform.</p>
+<div class="soc">
+<a href="https://www.linkedin.com/company/sociris/" target="_blank" rel="noopener" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+<a href="https://github.com/SOCIRIS" target="_blank" rel="noopener" aria-label="GitHub"><i data-lucide="github"></i></a>
+<a href="mailto:info@sociris.com" aria-label="Email"><i data-lucide="mail"></i></a>
+</div>
+</div>
+<div class="fls">
+<div class="fc"><h4>Platform</h4><a href="#/platform">Capabilities</a><a href="#/solutions">Solutions</a><a href="#/technology">Technology</a><a href="#/about">About</a></div>
+<div class="fc"><h4>Company</h4><a href="#/contact">Contact</a><a href="https://www.linkedin.com/company/sociris/" target="_blank">LinkedIn</a><a href="https://github.com/SOCIRIS" target="_blank">GitHub</a></div>
+<div class="fc"><h4>Legal</h4><a href="#/">Privacy Policy</a><a href="#/">Terms of Service</a><a href="#/">Security</a></div>
+</div>
+</div>
+<div class="fb"><p>&copy; 2026 SOCIRIS. All rights reserved.</p><p>Built in Karachi, Pakistan</p></div>
+</div>
+</footer>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <div class="cta-content">
-                <div class="cta-text">
-                    <h2>Ready to Secure Your Future?</h2>
-                    <p>Join the security revolution. Whether you're protecting a business, institution, or home, SOCIRIS has the solution for you.</p>
-                </div>
-                <div class="cta-actions">
-                    <a href="https://www.linkedin.com/company/sociris/" target="_blank" class="btn btn-primary btn-lg">
-                        <span>Request a Demo</span>
-                        <i data-lucide="external-link"></i>
-                    </a>
-                    <a href="mailto:info@sociris.com" class="btn btn-secondary btn-lg">
-                        <span>Contact Sales</span>
-                        <i data-lucide="mail"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <img src="images/sociris-wide-logo-dark.jpeg" alt="SOCIRIS Logo" class="footer-logo" id="footer-logo">
-                    <p class="footer-tagline">Transforming security through AI-powered innovation</p>
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/company/sociris/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                            <i data-lucide="linkedin"></i>
-                        </a>
-                        <a href="https://github.com/SOCIRIS" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                            <i data-lucide="github"></i>
-                        </a>
-                        <a href="mailto:info@sociris.com" aria-label="Email">
-                            <i data-lucide="mail"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="footer-links">
-                    <div class="footer-column">
-                        <h4>Product</h4>
-                        <ul>
-                            <li><a href="services.html">Services</a></li>
-                            <li><a href="solutions.html">Solutions</a></li>
-                            <li><a href="technology.html">Technology</a></li>
-                            <li><a href="about.html">About Us</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="footer-column">
-                        <h4>Company</h4>
-                        <ul>
-                            <li><a href="team.html">Our Team</a></li>
-                            <li><a href="contact.html">Contact</a></li>
-                            <li><a href="https://www.linkedin.com/company/sociris/" target="_blank">Careers</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="footer-column">
-                        <h4>Legal</h4>
-                        <ul>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Terms of Service</a></li>
-                            <li><a href="#">Security</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2025 SOCIRIS. All rights reserved.</p>
-                <p>A Final Year Project at ILMA University, Karachi, Pakistan</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Back to Top Button -->
-    <button class="back-to-top" id="back-to-top" aria-label="Back to top">
-        <i data-lucide="arrow-up"></i>
-    </button>
-
-    <!-- Scripts -->
-    <script src="js/theme-toggle.js"></script>
-    <script src="js/script.js"></script>
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-    <script>lucide.createIcons();</script>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<script src="site/js/helpers.js"></script>
+<script src="site/js/pages.js"></script>
+<script src="site/js/theme.js"></script>
+<script src="site/js/router.js"></script>
+<script src="site/js/app.js"></script>
 </body>
 </html>
