@@ -44,3 +44,46 @@ SOCIRIS.faq = function(q, a) {
   var I = SOCIRIS.I;
   return '<div class="tc" onclick="this.classList.toggle(\'open\')"><h4>' + q + ' <span style="transition:transform .3s">' + I('chevron-down') + '</span></h4><p>' + a + '</p></div>';
 };
+
+SOCIRIS.dashCard = function(cls, label, value, change, changeDir) {
+  return '<div class="dash-card dc-' + cls + ' fi"><div class="dc-label">' + label + '</div><div class="dc-value" data-count="' + value + '" data-suffix="' + (value === '99.7' ? '%' : value === '847' ? '' : value === '23' ? 's' : value === '1.2' ? 'K' : '') + '">' + value + '</div><div class="dc-change dc-' + changeDir + '">' + SOCIRIS.I(changeDir === 'up' ? 'trending-up' : 'trending-down') + ' ' + change + '</div></div>';
+};
+
+SOCIRIS.ringChart = function(value, color, label) {
+  var r = 48;
+  var circ = 2 * Math.PI * r;
+  return '<div class="stat-ring fi" data-value="' + value + '">' +
+    '<svg width="120" height="120" viewBox="0 0 120 120">' +
+    '<circle class="stat-ring-bg" cx="60" cy="60" r="' + r + '"/>' +
+    '<circle class="stat-ring-fill" cx="60" cy="60" r="' + r + '" stroke="' + color + '" style="stroke-dasharray:' + circ + ';stroke-dashoffset:' + circ + '"/>' +
+    '</svg>' +
+    '<div class="stat-ring-label"><div class="stat-ring-value">0%</div><div class="stat-ring-text">' + label + '</div></div></div>';
+};
+
+SOCIRIS.missionCard = function(icon, cls, title, desc) {
+  return '<div class="mission-card fi"><div class="mc-icon ' + cls + '">' + icon + '</div><h3>' + title + '</h3><p>' + desc + '</p></div>';
+};
+
+SOCIRIS.codeBlock = function(lang, lines) {
+  var code = lines.map(function(l, i) {
+    return '<div><span class="code-line-num">' + (i + 1) + '</span>' + l + '</div>';
+  }).join('');
+  return '<div class="code-block fi"><span class="code-lang">' + lang + '</span>' + code + '</div>';
+};
+
+SOCIRIS.archFlow = function(nodes) {
+  var I = SOCIRIS.I;
+  return '<div class="arch-flow">' + nodes.map(function(n, i) {
+    var nodeHtml = '<div class="arch-node ' + (n.cls || '') + '">' + (n.icon ? I(n.icon) + ' ' : '') + n.label + '</div>';
+    if (i < nodes.length - 1) nodeHtml += '<span class="arch-arrow">' + I('arrow-right') + '</span>';
+    return nodeHtml;
+  }).join('') + '</div>';
+};
+
+SOCIRIS.impactCard = function(value, cls, label) {
+  return '<div class="impact-card fi"><div class="impact-value ' + cls + '">' + value + '</div><div class="impact-label">' + label + '</div></div>';
+};
+
+SOCIRIS.threatMarker = function(top, left, sev) {
+  return '<div class="threat-marker ' + sev + '" style="top:' + top + '%;left:' + left + '%"></div>';
+};

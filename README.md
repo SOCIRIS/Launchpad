@@ -2,11 +2,11 @@
 
 <img src="images/sociris-wide-logo-dark.jpeg" alt="SOCIRIS Logo" width="500">
 
-# SOCIRIS Website - Updated Version
+# SOCIRIS — Security Intelligence Platform
 
-**AI-Powered Intrusion Detection, Prevention & Surveillance System**
+**AI-Powered Autonomous Security Intelligence Platform**
 
-A modern, responsive landing page for SOCIRIS - showcasing our revolutionary security solution for Pakistan.
+Context-driven threat detection, OSINT fusion, SOAR automation, and multi-tenant enterprise security — deployable as SaaS, self-hosted, or air-gapped.
 
 [![Live Site](https://img.shields.io/badge/Live-sociris.com-6366f1?style=for-the-badge)](https://sociris.com)
 [![GitHub](https://img.shields.io/badge/GitHub-SOCIRIS-181717?style=for-the-badge&logo=github)](https://github.com/SOCIRIS)
@@ -15,420 +15,229 @@ A modern, responsive landing page for SOCIRIS - showcasing our revolutionary sec
 
 ---
 
-## 🎯 What's New in This Update
+## Overview
 
-### ✅ Symmetric Layout Improvements
+SOCIRIS (Security Operations Center Intelligent Response & Intrusion Surveillance) is a production-grade security intelligence platform that evolved from a research project into a comprehensive enterprise solution. The platform combines:
 
-1. **Services Section** - Now features **7 core components** (up from 6)
-   - Added "Digital Forensics & Investigation" as the 7th service
-   - Centered 7th item for perfect symmetry
-   - Updated hero stats to reflect "7 Core Security Components"
-
-2. **Use Cases Section** - **8 items in 4x2 grid** (already symmetric)
-   - Government, Education, Businesses, Residential
-   - Industrial, Healthcare, Retail, Logistics
-   - Perfect 4-column layout on desktop
-
-3. **Technology Architecture** - **8 layers with card-based design**
-   - Now uses attractive card/box layout instead of plain text
-   - Each layer has expandable capability cards
-   - Consistent hover effects and visual hierarchy
-   - Added 8th layer: "Integration & APIs"
-   - 4-column highlights grid for key capabilities
-
-4. **Team Section** - **Centered layout structure**
-   - Row 1: Muhammad Abdullah (centered)
-   - Row 2: Yaseen (left), Huzaifa (center), Asad (right)
-   - Perfect symmetry with Huzaifa prominently centered
+- **Security Context Graph** — Organizational memory that enriches every alert with asset topology, ownership, blast radius, and investigation history
+- **AI Cascade Architecture** — Lightweight triage model filters 70% of noise, then heavy deep-analysis model produces narrative reasoning chains
+- **CD/CR Closed Loop** — Continuous Detection/Continuous Response transforms a linear pipeline into a self-improving loop
+- **OSINT Intelligence Fusion** — 16+ real-time geospatial data layers fused by an 8-agent AI swarm
+- **SOAR Automation** — 5 automated response playbooks with HITL verification gates
+- **Multi-Tenant Enterprise** — Schema-per-tenant isolation, RBAC, SOC 2/ISO 27001/GDPR compliance
 
 ---
 
-## 🎨 Brand Assets
+## Website Pages
 
-The SOCIRIS website now features our official logo in multiple formats:
-
-### Logo Files Available:
-```
-images/
-├── sociris-logo-dark.jpeg          # Square logo (dark theme)
-├── sociris-logo-light.jpeg         # Square logo (light theme)
-├── sociris-wide-logo-dark.jpeg     # Wide logo (dark theme) - Used in navbar
-└── sociris-wide-logo-light.jpeg    # Wide logo (light theme)
-```
-
-### Logo Usage:
-- **Navbar & Footer**: Wide logo (dark theme)
-- **Favicon**: Square logo
-- **Social Media**: Wide logo for Open Graph tags
-- All logos optimized for web performance
+| Page | Route | Description |
+|------|-------|-------------|
+| Home | `#/` | Hero, capabilities, real-time metrics, competitive comparison |
+| Mission | `#/mission` | Mission statement, strategic pillars, design principles, impact targets, deployment models |
+| Platform | `#/platform` | 7 core capabilities, end-to-end data flow architecture |
+| Solutions | `#/solutions` | Problem/solution comparison, 8 industry verticals, key benefits |
+| Technology | `#/technology` | 6 evolution phases, tech stack, 13 integrations |
+| Demo | `#/demo` | Interactive Situation Room with real-time threat feed, AI investigation, SOAR simulation |
+| About | `#/about` | Vision, mission, timeline, core values, platform scale |
+| Contact | `#/contact` | Contact form, FAQ with 8 questions |
 
 ---
 
-## 🚀 Quick Start
+## Interactive Demo
 
-### Local Setup
+The Demo page (`#/demo`) features a fully interactive Situation Room simulation:
 
-1. Navigate to your project directory:
-```bash
-cd ~/SOCIRIS/Launchpad
-```
-
-2. Copy the updated files to your repository
-
-3. Test locally:
-```bash
-python3 -m http.server 8000
-```
-
-4. Open: `http://localhost:8000`
-
-### GitHub Pages Deployment
-
-```bash
-git add .
-git commit -m "Update to symmetric layout with enhanced tech section"
-git push origin main
-```
-
-Your site will be live at: **https://sociris.com**
+- **Real-Time Threat Feed** — Animated alert stream with MITRE ATT&CK technique mapping
+- **AI Investigation Engine** — Step-by-step cascade visualization (triage → context → deep analysis → HITL → response)
+- **Geospatial Situation Room** — World map with animated threat markers
+- **SOAR Playbook Execution** — Click "Execute Playbook" to see step-by-step automation
+- **Detection Accuracy Ring** — Animated SVG ring chart showing ensemble model composition
+- **Alert Distribution Bars** — Animated progress bars by severity
+- **Dashboard Metrics** — Animated counter cards for threats detected, response time, coverage
+- **Security Context Graph** — Interactive node graph showing organizational memory
+- **Narrative Reasoning** — Side-by-side comparison: traditional numeric score vs. SOCIRIS investigation narrative
+- **CD/CR Pipeline** — Horizontal timeline showing the self-improving loop
 
 ---
 
-## 📁 File Structure
+## Tech Stack (Website)
+
+| Layer | Technology |
+|-------|-----------|
+| Architecture | Single-page application (hash-based router) |
+| Styling | CSS custom properties, modular CSS files |
+| Icons | Lucide Icons |
+| Fonts | Inter (Google Fonts) |
+| Animations | CSS keyframes, IntersectionObserver scroll animations |
+| Interactivity | Vanilla JavaScript, Canvas-free simulations |
+| Theme | Dark/light mode with localStorage persistence |
+| Deployment | GitHub Pages with custom domain |
+
+---
+
+## File Structure
 
 ```
 Launchpad/
-├── index.html      # Updated with 7 services, 8 use cases, 8 tech layers
-├── style.css       # Enhanced with card layouts and symmetric grids  
-├── script.js       # Interactive features (unchanged)
-├── CNAME           # Custom domain configuration
-└── README.md       # This file
+├── index.html                    # SPA shell with nav, footer, scripts
+├── CNAME                         # Custom domain (sociris.com)
+├── README.md
+├── site/
+│   ├── css/
+│   │   ├── variables.css         # CSS custom properties, theme tokens
+│   │   ├── base.css              # Reset, typography, animations
+│   │   ├── components.css        # Buttons, cards, dashboard, charts, modals
+│   │   ├── sections.css          # Hero, page heroes, demo, mission sections
+│   │   └── responsive.css        # Tablet + mobile breakpoints
+│   ├── js/
+│   │   ├── helpers.js            # HTML generators (icons, cards, charts, etc.)
+│   │   ├── demo.js               # Interactive demo engine (threat feed, SOAR, etc.)
+│   │   ├── pages.js              # All page render functions + init hooks
+│   │   ├── theme.js              # Dark/light theme toggle + persistence
+│   │   ├── router.js             # Hash-based SPA router with fade observers
+│   │   └── app.js                # App initialization, nav, scroll, hash change
+│   └── images/
+│       ├── sociris-logo-dark.jpeg
+│       ├── sociris-logo-light.jpeg
+│       ├── sociris-wide-logo-dark.jpeg
+│       └── sociris-wide-logo-light.jpeg
+├── css/                          # Legacy styles (not used by current site)
+├── js/                           # Legacy scripts (not used by current site)
+└── docs/                         # Documentation assets
 ```
 
 ---
 
-## ✨ Key Features
+## Quick Start
 
-### Symmetric Design Principles
-- **Services Grid**: 3x3 layout with centered 7th item
-- **Use Cases Grid**: 4x2 perfect grid (8 items)
-- **Technology Grid**: 2x4 architecture layers + 4-column highlights
-- **Team Grid**: Centered leadership with symmetric second row
+```bash
+# Clone
+git clone https://github.com/SOCIRIS/Launchpad.git
+cd Launchpad
 
-### Visual Improvements
-- Card-based technology architecture (not just text!)
-- Consistent hover effects across all sections
-- Gradient accents and border animations
-- Responsive breakpoints for mobile/tablet
+# Serve locally
+python3 -m http.server 8000
 
----
-
-## 📄 Content Sections
-
-### 1. Hero Section
-- Updated stats: "7 Core Security Components"
-- Eye-catching gradient text effects
-- Animated background
-
-### 2. About SOCIRIS
-- Vision and mission
-- 4 feature cards (Economic Accessibility, Industry Coverage, AI Agent, Predictive Analytics)
-
-### 3. Services (7 Core Components) ⭐ UPDATED
-1. Smart Surveillance System
-2. Access Control & Facial Recognition
-3. Automated Security Audits
-4. Asset Tracking & Analysis
-5. Threat Intelligence & Response
-6. Centralized Security Dashboard
-7. **Digital Forensics & Investigation** ⭐ NEW
-
-### 4. Solutions
-- Problem/Solution comparison
-- 8 use case cards in 4x2 grid:
-  - Government, Education, Business, Residential
-  - Industrial, Healthcare, Retail, Logistics
-
-### 5. Technology & Architecture ⭐ COMPLETELY REDESIGNED
-**8 Technology Layers in Card Format:**
-1. 🤖 **Artificial Intelligence Layer**
-   - Advanced Computer Vision
-   - Ensemble Threat Detection
-   - Intelligent Decision Engine
-
-2. ⚡ **Real-Time Data Processing**
-   - Event Streaming Platform
-   - Big Data Analytics Engine
-   - High-Performance Cache
-
-3. 📊 **Monitoring & Intelligence**
-   - Visualization & Reporting
-   - Log Analytics Platform
-   - Search & Data Discovery
-
-4. 🔒 **Security Operations Center**
-   - Intrusion Detection System
-   - Incident Response Platform
-   - Threat Intelligence Hub
-   - Vulnerability Management
-   - Digital Forensics Suite
-   - Observable Analysis Engine
-
-5. 🔄 **Automation & Orchestration**
-   - Security Orchestration (SOAR)
-   - Infrastructure Automation
-   - Change Monitoring System
-
-6. ☁️ **Cloud-Native Infrastructure**
-   - Container Orchestration
-   - Microservices Architecture
-   - High Availability Design
-
-7. 📍 **IoT & Physical Layer**
-   - GPS Tracking Platform
-   - Smart Sensor Network
-   - Network Discovery Tools
-
-8. 🌐 **Integration & APIs** ⭐ NEW
-   - RESTful API Gateway
-   - Webhook Integration
-   - Multi-Protocol Support
-
-**4 Core Technical Capabilities (Bottom Grid):**
-- 🚀 Scalable by Design
-- ⚡ Real-Time Processing
-- 🔐 Enterprise Security
-- 🌐 Cloud-Native
-
-### 6. Team ⭐ UPDATED LAYOUT
-**Row 1 (Centered):**
-- Muhammad Abdullah Tariq - Project Lead
-
-**Row 2 (Three members with Huzaifa centered):**
-- Yaseen Iqbal (Left) - IoT Engineer
-- Muhammad Huzaifa Tariq (Center) - AI Engineer ⭐
-- Muhammad Asad (Right) - Security Researcher
-
-### 7. Contact
-- 3-column contact details
-- **Social Links Section** ⭐ NEW
-  - LinkedIn Company Page
-  - GitHub Organization
-  - Official Website
-  - Interactive hover effects with brand colors
-- Call-to-action box
-
----
-
-## 🎨 CSS Changes Summary
-
-### New Styles Added:
-```css
-/* Services - 7 items with centered last item */
-.services-grid {
-    grid-template-columns: repeat(3, 1fr);
-}
-.service-card:nth-child(7) {
-    grid-column: 2 / 3; /* Center the 7th item */
-}
-
-/* Use Cases - Perfect 4x2 grid */
-.use-cases-grid {
-    grid-template-columns: repeat(4, 1fr);
-}
-
-/* Technology Architecture - Card-based layout */
-.tech-architecture {
-    grid-template-columns: repeat(2, 1fr);
-}
-.architecture-layer {
-    /* Card styling with hover effects */
-}
-
-/* Technology Highlights - 4-column grid */
-.tech-highlights {
-    grid-template-columns: repeat(4, 1fr);
-}
-
-/* Team - Centered layout */
-.team-member.team-lead {
-    grid-column: 2 / 3; /* Abdullah centered */
-}
-.team-member.team-center {
-    grid-column: 2 / 3; /* Huzaifa centered */
-}
+# Open
+open http://localhost:8000
 ```
 
-### Responsive Breakpoints:
-- **Desktop (>968px)**: Full symmetric grids
-- **Tablet (768-968px)**: 2-column layouts
-- **Mobile (<640px)**: Single column stacks
-
 ---
 
-## 📱 Responsive Design
+## SOCIRIS Platform Architecture
 
-All sections maintain symmetry across breakpoints:
+### Current → Evolved
 
-### Desktop (1200px+)
-- Services: 3x3 grid (7th centered)
-- Use Cases: 4x2 grid
-- Technology: 2x4 grid
-- Team: 3-column with centered positions
-
-### Tablet (768-968px)
-- Services: 2-column
-- Use Cases: 2x4 grid
-- Technology: 1-column stacked
-- Team: 2-column with centered special items
-
-### Mobile (< 640px)
-- All sections: Single column
-- Maintains card styling and hover effects
-
----
-
-## 🔧 Technical Details
-
-### Grid Systems Used:
-```css
-/* Services: 3-column with special positioning */
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-
-/* Use Cases: Fixed 4-column */
-display: grid;
-grid-template-columns: repeat(4, 1fr);
-
-/* Technology: 2-column architecture layers */
-display: grid;
-grid-template-columns: repeat(2, 1fr);
-
-/* Highlights: 4-column even distribution */
-display: grid;
-grid-template-columns: repeat(4, 1fr);
+```
+CURRENT (FYP)                          EVOLVED (Commercial)
+┌──────────────────────┐               ┌──────────────────────────────────┐
+│ Static HTML Dashboard │               │ Next.js + MapLibre + CesiumJS    │
+│ (12 pages, vanilla JS)│               │ + Ant Design + ECharts + 3D Globe│
+└──────────┬───────────┘               └──────────────┬───────────────────┘
+           │                                          │
+┌──────────▼───────────┐               ┌──────────────▼───────────────────┐
+│ Monolithic FastAPI    │               │ Modular FastAPI (routers+services)│
+│ (4300 lines, 1 file)  │               │ + Context Graph + OSINT Pipeline  │
+└──────────┬───────────┘               └──────────────┬───────────────────┘
+           │                                          │
+┌──────────▼───────────┐               ┌──────────────▼───────────────────┐
+│ Numeric Risk Score    │               │ AI Cascade + Narrative Reasoning  │
+│ (0-100, no memory)    │               │ + CD/CR Loop + Context Graph      │
+└──────────┬───────────┘               └──────────────┬───────────────────┘
+           │                                          │
+┌──────────▼───────────┐               ┌──────────────▼───────────────────┐
+│ Linear Pipeline       │               │ HITL Gate → Response → Feedback   │
+│ Detect→Score→Playbook │               │ → Better Detection → Repeat       │
+└──────────┬───────────┘               └──────────────┬───────────────────┘
+           │                                          │
+┌──────────▼───────────┐               ┌──────────────▼───────────────────┐
+│ 28 Docker Services    │               │ K8s/Helm + Edge Sensors + SaaS    │
+│ (Single deployment)   │               │ + Multi-tenant + Air-gapped       │
+└──────────────────────┘               └──────────────────────────────────┘
 ```
 
-### Card Hover Effects:
-- Translate Y: -8px to -10px
-- Border color transitions to primary
-- Shadow glow effects
-- Top border animations
+### Six Evolution Phases
+
+| Phase | Focus | Key Deliverables |
+|-------|-------|-----------------|
+| 0 | Foundation Refactor | Modular FastAPI, Next.js dashboard, Keycloak SSO, Vault, CI/CD |
+| 1 | Context Graph + CD/CR | Neo4j/AGE graph, AI cascade, HITL gates, detection compression |
+| 2 | OSINT Fusion | 16+ geospatial layers, RECON toolkit, 8-agent swarm, attack surface |
+| 3 | Enterprise Platform | Multi-tenancy, SOC 2/ISO 27001/GDPR, HA/DR, edge sensors |
+| 4 | Intelligence Products | Investigation reports, executive dashboard, analyst upskilling |
+| 5 | Ecosystem | Plugin marketplace (13 integrations), GraphQL API, community hub |
 
 ---
 
-## 🚀 Deployment Checklist
+## Key Differentiators
 
-- [x] Update hero stats to "7 Core"
-- [x] Add 7th service component
-- [x] Ensure 8 use cases display properly
-- [x] Convert technology section to cards
-- [x] Add 8th technology layer
-- [x] Fix team layout with centered positions
-- [x] Add 4-column highlights grid
-- [x] Test responsive breakpoints
-- [x] Verify all hover effects work
-- [x] Check mobile menu functionality
+| vs. Traditional SIEM/SOAR | SOCIRIS Advantage |
+|--------------------------|-------------------|
+| Rules decay, manual tuning | CD/CR auto-generates and retires detections |
+| No organizational memory | Security Context Graph persists knowledge |
+| Detection-only or response-only | Unified reasoning loop |
+| No OSINT fusion | 16+ real-time geospatial layers |
+| No physical security | Face recognition + GPS + CCTV |
+| Cloud-dependent | SaaS + Self-hosted + Air-gapped + Edge |
 
 ---
 
-## 📊 Section Summary
+## Deployment Models
 
-| Section | Items | Layout | Status |
-|---------|-------|--------|--------|
-| Services | 7 | 3x3 (7th centered) | ✅ Symmetric |
-| Use Cases | 8 | 4x2 | ✅ Symmetric |
-| Technology Layers | 8 | 2x4 | ✅ Symmetric |
-| Tech Highlights | 4 | 1x4 | ✅ Symmetric |
-| Team | 4 | Special centered | ✅ Symmetric |
+- **SaaS Cloud** — Managed SOCIRIS with web signup and auto-scaling
+- **Self-Hosted** — Docker Compose or Helm chart, full infrastructure control
+- **Air-Gapped** — Local LLM (Ollama), offline threat feeds, government/defense ready
+- **Edge Sensors** — Lightweight Go binary, autonomous operation, MSSP model
 
 ---
 
-## 🎯 Design Philosophy
+## Change Log
 
-### Symmetry Principles Applied:
-1. **Even Numbers**: Use 2, 4, 6, 8 for perfect grids
-2. **Odd with Center**: Use 3, 5, 7 with middle item centered
-3. **Responsive Balance**: Maintain visual harmony on all screens
-4. **Consistent Spacing**: Uniform gaps between all grid items
+### Version 3.0 (Current — Complete Overhaul)
+- Rewrote entire site as single-page application with hash-based router
+- Added 8 pages: Home, Mission, Platform, Solutions, Technology, Demo, About, Contact
+- Built interactive Situation Room demo with real-time threat feed simulation
+- Added AI investigation cascade visualization with animated steps
+- Added SOAR playbook execution simulation
+- Added geospatial situation room with animated threat markers
+- Added Security Context Graph interactive node visualization
+- Added narrative reasoning comparison (before/after code blocks)
+- Added CD/CR pipeline horizontal timeline
+- Added competitive comparison grid
+- Added animated counter metrics, ring charts, progress bars
+- Added mission statement page with strategic pillars and design principles
+- Added dark/light theme with smooth transitions
+- Modular CSS architecture (5 files)
+- Modular JS architecture (6 files)
+- All animations use IntersectionObserver for scroll-triggered reveals
+- Full responsive design (desktop, tablet, mobile)
+- Enhanced SEO with structured data (Organization + WebSite schemas)
 
-### Visual Hierarchy:
-- **Level 1**: Section headers with gradient labels
-- **Level 2**: Card containers with borders
-- **Level 3**: Capability/feature items within cards
-- **Level 4**: Supporting text and icons
+### Version 2.2 (Logo Integration)
+- Integrated official SOCIRIS logos
+- Added favicon, Open Graph, and Twitter Card meta tags
 
----
+### Version 2.0 (Symmetric Layout)
+- 7 service components, 8 use cases, card-based technology section
 
-## 🐛 Known Issues & Fixes
-
-### Issue: Use cases not showing all 8
-**Fix**: Updated CSS to ensure 4-column grid at desktop breakpoint
-
-### Issue: Technology section was text-only
-**Fix**: Converted to card-based architecture with hover effects
-
-### Issue: Team members not properly centered
-**Fix**: Applied grid-column positioning for centered items
-
----
-
-## 📞 Support & Contact
-
-### For Website Issues
-- **Technical Lead**: Muhammad Abdullah Tariq (BB-6792)
-- **Email**: info@sociris.com
+### Version 1.0 (Initial)
+- Static HTML landing page
 
 ---
 
-## 📝 Change Log
+## Contact
 
-### Version 2.2 (Latest Update - Logo Integration)
-- ✅ Integrated official SOCIRIS logos (square and wide formats)
-- ✅ Replaced emoji logo with professional brand images
-- ✅ Added favicon using square logo
-- ✅ Added Open Graph and Twitter Card meta tags with logo
-- ✅ Responsive logo sizing for mobile, tablet, and desktop
-- ✅ Logo showcase in README with brand assets documentation
-
-### Version 2.1 (Previous Update)
-- ✅ Integrated LinkedIn Company Page
-- ✅ Integrated GitHub Organization
-- ✅ Added "Connect With Us" section with social cards
-- ✅ Brand-specific hover effects (LinkedIn blue, GitHub dark, SOCIRIS cyan)
-- ✅ Responsive social grid (3-column desktop, 2-column tablet, 1-column mobile)
-
-### Version 2.0 (Previous Update)
-- ✅ Added 7th service component (Digital Forensics)
-- ✅ Redesigned Technology Architecture with cards
-- ✅ Added 8th technology layer (Integration & APIs)
-- ✅ Fixed team layout for perfect symmetry
-- ✅ Ensured all 8 use cases display in 4x2 grid
-- ✅ Added 4-column highlights grid
-- ✅ Enhanced hover effects across all cards
-- ✅ Improved responsive breakpoints
-
-### Version 1.0 (Original)
-- Initial website launch
-- 6 services, basic layout
-- Text-based technology section
-
----
-
-## 🙏 Acknowledgments
-
-- **ILMA University** for academic support
-- **Dr. Nabila Sehito** for supervision
-- **Design Inspiration**: Modern SaaS landing pages
+- **Email**: [info@sociris.com](mailto:info@sociris.com)
+- **LinkedIn**: [/company/sociris](https://www.linkedin.com/company/sociris/)
+- **GitHub**: [github.com/SOCIRIS](https://github.com/SOCIRIS)
+- **Location**: Karachi, Pakistan
 
 ---
 
 <div align="center">
 
-**Built with ❤️ by the SOCIRIS Team**
+**Built by the SOCIRIS Team**
 
-*Transforming security through AI-powered innovation*
-
-**Now with Perfect Symmetry! 🎯**
+*Context-driven, AI-native security intelligence for every organization*
 
 </div>

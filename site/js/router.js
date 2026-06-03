@@ -11,6 +11,8 @@ SOCIRIS.router = {
     var app = document.getElementById('app');
     if (!app) return;
 
+    SOCIRIS.demo.destroy();
+
     window.scrollTo({ top: 0, behavior: 'instant' });
     var pg = SOCIRIS.pages[route];
     if (!pg || typeof pg.render !== 'function') return;

@@ -23,6 +23,8 @@
   .fr { grid-template-columns: 1fr; }
   .ctaw { flex-direction: column; text-align: center; }
   .ctaa { justify-content: center; }
+  .sdc { padding: 1.5rem; }
+  .sec { padding: 4rem 0; }
 }
 
 @media (max-width: 640px) {
@@ -31,4 +33,11 @@
   .fls { grid-template-columns: 1fr; }
   .fb { flex-direction: column; gap: .5rem; text-align: center; }
   .ht { font-size: clamp(2rem, 8vw, 3rem); }
+  .sec { padding: 3rem 0; }
+  .hero { min-height: auto; padding: 6rem 0 3rem; }
+  .ph { padding: 6rem 0 3rem; }
+  .cg2, .cg3, .cg4, .cg5 { grid-template-columns: 1fr; }
+  .cd { padding: 1.5rem; }
+  .impact-grid { grid-template-columns: 1fr; }
+  .principle-list { grid-template-columns: 1fr; }
 }
