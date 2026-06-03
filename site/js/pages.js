@@ -29,59 +29,130 @@ var SOCIRIS = SOCIRIS || {};
       '<p class="hs">SOCIRIS delivers context-driven threat detection, OSINT intelligence fusion, automated incident response, and enterprise-grade security operations — all powered by an AI ensemble engine with a Security Context Graph that remembers.</p>' +
       '<div class="hcta"><a href="#/demo" class="btn bp bl"><span>Live Demo</span>' + I('play') + '</a><a href="#/about" class="btn bs bl"><span>Discover SOCIRIS</span>' + I('arrow-right') + '</a></div>' +
       '<div class="hstats">' +
-      '<div class="sc fi"><div class="si">' + I('shield-check') + '</div><div><span class="sn">24/7</span><span class="sl">Autonomous Monitoring</span></div></div>' +
-      '<div class="sc fi"><div class="si">' + I('brain') + '</div><div><span class="sn">95%+</span><span class="sl">Detection Accuracy</span></div></div>' +
-      '<div class="sc fi"><div class="si">' + I('layers') + '</div><div><span class="sn">25+</span><span class="sl">Microservices</span></div></div>' +
-      '<div class="sc fi"><div class="si">' + I('globe') + '</div><div><span class="sn">16+</span><span class="sl">OSINT Data Layers</span></div></div>' +
-      '</div></div><div class="scr">' + I('chevron-down') + '</div></section>' +
+      '<div class="sc fi stagger-1"><div class="si">' + I('shield-check') + '</div><div><span class="sn">24/7</span><span class="sl">Autonomous Monitoring</span></div></div>' +
+      '<div class="sc fi stagger-2"><div class="si">' + I('brain') + '</div><div><span class="sn">95%+</span><span class="sl">Detection Accuracy</span></div></div>' +
+      '<div class="sc fi stagger-3"><div class="si">' + I('layers') + '</div><div><span class="sn">25+</span><span class="sl">Microservices</span></div></div>' +
+      '<div class="sc fi stagger-4"><div class="si">' + I('globe') + '</div><div><span class="sn">16+</span><span class="sl">OSINT Data Layers</span></div></div>' +
+      '</div></div>' +
+      '<div class="hero-logo-container"><div class="hero-logo-orbit"><div class="hero-logo-orbit-dot"></div></div><div class="hero-logo-orbit"></div><img src="site/images/sociris-logo-dark.jpeg" alt="SOCIRIS" class="hero-logo-center" id="hero-center-logo"></div>' +
+      '<div class="scr">' + I('chevron-down') + '</div></section>' +
 
-      '<section class="sec"><div class="ctn"><div class="sh"><span class="slb">' + I('sparkles') + ' Platform Capabilities</span><h2>Security Reimagined with <span class="gt">Artificial Intelligence</span></h2><p class="ss">Context-driven detection, OSINT fusion, and automated response — a complete security intelligence platform</p></div>' +
-      '<div class="cg4">' +
-      '<div class="cd fi"><div class="ci c1">' + I('eye') + '</div><h3>Smart Surveillance</h3><p>FaceNet + MTCNN facial recognition with real-time video analytics, multi-camera coordination, and biometric access control across all perimeters</p><a href="#/platform" class="cl">Learn more ' + I('arrow-right') + '</a></div>' +
-      '<div class="cd fi"><div class="ci c6">' + I('shield-alert') + '</div><h3>Threat Detection</h3><p>Ensemble AI models — LSTM (30%), SVM (20%), Isolation Forest (20%), UEBA (15%), Threat Intel (15%) with detection compression and shadow mode</p><a href="#/technology" class="cl">Learn more ' + I('arrow-right') + '</a></div>' +
-      '<div class="cd fi"><div class="ci c3">' + I('radar') + '</div><h3>OSINT Fusion</h3><p>16+ geospatial data layers, RECON toolkit, 8-agent AI swarm, crypto wallet tracing, and absence-as-signal intelligence</p><a href="#/technology" class="cl">Learn more ' + I('arrow-right') + '</a></div>' +
-      '<div class="cd fi"><div class="ci c4">' + I('workflow') + '</div><h3>SOAR Automation</h3><p>5 automated response playbooks with HITL verification gates, shadow mode validation, and detection compression engine</p><a href="#/platform" class="cl">Learn more ' + I('arrow-right') + '</a></div>' +
+      '<section class="stats-marquee"><div class="stats-marquee-track">' +
+      '<div class="stats-marquee-item"><div class="stats-marquee-value gt">847</div><div class="stats-marquee-label">Threats Detected Today</div></div>' +
+      '<div class="stats-marquee-item"><div class="stats-marquee-value gt2">23s</div><div class="stats-marquee-label">Avg Response Time</div></div>' +
+      '<div class="stats-marquee-item"><div class="stats-marquee-value gt">99.7%</div><div class="stats-marquee-label">Alert Coverage</div></div>' +
+      '<div class="stats-marquee-item"><div class="stats-marquee-value gt2">93%</div><div class="stats-marquee-label">MTTR Reduction</div></div>' +
+      '<div class="stats-marquee-item"><div class="stats-marquee-value gt">25+</div><div class="stats-marquee-label">Microservices</div></div>' +
+      '<div class="stats-marquee-item"><div class="stats-marquee-value gt2">5</div><div class="stats-marquee-label">AI Models</div></div>' +
+      '<div class="stats-marquee-item"><div class="stats-marquee-value gt">13</div><div class="stats-marquee-label">Integrations</div></div>' +
+      '<div class="stats-marquee-item"><div class="stats-marquee-value gt2">16+</div><div class="stats-marquee-label">OSINT Layers</div></div>' +
+      '<div class="stats-marquee-item"><div class="stats-marquee-value gt">8</div><div class="stats-marquee-label">AI Swarm Agents</div></div>' +
+      '<div class="stats-marquee-item"><div class="stats-marquee-value gt2">6</div><div class="stats-marquee-label">Evolution Phases</div></div>' +
+      '<div class="stats-marquee-item"><div class="stats-marquee-value gt">847</div><div class="stats-marquee-label">Threats Detected Today</div></div>' +
+      '<div class="stats-marquee-item"><div class="stats-marquee-value gt2">23s</div><div class="stats-marquee-label">Avg Response Time</div></div>' +
+      '<div class="stats-marquee-item"><div class="stats-marquee-value gt">99.7%</div><div class="stats-marquee-label">Alert Coverage</div></div>' +
+      '<div class="stats-marquee-item"><div class="stats-marquee-value gt2">93%</div><div class="stats-marquee-label">MTTR Reduction</div></div>' +
+      '<div class="stats-marquee-item"><div class="stats-marquee-value gt">25+</div><div class="stats-marquee-label">Microservices</div></div>' +
+      '<div class="stats-marquee-item"><div class="stats-marquee-value gt2">5</div><div class="stats-marquee-label">AI Models</div></div>' +
+      '<div class="stats-marquee-item"><div class="stats-marquee-value gt">13</div><div class="stats-marquee-label">Integrations</div></div>' +
+      '<div class="stats-marquee-item"><div class="stats-marquee-value gt2">16+</div><div class="stats-marquee-label">OSINT Layers</div></div>' +
+      '</div></section>' +
+
+      '<section class="sec lore-section"><div class="ctn"><div class="sh"><span class="slb">' + I('sparkles') + ' The Name</span><h2>What Does <span class="gt text-glow">SOCIRIS</span> Mean?</h2><p class="ss">The story behind the name — a convergence of ancient mythology and modern security engineering</p></div>' +
+      '<div class="lore-grid">' +
+      '<div class="lore-visual"><div class="lore-logo-ring">' +
+      '<img src="site/images/sociris-logo-dark.jpeg" alt="SOCIRIS" class="lore-logo-img" id="lore-logo">' +
+      '<div class="lore-letter" style="top:-10px;left:50%;transform:translateX(-50%)" title="Security">S</div>' +
+      '<div class="lore-letter" style="top:20%;right:-10px" title="Operations">O</div>' +
+      '<div class="lore-letter" style="bottom:20%;right:-10px" title="Center">C</div>' +
+      '<div class="lore-letter" style="bottom:-10px;left:50%;transform:translateX(-50%)" title="Intelligent">I</div>' +
+      '<div class="lore-letter" style="bottom:20%;left:-10px" title="Response">R</div>' +
+      '<div class="lore-letter" style="top:20%;left:-10px" title="Surveillance">S</div>' +
+      '</div></div>' +
+      '<div>' +
+      '<h3 style="margin-bottom:1rem">Security Operations Center —<br><span class="gt">Intelligent Response & Intrusion Surveillance</span></h3>' +
+      '<p>Every letter of SOCIRIS carries deliberate engineering intent. The name is both a technical acronym and a creative resonance with <strong style="color:var(--pri-l)">Osiris</strong>, the ancient Egyptian deity of resurrection, protection, and the afterlife — the ultimate guardian who judges and protects.</p>' +
+      '<p>Like Osiris who saw all and judged with wisdom, SOCIRIS monitors everything, understands context, and responds with intelligent precision. The platform doesn\'t just detect — it <em>remembers</em>, <em>reasons</em>, and <em>evolves</em>.</p>' +
+      '<div class="lore-breakdown">' +
+      '<div class="lore-letter-card fi"><div class="lore-letter-char gt">S</div><div class="lore-letter-meaning"><strong>Security</strong><br>Multi-layered defense with hash-chained audit trails</div></div>' +
+      '<div class="lore-letter-card fi"><div class="lore-letter-char gt2">O</div><div class="lore-letter-meaning"><strong>Operations</strong><br>24/7 autonomous SOC operations with CD/CR loop</div></div>' +
+      '<div class="lore-letter-card fi"><div class="lore-letter-char gt3">C</div><div class="lore-letter-meaning"><strong>Center</strong><br>Centralized intelligence with Security Context Graph</div></div>' +
+      '<div class="lore-letter-card fi"><div class="lore-letter-char gt">I</div><div class="lore-letter-meaning"><strong>Intelligent</strong><br>AI cascade: triage → deep analysis → HITL verification</div></div>' +
+      '<div class="lore-letter-card fi"><div class="lore-letter-char gt2">R</div><div class="lore-letter-meaning"><strong>Response</strong><br>5 SOAR playbooks with human-in-the-loop gates</div></div>' +
+      '<div class="lore-letter-card fi"><div class="lore-letter-char gt3">S</div><div class="lore-letter-meaning"><strong>Surveillance</strong><br>FaceNet + MTCNN + GPS + CCTV + OSINT fusion</div></div>' +
+      '</div></div></div></section>' +
+
+      '<section class="sec sec-alt"><div class="ctn"><div class="sh"><span class="slb">' + I('sparkles') + ' Platform Capabilities</span><h2>Security Reimagined with <span class="gt">Artificial Intelligence</span></h2><p class="ss">Context-driven detection, OSINT fusion, and automated response — a complete security intelligence platform</p></div>' +
+      '<div class="feature-showcase">' +
+      '<div class="feature-showcase-card fi"><div class="fsc-header"><div class="fsc-icon c1">' + I('eye') + '</div><div><h3>Smart Surveillance</h3><div class="fsc-stat c1">' + I('camera') + ' Real-Time</div></div></div><p>FaceNet + MTCNN facial recognition with real-time video analytics, multi-camera coordination, behavior analysis, and biometric access control across all perimeters. Traccar GPS integration for asset tracking.</p><div class="tech-badge-grid">' + ['FaceNet', 'MTCNN', 'Traccar GPS', 'Computer Vision', 'Biometrics'].map(function(t) { return '<span class="tech-badge">' + I('cpu') + ' ' + t + '</span>'; }).join('') + '</div></div>' +
+      '<div class="feature-showcase-card fi"><div class="fsc-header"><div class="fsc-icon c6">' + I('shield-alert') + '</div><div><h3>Threat Detection</h3><div class="fsc-stat c6">' + I('brain') + ' AI Ensemble</div></div></div><p>Ensemble AI models — LSTM (30%), SVM (20%), Isolation Forest (20%), UEBA (15%), Threat Intel (15%) with AI cascade architecture: lightweight triage filters 70% noise in <100ms, then deep analysis with Ollama Qwen3.</p><div class="tech-badge-grid">' + ['LSTM', 'SVM', 'Isolation Forest', 'UEBA', 'Ollama', 'Qwen3'].map(function(t) { return '<span class="tech-badge">' + I('cpu') + ' ' + t + '</span>'; }).join('') + '</div></div>' +
+      '<div class="feature-showcase-card fi"><div class="fsc-header"><div class="fsc-icon c2">' + I('radar') + '</div><div><h3>OSINT Fusion</h3><div class="fsc-stat c2">' + I('globe') + ' 16+ Layers</div></div></div><p>16+ geospatial data layers, RECON toolkit, 8-agent AI swarm, crypto wallet tracing, absence-as-signal intelligence, OpenSky ADS-B flights, maritime AIS, seismic monitoring, conflict zone tracking, and more.</p><div class="tech-badge-grid">' + ['OpenSky', 'AIS Maritime', 'USGS', 'NASA FIRMS', 'NOAA', 'BGP'].map(function(t) { return '<span class="tech-badge">' + I('globe') + ' ' + t + '</span>'; }).join('') + '</div></div>' +
+      '<div class="feature-showcase-card fi"><div class="fsc-header"><div class="fsc-icon c4">' + I('workflow') + '</div><div><h3>SOAR Automation</h3><div class="fsc-stat c4">' + I('zap') + ' 5 Playbooks</div></div></div><p>5 automated response playbooks with HITL verification gates: confidence >95% auto-execute, 70-95% one-click approval, <70% needs-data. Shuffle + TheHive + Cortex integration for full orchestration.</p><div class="tech-badge-grid">' + ['Shuffle', 'TheHive', 'Cortex', 'HITL', 'Shadow Mode', 'CD/CR'].map(function(t) { return '<span class="tech-badge">' + I('shield') + ' ' + t + '</span>'; }).join('') + '</div></div>' +
+      '<div class="feature-showcase-card fi"><div class="fsc-header"><div class="fsc-icon c3">' + I('database') + '</div><div><h3>Context Graph</h3><div class="fsc-stat c3">' + I('git-branch') + ' Neo4j / AGE</div></div></div><p>Security Context Graph that enriches every alert with asset topology, ownership, blast radius, SOPs, investigation history, behavioral baselines, and temporal context. Federated queries across Wazuh, MISP, and OpenSearch.</p><div class="tech-badge-grid">' + ['Neo4j', 'Apache AGE', 'Wazuh', 'MISP', 'OpenSearch', 'PostgreSQL'].map(function(t) { return '<span class="tech-badge">' + I('database') + ' ' + t + '</span>'; }).join('') + '</div></div>' +
+      '<div class="feature-showcase-card fi"><div class="fsc-header"><div class="fsc-icon c5">' + I('building-2') + '</div><div><h3>Enterprise Multi-Tenancy</h3><div class="fsc-stat c5">' + I('users') + ' SOC 2 / ISO 27001</div></div></div><p>Schema-per-tenant isolation, 5-role RBAC, white-label branding for MSSPs. Built-in compliance engines for SOC 2, ISO 27001, GDPR with automated DSAR workflows, right-to-erasure, and evidence collection.</p><div class="tech-badge-grid">' + ['SOC 2', 'ISO 27001', 'GDPR', 'RBAC', 'DSAR', 'Multi-Tenant'].map(function(t) { return '<span class="tech-badge">' + I('lock') + ' ' + t + '</span>'; }).join('') + '</div></div>' +
       '</div></div></section>' +
 
-      '<section class="sec" style="padding-top:0"><div class="ctn"><div class="sh"><span class="slb">' + I('bar-chart-3') + ' Real-Time Metrics</span><h2>Platform <span class="gt">Performance</span></h2><p class="ss">Live operational metrics from the SOCIRIS security intelligence engine</p></div>' +
+      '<section class="sec"><div class="ctn"><div class="sh"><div class="section-icon-row">' +
+      '<div class="section-icon-item">' + I('activity') + '</div><div class="section-icon-item">' + I('bar-chart-3') + '</div><div class="section-icon-item">' + I('trending-up') + '</div><div class="section-icon-item">' + I('pie-chart') + '</div><div class="section-icon-item">' + I('target') + '</div>' +
+      '</div><span class="slb">' + I('bar-chart-3') + ' Real-Time Metrics</span><h2>Platform <span class="gt">Performance</span></h2><p class="ss">Live operational metrics from the SOCIRIS security intelligence engine</p></div>' +
       '<div class="cg5">' +
-      '<div class="cd fi" style="text-align:center"><div class="gt" style="font-size:2.5rem;font-weight:800;display:block" data-count="847" data-suffix="">0</div><h3>Threats Detected</h3><p>Last 24 hours across all tenants</p></div>' +
-      '<div class="cd fi" style="text-align:center"><div class="gt2" style="font-size:2.5rem;font-weight:800;display:block" data-count="23" data-suffix="s">0</div><h3>Avg Response Time</h3><p>From alert to containment</p></div>' +
-      '<div class="cd fi" style="text-align:center"><div class="gt" style="font-size:2.5rem;font-weight:800;display:block" data-count="99" data-suffix=".7%">0</div><h3>Alert Coverage</h3><p>100% SLA target</p></div>' +
-      '<div class="cd fi" style="text-align:center"><div class="gt2" style="font-size:2.5rem;font-weight:800;display:block" data-count="93" data-suffix="%">0</div><h3>MTTR Reduction</h3><p>Faster resolution via AI</p></div>' +
-      '<div class="cd fi" style="text-align:center"><div class="gt" style="font-size:2.5rem;font-weight:800;display:block" data-count="6" data-suffix="phases">0</div><h3>Evolution Phases</h3><p>Foundation to ecosystem</p></div>' +
+      '<div class="cd fi stagger-1" style="text-align:center"><div class="number-highlight gt" data-count="847" data-suffix="">0</div><h3>Threats Detected</h3><p>Last 24 hours across all tenants</p></div>' +
+      '<div class="cd fi stagger-2" style="text-align:center"><div class="number-highlight gt2" data-count="23" data-suffix="s">0</div><h3>Avg Response Time</h3><p>From alert to containment</p></div>' +
+      '<div class="cd fi stagger-3" style="text-align:center"><div class="number-highlight gt" data-count="99" data-suffix=".7%">0</div><h3>Alert Coverage</h3><p>100% SLA target</p></div>' +
+      '<div class="cd fi stagger-4" style="text-align:center"><div class="number-highlight gt2" data-count="93" data-suffix="%">0</div><h3>MTTR Reduction</h3><p>Faster resolution via AI</p></div>' +
+      '<div class="cd fi stagger-5" style="text-align:center"><div class="number-highlight gt" data-count="6" data-suffix="phases">0</div><h3>Evolution Phases</h3><p>Foundation to ecosystem</p></div>' +
       '</div></div></section>' +
 
       '<section class="sec sec-alt"><div class="ctn"><div class="sh"><span class="slb">' + I('zap') + ' Built Different</span><h2>Why <span class="gt">SOCIRIS</span></h2></div><div class="cg2">' +
-      '<div class="qc fi" onclick="location.hash=\'#/platform\'"><div class="qci c1">' + I('brain') + '</div><h3>Context-Driven Detection</h3><p>Security Context Graph with CD/CR closed loop — every alert enriched with asset, identity, and threat intel context. Not a score. A reasoning chain.</p><span class="la">' + I('arrow-right') + '</span></div>' +
-      '<div class="qc fi" onclick="location.hash=\'#/technology\'"><div class="qci c2">' + I('map') + '</div><h3>OSINT Intelligence Fusion</h3><p>16+ real-time geospatial layers, sanctions screening, CVE analysis, crypto wallet tracing, and absence-as-signal detection</p><span class="la">' + I('arrow-right') + '</span></div>' +
-      '<div class="qc fi" onclick="location.hash=\'#/solutions\'"><div class="qci c4">' + I('building-2') + '</div><h3>Enterprise Multi-Tenancy</h3><p>SOC 2, ISO 27001, GDPR compliance with schema-per-tenant isolation, RBAC, and white-label branding for MSSPs</p><span class="la">' + I('arrow-right') + '</span></div>' +
-      '<div class="qc fi" onclick="location.hash=\'#/solutions\'"><div class="qci c5">' + I('puzzle') + '</div><h3>Plugin Ecosystem</h3><p>13 pre-built integrations (Splunk, CrowdStrike, Palo Alto), community detection rules, webhook marketplace, and GraphQL API</p><span class="la">' + I('arrow-right') + '</span></div>' +
+      '<div class="qc fi hover-lift" onclick="location.hash=\'#/platform\'"><div class="qci c1">' + I('brain') + '</div><h3>Context-Driven Detection</h3><p>Security Context Graph with CD/CR closed loop — every alert enriched with asset, identity, and threat intel context. Not a score. A reasoning chain with narrative explanations.</p><span class="la">' + I('arrow-right') + '</span></div>' +
+      '<div class="qc fi hover-lift" onclick="location.hash=\'#/technology\'"><div class="qci c2">' + I('map') + '</div><h3>OSINT Intelligence Fusion</h3><p>16+ real-time geospatial layers, sanctions screening, CVE analysis, crypto wallet tracing, and absence-as-signal detection fused by 8-agent AI swarm.</p><span class="la">' + I('arrow-right') + '</span></div>' +
+      '<div class="qc fi hover-lift" onclick="location.hash=\'#/solutions\'"><div class="qci c4">' + I('building-2') + '</div><h3>Enterprise Multi-Tenancy</h3><p>SOC 2, ISO 27001, GDPR compliance with schema-per-tenant isolation, RBAC, and white-label branding for MSSPs worldwide.</p><span class="la">' + I('arrow-right') + '</span></div>' +
+      '<div class="qc fi hover-lift" onclick="location.hash=\'#/solutions\'"><div class="qci c5">' + I('puzzle') + '</div><h3>Plugin Ecosystem</h3><p>13 pre-built integrations (Splunk, CrowdStrike, Palo Alto), community detection rules, webhook marketplace, and GraphQL API for custom workflows.</p><span class="la">' + I('arrow-right') + '</span></div>' +
+      '<div class="qc fi hover-lift" onclick="location.hash=\'#/technology\'"><div class="qci c3">' + I('shield') + '</div><h3>Deployment Freedom</h3><p>SaaS cloud, self-hosted Docker/K8s, air-gapped for government/defense with local LLM via Ollama, or edge sensors for remote sites. Your data, your choice.</p><span class="la">' + I('arrow-right') + '</span></div>' +
+      '<div class="qc fi hover-lift" onclick="location.hash=\'#/platform\'"><div class="qci c6">' + I('users') + '</div><h3>Analyst Empowerment</h3><p>Investigation replay, reasoning chain explorer, AI coaching scenarios, skill gap analysis — junior analysts operate at senior levels within months.</p><span class="la">' + I('arrow-right') + '</span></div>' +
       '</div></div></section>' +
 
       '<section class="sec"><div class="ctn"><div class="sh"><span class="slb">' + I('git-compare') + ' Competitive Edge</span><h2>How SOCIRIS <span class="gt">Compares</span></h2></div>' +
       '<div class="comparison-grid">' +
       '<div class="comp-card fi"><h3>Traditional SIEM/SOAR</h3><div class="comp-price" style="color:var(--tm)">Legacy</div><ul class="comp-features">' +
-      '<li>' + I('x') + ' Rules decay, manual tuning</li>' +
+      '<li>' + I('x') + ' Rules decay, manual tuning required</li>' +
       '<li>' + I('x') + ' No organizational memory</li>' +
       '<li>' + I('x') + ' Detection-only or response-only</li>' +
-      '<li>' + I('x') + ' No OSINT fusion</li>' +
-      '<li>' + I('x') + ' No physical security</li>' +
-      '<li>' + I('x') + ' Cloud-dependent</li></ul></div>' +
+      '<li>' + I('x') + ' No OSINT fusion capability</li>' +
+      '<li>' + I('x') + ' No physical security integration</li>' +
+      '<li>' + I('x') + ' Cloud-dependent, no air-gap</li>' +
+      '<li>' + I('x') + ' No context-driven reasoning</li>' +
+      '</ul></div>' +
       '<div class="comp-card featured fi"><h3>SOCIRIS</h3><div class="comp-price gt">Complete<span>/platform</span></div><ul class="comp-features">' +
       '<li>' + I('check') + ' CD/CR auto-generates detections</li>' +
       '<li>' + I('check') + ' Security Context Graph persists knowledge</li>' +
       '<li>' + I('check') + ' Unified reasoning loop (detect→respond)</li>' +
       '<li>' + I('check') + ' 16+ OSINT data layers fused by AI swarm</li>' +
       '<li>' + I('check') + ' Face recognition + GPS + CCTV</li>' +
-      '<li>' + I('check') + ' SaaS + Self-hosted + Air-gapped + Edge</li></ul></div>' +
+      '<li>' + I('check') + ' SaaS + Self-hosted + Air-gapped + Edge</li>' +
+      '<li>' + I('check') + ' Narrative reasoning with HITL gates</li>' +
+      '</ul></div>' +
       '<div class="comp-card fi"><h3>Point Solutions</h3><div class="comp-price" style="color:var(--tm)">Partial</div><ul class="comp-features">' +
       '<li>' + I('x') + ' Dashboard only (no detection/response)</li>' +
-      '<li>' + I('x') + ' No SOAR automation</li>' +
-      '<li>' + I('x') + ' No ML/AI ensemble</li>' +
-      '<li>' + I('x') + ' SaaS-only, US-focused</li>' +
+      '<li>' + I('x') + ' No SOAR automation playbooks</li>' +
+      '<li>' + I('x') + ' No ML/AI ensemble engine</li>' +
+      '<li>' + I('x') + ' SaaS-only, US-focused data residency</li>' +
       '<li>' + I('x') + ' No compliance automation</li>' +
-      '<li>' + I('x') + ' No multi-tenancy</li></ul></div>' +
+      '<li>' + I('x') + ' No multi-tenancy support</li>' +
+      '<li>' + I('x') + ' No analyst upskilling tools</li>' +
+      '</ul></div>' +
+      '</div></div></section>' +
+
+      '<section class="sec sec-alt"><div class="ctn"><div class="sh"><span class="slb">' + I('globe') + ' Global Reach</span><h2>Trusted by Organizations <span class="gt">Worldwide</span></h2><p class="ss">From Karachi to the world — securing governments, enterprises, and communities</p></div>' +
+      '<div class="cg4">' +
+      '<div class="cd fi hover-lift" style="text-align:center"><div class="ci c1">' + I('landmark') + '</div><h3>Government</h3><p>Air-gapped deployments for ministries, courts, and defense with local LLM</p></div>' +
+      '<div class="cd fi hover-lift" style="text-align:center"><div class="ci c2">' + I('graduation-cap') + '</div><h3>Education</h3><p>Campus security with face recognition attendance and exam integrity</p></div>' +
+      '<div class="cd fi hover-lift" style="text-align:center"><div class="ci c3">' + I('building-2') + '</div><h3>Enterprise</h3><p>Multi-tenant corporate security with RBAC, compliance, and white-label</p></div>' +
+      '<div class="cd fi hover-lift" style="text-align:center"><div class="ci c4">' + I('heart-pulse') + '</div><h3>Healthcare</h3><p>Hospital ward monitoring, pharmacy access control, patient safety</p></div>' +
+      '<div class="cd fi hover-lift" style="text-align:center"><div class="ci c5">' + I('factory') + '</div><h3>Industrial</h3><p>Plant perimeter security, worker safety, GPS asset tracking, IoT</p></div>' +
+      '<div class="cd fi hover-lift" style="text-align:center"><div class="ci c6">' + I('shopping-bag') + '</div><h3>Retail</h3><p>AI-powered shoplifting prevention, customer analytics, POS monitoring</p></div>' +
+      '<div class="cd fi hover-lift" style="text-align:center"><div class="ci c7">' + I('truck') + '</div><h3>Logistics</h3><p>Fleet tracking via Traccar, cargo security, warehouse surveillance</p></div>' +
+      '<div class="cd fi hover-lift" style="text-align:center"><div class="ci c8">' + I('home') + '</div><h3>Residential</h3><p>Smart home security, gated communities, intruder detection alerts</p></div>' +
       '</div></div></section>' +
 
       cta('Ready to Secure Your Future?', 'Join the security intelligence revolution with SOCIRIS.', 'Live Demo', '#/demo', 'Request Demo', 'https://www.linkedin.com/company/sociris/');
@@ -97,9 +168,33 @@ var SOCIRIS = SOCIRIS || {};
     desc: 'Learn about SOCIRIS — the context-driven, AI-native security intelligence platform built to transform security operations.',
     render: function() {
       return ph('About', 'About <span class="gt">SOCIRIS</span>', 'Transforming Security Through Artificial Intelligence') +
-      '<section class="sec"><div class="ctn"><div class="vmg">' +
-      '<div class="vm"><div class="ci c1" style="margin-bottom:1.5rem">' + I('target') + '</div><h2>Our Vision</h2><p>To redefine security intelligence by making context-driven, AI-native threat detection and automated response accessible to every organization — from enterprises to individual users.</p><p>We envision a future where advanced AI-powered security is not a luxury, but a fundamental capability accessible to all, regardless of budget or technical expertise.</p></div>' +
-      '<div class="vm"><div class="ci c2" style="margin-bottom:1.5rem">' + I('flag') + '</div><h2>Our Mission</h2><p>To leverage cutting-edge artificial intelligence, real-time analytics, and OSINT intelligence fusion to create an autonomous security platform that delivers:</p><ul>' +
+      '<section class="sec"><div class="ctn"><div class="sh"><span class="slb">' + I('sparkles') + ' The Origin</span><h2>The Legend of <span class="gt">SOCIRIS</span></h2><p class="ss">Where ancient mythology meets cutting-edge security engineering</p></div>' +
+      '<div class="lore-grid">' +
+      '<div class="lore-visual"><div class="lore-logo-ring">' +
+      '<img src="site/images/sociris-logo-dark.jpeg" alt="SOCIRIS" class="lore-logo-img" id="lore-logo">' +
+      '<div class="lore-letter" style="top:-10px;left:50%;transform:translateX(-50%)">S</div>' +
+      '<div class="lore-letter" style="top:20%;right:-10px">O</div>' +
+      '<div class="lore-letter" style="bottom:20%;right:-10px">C</div>' +
+      '<div class="lore-letter" style="bottom:-10px;left:50%;transform:translateX(-50%)">I</div>' +
+      '<div class="lore-letter" style="bottom:20%;left:-10px">R</div>' +
+      '<div class="lore-letter" style="top:20%;left:-10px">S</div>' +
+      '</div></div>' +
+      '<div>' +
+      '<p style="font-size:1.125rem;line-height:1.8"><strong style="color:var(--pri-l)">SOCIRIS</strong> — <em>Security Operations Center: Intelligent Response & Intrusion Surveillance</em> — is more than an acronym. It is a philosophy inspired by <strong style="color:var(--sec)">Osiris</strong>, the ancient Egyptian god of the afterlife, resurrection, and judgment.</p>' +
+      '<p>In Egyptian mythology, Osiris was the ultimate guardian: he saw all transgressions, remembered every deed, and judged with perfect wisdom. SOCIRIS embodies this spirit — an AI-powered sentinel that monitors everything, remembers organizational context, reasons about threats, and responds with precision.</p>' +
+      '<p>Like Osiris who was reborn, SOCIRIS continuously evolves through its <strong style="color:var(--pri-l)">CD/CR closed loop</strong> — every investigation makes the platform sharper, every response makes detection better. The Security Context Graph is its memory, the AI cascade is its judgment, and the SOAR playbooks are its swift action.</p>' +
+      '<div class="lore-breakdown">' +
+      '<div class="lore-letter-card fi"><div class="lore-letter-char gt">S</div><div class="lore-letter-meaning"><strong>Security</strong><br>Multi-layered defense</div></div>' +
+      '<div class="lore-letter-card fi"><div class="lore-letter-char gt2">O</div><div class="lore-letter-meaning"><strong>Operations</strong><br>24/7 autonomous SOC</div></div>' +
+      '<div class="lore-letter-card fi"><div class="lore-letter-char gt3">C</div><div class="lore-letter-meaning"><strong>Center</strong><br>Centralized intelligence</div></div>' +
+      '<div class="lore-letter-card fi"><div class="lore-letter-char gt">I</div><div class="lore-letter-meaning"><strong>Intelligent</strong><br>AI cascade reasoning</div></div>' +
+      '<div class="lore-letter-card fi"><div class="lore-letter-char gt2">R</div><div class="lore-letter-meaning"><strong>Response</strong><br>Automated SOAR</div></div>' +
+      '<div class="lore-letter-card fi"><div class="lore-letter-char gt3">S</div><div class="lore-letter-meaning"><strong>Surveillance</strong><br>Omni-sensor monitoring</div></div>' +
+      '</div></div></div></section>' +
+
+      '<section class="sec sec-alt"><div class="ctn"><div class="vmg">' +
+      '<div class="vm fi"><div class="ci c1" style="margin-bottom:1.5rem">' + I('target') + '</div><h2>Our Vision</h2><p>To redefine security intelligence by making context-driven, AI-native threat detection and automated response accessible to every organization — from enterprises to individual users.</p><p>We envision a future where advanced AI-powered security is not a luxury, but a fundamental capability accessible to all, regardless of budget or technical expertise.</p></div>' +
+      '<div class="vm fi"><div class="ci c2" style="margin-bottom:1.5rem">' + I('flag') + '</div><h2>Our Mission</h2><p>To leverage cutting-edge artificial intelligence, real-time analytics, and OSINT intelligence fusion to create an autonomous security platform that delivers:</p><ul>' +
       '<li>' + I('check-circle') + ' Context-driven threat detection with narrative reasoning</li>' +
       '<li>' + I('check-circle') + ' 24/7 intelligent autonomous monitoring with CD/CR loop</li>' +
       '<li>' + I('check-circle') + ' OSINT-powered intelligence fusion (16+ data layers)</li>' +
@@ -107,11 +202,12 @@ var SOCIRIS = SOCIRIS || {};
       '<li>' + I('check-circle') + ' Enterprise compliance (SOC 2, ISO 27001, GDPR)</li></ul></div>' +
       '</div></div></section>' +
 
-      '<section class="sec sec-alt"><div class="ctn"><div class="sh"><span class="slb">' + I('book-open') + ' Our Story</span><h2>The SOCIRIS Journey</h2><p class="ss">From a research project to a full-scale security intelligence platform</p></div>' +
+      '<section class="sec"><div class="ctn"><div class="sh"><span class="slb">' + I('book-open') + ' Our Story</span><h2>The SOCIRIS Journey</h2><p class="ss">From a research project to a full-scale security intelligence platform</p></div>' +
       '<div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start"><div>' +
-      '<h3 style="margin-bottom:1rem">Born from Innovation</h3><p>SOCIRIS (Security Operations Center Intelligent Response & Intrusion Surveillance) began as a research project in 2024. The platform has since evolved through six engineering phases into a production-grade security intelligence platform with 25+ containerized microservices.</p>' +
-      '<h3 style="margin:1.5rem 0 1rem">The Problem</h3><p>Traditional security operations face critical challenges: reactive rather than proactive detection, alert fatigue from high false-positive rates, siloed data sources, and enterprise-grade solutions that remain financially inaccessible to most organizations. 70% of organizations cannot afford enterprise security.</p>' +
-      '<h3 style="margin:1.5rem 0 1rem">Our Solution</h3><p>SOCIRIS addresses these with a context-driven approach: a Security Context Graph that enriches every alert with organizational memory, an ensemble AI engine for accurate detection, OSINT fusion for global intelligence, SOAR automation for rapid response, and multi-tenant enterprise architecture — all deployable SaaS, self-hosted, or air-gapped.</p>' +
+      '<h3 style="margin-bottom:1rem">' + I('lightbulb') + ' Born from Innovation</h3><p>SOCIRIS began as a research project in 2024. The platform has since evolved through six engineering phases into a production-grade security intelligence platform with 25+ containerized microservices.</p>' +
+      '<h3 style="margin:1.5rem 0 1rem">' + I('alert-triangle') + ' The Problem</h3><p>Traditional security operations face critical challenges: reactive rather than proactive detection, alert fatigue from high false-positive rates, siloed data sources, and enterprise-grade solutions that remain financially inaccessible to most organizations. 70% of organizations cannot afford enterprise security.</p>' +
+      '<h3 style="margin:1.5rem 0 1rem">' + I('rocket') + ' Our Solution</h3><p>SOCIRIS addresses these with a context-driven approach: a Security Context Graph that enriches every alert with organizational memory, an ensemble AI engine for accurate detection, OSINT fusion for global intelligence, SOAR automation for rapid response, and multi-tenant enterprise architecture — all deployable SaaS, self-hosted, or air-gapped.</p>' +
+      '<h3 style="margin:1.5rem 0 1rem">' + I('map-pin') + ' Built in Karachi</h3><p>SOCIRIS is proudly engineered in Karachi, Pakistan — a city rapidly emerging as a hub for cybersecurity innovation in South Asia. Our team combines deep security expertise with cutting-edge AI research to deliver a platform that competes globally.</p>' +
       '</div><div class="tl">' +
       '<div class="ti"><div class="tm">' + I('lightbulb') + '</div><div class="td">Early 2024</div><h4>Research & Inception</h4><p>Threat detection research, AI model prototyping with LSTM/SVM/Isolation Forest, and platform vision.</p></div>' +
       '<div class="ti"><div class="tm">' + I('code') + '</div><div class="td">Mid 2024</div><h4>Phase 0 — Foundation Refactor</h4><p>Modular FastAPI engine (routers + services), Next.js 16 dashboard with MapLibre + CesiumJS, Keycloak SSO, Vault secrets, event-driven plugin architecture.</p></div>' +
@@ -122,21 +218,26 @@ var SOCIRIS = SOCIRIS || {};
       '<div class="ti"><div class="tm">' + I('rocket') + '</div><div class="td">2026</div><h4>Phase 5 — Ecosystem + Community</h4><p>Plugin marketplace (13 integrations), GraphQL API, community hub, webhook system, Python/Go SDKs.</p></div>' +
       '</div></div></div></section>' +
 
-      '<section class="sec"><div class="ctn"><div class="sh"><span class="slb">' + I('heart') + ' Core Values</span><h2>What We Stand For</h2></div><div class="cg3">' +
-      '<div class="vc fi"><div class="ci c6" style="margin:0 auto 1.25rem">' + I('shield') + '</div><h3>Security First</h3><p>Multi-layered defense with immutable audit trails (hash-chained), SSO via Keycloak, Vault-managed secrets, and WORM archival.</p></div>' +
-      '<div class="vc fi"><div class="ci c1" style="margin:0 auto 1.25rem">' + I('zap') + '</div><h3>Innovation</h3><p>Ensemble AI cascade (triage → deep → HITL), context-driven detection, and OSINT fusion — continuously advancing the state of the art.</p></div>' +
-      '<div class="vc fi"><div class="ci c4" style="margin:0 auto 1.25rem">' + I('users') + '</div><h3>Accessibility</h3><p>From single-site to enterprise multi-tenant. SaaS, self-hosted, air-gapped, and edge sensor deployment — security for every scale.</p></div>' +
-      '<div class="vc fi"><div class="ci c2" style="margin:0 auto 1.25rem">' + I('clock') + '</div><h3>Reliability</h3><p>HA/DR with Patroni, automated backups, health monitoring, RTO &lt; 15min, RPO &lt; 5min targets.</p></div>' +
-      '<div class="vc fi"><div class="ci c3" style="margin:0 auto 1.25rem">' + I('brain') + '</div><h3>Transparency</h3><p>Narrative reasoning chains, investigation replay, reasoning explorer, and shadow mode detection validation — every AI decision explainable.</p></div>' +
-      '<div class="vc fi"><div class="ci c5" style="margin:0 auto 1.25rem">' + I('globe') + '</div><h3>Global Reach</h3><p>Air-gapped deployment for government/defense, edge sensors for remote sites, and multi-channel messaging (6 channels).</p></div>' +
+      '<section class="sec sec-alt"><div class="ctn"><div class="sh"><span class="slb">' + I('heart') + ' Core Values</span><h2>What We Stand For</h2></div><div class="cg3">' +
+      '<div class="vc fi hover-lift"><div class="ci c6" style="margin:0 auto 1.25rem">' + I('shield') + '</div><h3>Security First</h3><p>Multi-layered defense with immutable audit trails (hash-chained), SSO via Keycloak, Vault-managed secrets, and WORM archival.</p></div>' +
+      '<div class="vc fi hover-lift"><div class="ci c1" style="margin:0 auto 1.25rem">' + I('zap') + '</div><h3>Innovation</h3><p>Ensemble AI cascade (triage → deep → HITL), context-driven detection, and OSINT fusion — continuously advancing the state of the art.</p></div>' +
+      '<div class="vc fi hover-lift"><div class="ci c4" style="margin:0 auto 1.25rem">' + I('users') + '</div><h3>Accessibility</h3><p>From single-site to enterprise multi-tenant. SaaS, self-hosted, air-gapped, and edge sensor deployment — security for every scale.</p></div>' +
+      '<div class="vc fi hover-lift"><div class="ci c2" style="margin:0 auto 1.25rem">' + I('clock') + '</div><h3>Reliability</h3><p>HA/DR with Patroni, automated backups, health monitoring, RTO &lt; 15min, RPO &lt; 5min targets.</p></div>' +
+      '<div class="vc fi hover-lift"><div class="ci c3" style="margin:0 auto 1.25rem">' + I('brain') + '</div><h3>Transparency</h3><p>Narrative reasoning chains, investigation replay, reasoning explorer, and shadow mode detection validation — every AI decision explainable.</p></div>' +
+      '<div class="vc fi hover-lift"><div class="ci c5" style="margin:0 auto 1.25rem">' + I('globe') + '</div><h3>Global Reach</h3><p>Air-gapped deployment for government/defense, edge sensors for remote sites, and multi-channel messaging (6 channels).</p></div>' +
       '</div></div></section>' +
 
-      '<section class="sec sec-alt"><div class="ctn"><div class="sh"><span class="slb">' + I('award') + ' Platform Scale</span><h2>Built for <span class="gt">Enterprise</span></h2></div>' +
+      '<section class="sec"><div class="ctn"><div class="sh"><span class="slb">' + I('award') + ' Platform Scale</span><h2>Built for <span class="gt">Enterprise</span></h2></div>' +
       '<div class="cg4">' +
-      '<div class="cd fi" style="text-align:center"><div class="gt" style="font-size:2.5rem;font-weight:800;display:block" data-count="25" data-suffix="+">0</div><h3>Microservices</h3><p>Containerized across 3 network tiers</p></div>' +
-      '<div class="cd fi" style="text-align:center"><div class="gt2" style="font-size:2.5rem;font-weight:800;display:block" data-count="5" data-suffix="">0</div><h3>AI Models</h3><p>Weighted ensemble with cascade architecture</p></div>' +
-      '<div class="cd fi" style="text-align:center"><div class="gt" style="font-size:2.5rem;font-weight:800;display:block" data-count="13" data-suffix="">0</div><h3>Integrations</h3><p>Pre-built connectors in marketplace</p></div>' +
-      '<div class="cd fi" style="text-align:center"><div class="gt2" style="font-size:2.5rem;font-weight:800;display:block" data-count="3" data-suffix="">0</div><h3>Deployment Models</h3><p>SaaS, Self-hosted, Air-gapped</p></div>' +
+      '<div class="cd fi" style="text-align:center"><div class="number-highlight gt" data-count="25" data-suffix="+">0</div><h3>Microservices</h3><p>Containerized across 3 network tiers</p></div>' +
+      '<div class="cd fi" style="text-align:center"><div class="number-highlight gt2" data-count="5" data-suffix="">0</div><h3>AI Models</h3><p>Weighted ensemble with cascade architecture</p></div>' +
+      '<div class="cd fi" style="text-align:center"><div class="number-highlight gt" data-count="13" data-suffix="">0</div><h3>Integrations</h3><p>Pre-built connectors in marketplace</p></div>' +
+      '<div class="cd fi" style="text-align:center"><div class="number-highlight gt2" data-count="3" data-suffix="">0</div><h3>Deployment Models</h3><p>SaaS, Self-hosted, Air-gapped</p></div>' +
+      '</div></div></section>' +
+
+      '<section class="sec sec-alt"><div class="ctn"><div class="sh"><span class="slb">' + I('code') + ' Tech Stack</span><h2>Powered by <span class="gt">Modern Technology</span></h2></div>' +
+      '<div class="tech-badge-grid" style="justify-content:center">' +
+      ['FastAPI', 'Next.js 16', 'PostgreSQL', 'Redis', 'OpenSearch', 'Neo4j', 'Docker', 'Kubernetes', 'Kafka', 'Keycloak', 'Vault', 'Wazuh', 'MISP', 'TheHive', 'Ollama', 'TensorFlow', 'scikit-learn', 'FaceNet', 'MTCNN', 'MapLibre', 'CesiumJS', 'GraphQL', 'Prometheus', 'Grafana', 'Terraform'].map(function(t) { return '<span class="tech-badge">' + I('cpu') + ' ' + t + '</span>'; }).join('') +
       '</div></div></section>' +
 
       cta('Ready to Experience SOCIRIS?', 'See the platform in action — request a personalized demo.', 'Live Demo', '#/demo', 'Contact Us', '#/contact');

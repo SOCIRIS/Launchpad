@@ -13,8 +13,14 @@ SOCIRIS.theme = {
 
     var n = document.getElementById('logo-img');
     var f = document.getElementById('footer-logo');
+    var fs = document.getElementById('footer-shield');
     if (n) n.src = 'site/images/sociris-logo-' + (t === 'light' ? 'light' : 'dark') + '.jpeg';
     if (f) f.src = 'site/images/sociris-wide-logo-' + (t === 'light' ? 'light' : 'dark') + '.jpeg';
+    if (fs) fs.src = 'site/images/sociris-logo-' + (t === 'light' ? 'light' : 'dark') + '.jpeg';
+    var heroLogo = document.getElementById('hero-center-logo');
+    if (heroLogo) heroLogo.src = 'site/images/sociris-logo-' + (t === 'light' ? 'light' : 'dark') + '.jpeg';
+    var loreLogo = document.getElementById('lore-logo');
+    if (loreLogo) loreLogo.src = 'site/images/sociris-logo-' + (t === 'light' ? 'light' : 'dark') + '.jpeg';
     SOCIRIS.theme.refreshIcons();
   },
 

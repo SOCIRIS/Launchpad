@@ -54,6 +54,7 @@ var SOCIRIS = SOCIRIS || {};
 
     window.addEventListener('hashchange', SOCIRIS.router.handle);
     SOCIRIS.router.handle();
+    SOCIRIS.particles.init();
   }
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
