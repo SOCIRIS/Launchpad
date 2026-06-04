@@ -143,3 +143,65 @@ SOCIRIS.dualMeaning = function() {
     '</div>' +
     '</div>';
 };
+
+SOCIRIS.statCard = function(iconCls, icon, value, label, change, changeDir) {
+  return '<div class="stat-card fi"><div class="stat-card-icon ' + iconCls + '">' + SOCIRIS.I(icon) + '</div><div class="stat-card-value" data-count="' + value + '" data-suffix="">' + value + '</div><div class="stat-card-label">' + label + '</div><div class="stat-card-change" style="color:var(--' + (changeDir === 'up' ? 'ok' : 'er') + ')">' + SOCIRIS.I(changeDir === 'up' ? 'trending-up' : 'trending-down') + ' ' + change + '</div></div>';
+};
+
+SOCIRIS.featureIconRow = function(icons) {
+  return '<div class="feature-icon-row">' + icons.map(function(ic) {
+    return '<div class="feature-icon-item c' + ic.c + '" data-label="' + ic.label + '">' + SOCIRIS.I(ic.icon) + '</div>';
+  }).join('') + '</div>';
+};
+
+SOCIRIS.progressRing = function(value, color, label) {
+  var r = 32; var circ = 2 * Math.PI * r;
+  return '<div class="progress-ring fi" data-value="' + value + '"><svg width="80" height="80" viewBox="0 0 80 80"><circle class="progress-ring-bg" cx="40" cy="40" r="' + r + '"/><circle class="progress-ring-fill" cx="40" cy="40" r="' + r + '" stroke="' + color + '" style="stroke-dasharray:' + circ + ';stroke-dashoffset:' + circ + '"/></svg><div class="progress-ring-label">' + label + '</div></div>';
+};
+
+SOCIRIS.teamCard = function(initials, name, role, bio, color) {
+  return '<div class="team-card fi hover-lift"><div class="team-avatar" style="background:' + (color || 'var(--g1)') + '">' + initials + '</div><div class="team-name">' + name + '</div><div class="team-role">' + role + '</div><p class="team-bio">' + bio + '</p></div>';
+};
+
+SOCIRIS.docCard = function(icon, cls, title, desc) {
+  return '<div class="doc-card fi"><div class="doc-card-icon ci ' + cls + '">' + SOCIRIS.I(icon) + '</div><div><h4 style="margin-bottom:.25rem">' + title + '</h4><p style="font-size:.8125rem;margin:0;color:var(--t2)">' + desc + '</p></div></div>';
+};
+
+SOCIRIS.statusItem = function(icon, cls, name, status, statusText) {
+  var dotCls = status === 'operational' ? 'green' : status === 'degraded' ? 'yellow' : 'red';
+  return '<div class="status-item fi"><div class="status-item-icon ci ' + cls + '">' + SOCIRIS.I(icon) + '</div><div style="flex:1"><div style="font-weight:600;font-size:.9375rem">' + name + '</div><div style="font-size:.75rem;color:var(--tm)">' + statusText + '</div></div><span class="status-dot ' + dotCls + '"></span></div>';
+};
+
+SOCIRIS.tabFilter = function(id, categories) {
+  var I = SOCIRIS.I;
+  return '<div class="tab-filter" id="' + id + '">' + categories.map(function(cat, i) {
+    return '<button class="tab-filter-btn' + (i === 0 ? ' active' : '') + '" data-filter="' + cat.filter + '">' + I(cat.icon || 'hash') + ' ' + cat.label + '</button>';
+  }).join('') + '</div>';
+};
+
+SOCIRIS.glowDivider = function(thick) {
+  return '<div class="glow-divider' + (thick ? ' thick' : '') + '"></div>';
+};
+
+SOCIRIS.floatingBadge = function(text, dotColor) {
+  return '<div class="floating-badge"><span class="badge-dot" style="background:var(--' + (dotColor || 'ok') + ')"></span>' + text + '</div>';
+};
+
+SOCIRIS.irisEye = function(size) {
+  var s = size || 200;
+  return '<div class="iris-eye-hero" style="width:' + s + 'px;height:' + s + 'px">' +
+    '<div class="iris-eye-ring"></div><div class="iris-eye-ring"></div><div class="iris-eye-ring"></div>' +
+    '<div class="iris-eye-outer"></div>' +
+    '<div class="iris-eye-iris"><div class="iris-eye-pupil"></div></div>' +
+    '</div>';
+};
+
+SOCIRIS.svgDecor = function(id) {
+  var svgs = {
+    'hex': '<svg class="svg-decor svg-decor-1" viewBox="0 0 200 200"><polygon points="100,10 180,55 180,145 100,190 20,145 20,55" fill="none" stroke="var(--pri)" stroke-width="1"/></svg>',
+    'circles': '<svg class="svg-decor svg-decor-2" viewBox="0 0 200 200"><circle cx="100" cy="100" r="80" fill="none" stroke="var(--sec)" stroke-width="1"/><circle cx="100" cy="100" r="50" fill="none" stroke="var(--pri)" stroke-width="1"/><circle cx="100" cy="100" r="20" fill="none" stroke="var(--acc)" stroke-width="1"/></svg>',
+    'grid': '<svg class="svg-decor svg-decor-1" viewBox="0 0 200 200"><line x1="0" y1="50" x2="200" y2="50" stroke="var(--pri)" stroke-width=".5"/><line x1="0" y1="100" x2="200" y2="100" stroke="var(--pri)" stroke-width=".5"/><line x1="0" y1="150" x2="200" y2="150" stroke="var(--pri)" stroke-width=".5"/><line x1="50" y1="0" x2="50" y2="200" stroke="var(--pri)" stroke-width=".5"/><line x1="100" y1="0" x2="100" y2="200" stroke="var(--pri)" stroke-width=".5"/><line x1="150" y1="0" x2="150" y2="200" stroke="var(--pri)" stroke-width=".5"/></svg>',
+    'shield': '<svg class="svg-decor svg-decor-2" viewBox="0 0 200 200"><path d="M100,20 L170,60 L170,120 C170,160 100,190 100,190 C100,190 30,160 30,120 L30,60 Z" fill="none" stroke="var(--pri)" stroke-width="1.5"/></svg>'
+  };
+  return svgs[id] || '';
+};

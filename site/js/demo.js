@@ -176,5 +176,38 @@ SOCIRIS.demo = {
     SOCIRIS.demo.metrics();
     SOCIRIS.demo.ringCharts();
     SOCIRIS.demo.investigation('investigation-steps');
+  },
+
+  initTabFilter: function(containerId) {
+    var container = document.getElementById(containerId);
+    if (!container) return;
+    var btns = container.querySelectorAll('.tab-filter-btn');
+    btns.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        btns.forEach(function(b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        var filter = btn.getAttribute('data-filter');
+        var cards = document.querySelectorAll('[data-category]');
+        cards.forEach(function(card) {
+          if (filter === 'all' || card.getAttribute('data-category') === filter) {
+            card.style.display = '';
+            card.style.animation = 'fadeIn .3s ease';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  },
+
+  initScrollIndicator: function() {
+    var bar = document.querySelector('.scroll-indicator');
+    if (!bar) return;
+    window.addEventListener('scroll', function() {
+      var scrollTop = window.scrollY;
+      var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      var progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      bar.style.width = progress + '%';
+    });
   }
 };

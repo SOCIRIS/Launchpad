@@ -98,5 +98,26 @@ SOCIRIS.router = {
         scrollTrigger: { trigger: el, start: 'top bottom', end: 'bottom top', scrub: true }
       });
     });
+
+    gsap.utils.toArray('.gsap-pop').forEach(function(el) {
+      gsap.from(el, {
+        opacity: 0, scale: .8, duration: .6, ease: 'back.out(1.4)',
+        scrollTrigger: { trigger: el, start: 'top 85%' }
+      });
+    });
+
+    gsap.utils.toArray('.gsap-rotate').forEach(function(el) {
+      gsap.from(el, {
+        opacity: 0, rotation: -5, duration: .8, ease: 'power2.out',
+        scrollTrigger: { trigger: el, start: 'top 85%' }
+      });
+    });
+
+    gsap.utils.toArray('.gsap-clip').forEach(function(el) {
+      gsap.from(el, {
+        clipPath: 'inset(100% 0 0 0)', duration: .8, ease: 'power2.out',
+        scrollTrigger: { trigger: el, start: 'top 85%' }
+      });
+    });
   }
 };
