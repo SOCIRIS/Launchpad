@@ -43,10 +43,10 @@ var SOCIRIS = SOCIRIS || {};
     title: 'SOCIRIS — AI-Powered Security Intelligence Platform',
     desc: 'SOCIRIS — AI-powered autonomous security intelligence platform with context-driven threat detection, OSINT fusion, and SOAR automation.',
     render: function() {
-      return '<section class="hero"><div class="hbg"></div><div class="ctn">' +
+      return '<section class="hero"><div class="hbg"></div><div class="hero-mesh"></div><div class="ctn">' +
       '<div class="hb">' + I('zap') + ' Next-Gen Security Intelligence</div>' +
       '<h1 class="ht">Intelligent <span class="gt">Security</span><br>For a Safer <span class="gt2">World</span></h1>' +
-      '<p class="hs">SOCIRIS delivers context-driven threat detection, OSINT intelligence fusion, automated incident response, and enterprise-grade security operations — all powered by an AI ensemble engine with a Security Context Graph that remembers.</p>' +
+      '<p class="hs text-shimmer-subtle">SOCIRIS delivers context-driven threat detection, OSINT intelligence fusion, automated incident response, and enterprise-grade security operations — all powered by an AI ensemble engine with a Security Context Graph that remembers.</p>' +
       '<div class="hcta"><a href="#/demo" class="btn bp bl"><span>Live Demo</span>' + I('play') + '</a><a href="#/about" class="btn bs bl"><span>Discover SOCIRIS</span>' + I('arrow-right') + '</a></div>' +
       '<div class="hstats">' +
       '<div class="sc fi stagger-1"><div class="si">' + I('shield-check') + '</div><div><span class="sn">24/7</span><span class="sl">Autonomous Monitoring</span></div></div>' +
@@ -127,7 +127,7 @@ var SOCIRIS = SOCIRIS || {};
 
       '<section class="sec"><div class="ctn"><div class="sh"><span class="slb">' + I('git-compare') + ' Competitive Edge</span><h2>Why SOCIRIS <span class="gt">Wins</span></h2></div>' +
       '<div class="comparison-grid">' +
-      '<div class="comp-card fi"><h3>Traditional SIEM/SOAR</h3><div class="comp-price" style="color:var(--tm)">Legacy</div><ul class="comp-features">' +
+      '<div class="comp-card fi tilt-3d"><h3>Traditional SIEM/SOAR</h3><div class="comp-price" style="color:var(--tm)">Legacy</div><ul class="comp-features">' +
       '<li>' + I('x') + ' Rules decay, manual tuning required</li>' +
       '<li>' + I('x') + ' No organizational memory</li>' +
       '<li>' + I('x') + ' Detection-only or response-only</li>' +
@@ -136,7 +136,7 @@ var SOCIRIS = SOCIRIS || {};
       '<li>' + I('x') + ' Cloud-dependent, no air-gap</li>' +
       '<li>' + I('x') + ' No context-driven reasoning</li>' +
       '</ul></div>' +
-      '<div class="comp-card featured fi"><h3>SOCIRIS</h3><div class="comp-price gt">Complete<span>/platform</span></div><ul class="comp-features">' +
+      '<div class="comp-card featured fi tilt-3d"><h3>SOCIRIS</h3><div class="comp-price gt">Complete<span>/platform</span></div><ul class="comp-features">' +
       '<li>' + I('check') + ' CD/CR auto-generates detections</li>' +
       '<li>' + I('check') + ' Security Context Graph persists knowledge</li>' +
       '<li>' + I('check') + ' Unified reasoning loop (detect→respond)</li>' +
@@ -145,7 +145,7 @@ var SOCIRIS = SOCIRIS || {};
       '<li>' + I('check') + ' SaaS + Self-hosted + Air-gapped + Edge</li>' +
       '<li>' + I('check') + ' Narrative reasoning with HITL gates</li>' +
       '</ul></div>' +
-      '<div class="comp-card fi"><h3>Point Solutions</h3><div class="comp-price" style="color:var(--tm)">Partial</div><ul class="comp-features">' +
+      '<div class="comp-card fi tilt-3d"><h3>Point Solutions</h3><div class="comp-price" style="color:var(--tm)">Partial</div><ul class="comp-features">' +
       '<li>' + I('x') + ' Dashboard only (no detection/response)</li>' +
       '<li>' + I('x') + ' No SOAR automation playbooks</li>' +
       '<li>' + I('x') + ' No ML/AI ensemble engine</li>' +
@@ -1064,7 +1064,31 @@ var SOCIRIS = SOCIRIS || {};
     },
     init: function() {
       SOCIRIS.demo.destroy();
-      SOCIRIS.demo.initTabFilter('integration-filter');
+      SOCIRIS.demo.counters();
+      if (window.gsap && window.ScrollTrigger) {
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.utils.toArray('.feature-showcase-card').forEach(function(card, i) {
+          gsap.from(card, {
+            opacity: 0, y: 60, scale: .95, duration: .8, delay: i * .1,
+            ease: 'back.out(1.2)',
+            scrollTrigger: { trigger: card, start: 'top 88%' }
+          });
+        });
+        gsap.utils.toArray('.qc').forEach(function(card, i) {
+          gsap.from(card, {
+            opacity: 0, x: i % 2 === 0 ? -40 : 40, duration: .7, delay: i * .08,
+            ease: 'power2.out',
+            scrollTrigger: { trigger: card, start: 'top 88%' }
+          });
+        });
+        gsap.utils.toArray('.comp-card').forEach(function(card, i) {
+          gsap.from(card, {
+            opacity: 0, y: 50, duration: .7, delay: i * .15,
+            ease: 'power2.out',
+            scrollTrigger: { trigger: card, start: 'top 85%' }
+          });
+        });
+      }
     }
   };
   SOCIRIS.pages.changelog = {
