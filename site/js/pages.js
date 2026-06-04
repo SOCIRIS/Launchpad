@@ -361,11 +361,11 @@ var SOCIRIS = SOCIRIS || {};
     title: 'Live Demo — SOCIRIS Security Intelligence Platform',
     desc: 'Interactive demonstration of the SOCIRIS platform: real-time threat feed, investigation engine, SOAR playbooks, and security metrics.',
     render: function() {
-      return '<section class="ph" style="background:linear-gradient(135deg,var(--bg2),rgba(99,102,241,.05),var(--bg2))"><div class="ctn" style="position:relative;z-index:1">' +
+      return '<section class="ph" style="background:linear-gradient(180deg,var(--bg2) 0%,rgba(99,102,241,.04) 50%,var(--bg2) 100%)"><div class="ctn" style="position:relative;z-index:1">' +
       '<nav class="bc"><a href="#/">Home</a><span>/</span><span>Demo</span></nav>' +
       '<div class="hb"><span class="live-dot"></span> Interactive Demo</div>' +
       '<h1>SOCIRIS <span class="gt">Situation Room</span></h1>' +
-      '<p class="hs" style="max-width:700px;margin-bottom:0">Interactive simulation of the SOCIRIS security intelligence platform with real-time threat detection, AI investigation, and SOAR automation.</p>' +
+      '<p class="hs" style="max-width:700px;margin-bottom:0">Live simulation of the SOCIRIS security intelligence platform — real-time threat detection, AI investigation, and SOAR automation.</p>' +
       '</div></section>' +
 
       '<section class="demo-sec"><div class="ctn">' +
@@ -383,26 +383,37 @@ var SOCIRIS = SOCIRIS || {};
 
       '<div class="demo-panel"><div class="demo-panel-header"><h4>' + I('brain') + ' AI Investigation Engine</h4><span class="tag tag-info">AI CASCADE</span></div><div class="demo-panel-body"><div id="investigation-steps"></div></div></div>' +
 
-      '<div class="demo-panel"><div class="demo-panel-header"><h4>' + I('map') + ' Geospatial Situation Room</h4><span class="tag tag-info">MAP VIEW</span></div><div class="demo-panel-body"><div class="world-map-container" style="min-height:280px">' +
+      '<div class="demo-panel"><div class="demo-panel-header"><h4>' + I('map') + ' Geospatial Situation Room</h4><span class="tag tag-info">GLOBAL</span></div><div class="demo-panel-body"><div class="world-map-container" style="min-height:280px">' +
       '<div class="map-overlay"></div>' +
-      '<svg style="position:absolute;inset:0;width:100%;height:100%;opacity:.08" viewBox="0 0 1000 500"><path d="M150,120 L200,100 L250,130 L300,90 L350,120 L400,80 L450,110 L500,70 L550,100 L600,60 L650,90 L700,50 L750,80 L800,40 L850,70" stroke="var(--pri)" fill="none" stroke-width="1"/><path d="M100,200 L200,220 L300,190 L400,210 L500,180 L600,200 L700,170 L800,190 L900,160" stroke="var(--sec)" fill="none" stroke-width="1"/><path d="M120,300 L220,280 L320,310 L420,290 L520,300 L620,270 L720,290 L820,260" stroke="var(--acc)" fill="none" stroke-width="1"/></svg>' +
-      tm(18, 22, 'critical') + tm(35, 48, 'high') + tm(52, 32, 'critical') + tm(68, 55, 'medium') + tm(75, 25, 'high') + tm(28, 68, 'low') + tm(82, 42, 'critical') + tm(45, 75, 'medium') + tm(15, 45, 'high') + tm(60, 15, 'low') +
-      '<div style="position:absolute;bottom:1rem;left:1rem;display:flex;gap:.75rem;flex-wrap:wrap">' +
-      '<span style="display:flex;align-items:center;gap:.375rem;font-size:.75rem;color:var(--t2)"><span style="width:8px;height:8px;border-radius:50%;background:var(--er)"></span> Critical</span>' +
-      '<span style="display:flex;align-items:center;gap:.375rem;font-size:.75rem;color:var(--t2)"><span style="width:8px;height:8px;border-radius:50%;background:var(--wr)"></span> High</span>' +
-      '<span style="display:flex;align-items:center;gap:.375rem;font-size:.75rem;color:var(--t2)"><span style="width:8px;height:8px;border-radius:50%;background:var(--info)"></span> Medium</span>' +
-      '<span style="display:flex;align-items:center;gap:.375rem;font-size:.75rem;color:var(--t2)"><span style="width:8px;height:8px;border-radius:50%;background:var(--ok)"></span> Low</span>' +
-      '</div></div></div></div>' +
+      '<svg style="position:absolute;inset:0;width:100%;height:100%;opacity:.06" viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid slice">' +
+      '<path d="M180,100 Q200,80 240,90 Q260,70 300,85 Q320,75 350,80 L370,70 Q400,60 430,75 L460,65 Q490,55 520,70 Q540,60 560,75 L580,68 Q610,58 640,72" stroke="var(--pri)" fill="none" stroke-width="1.5"/>' +
+      '<path d="M160,140 Q200,150 240,130 Q280,145 320,125 Q360,140 400,120 L440,135 Q480,125 520,140 Q560,130 600,145 L640,135 Q680,150 720,130" stroke="var(--pri)" fill="none" stroke-width="1.5"/>' +
+      '<path d="M100,180 Q160,200 220,175 Q280,195 340,170 Q400,190 460,165 L520,185 Q580,175 640,190 Q700,180 760,200 L820,190 Q880,210 940,185" stroke="var(--sec)" fill="none" stroke-width="1"/>' +
+      '<path d="M140,240 Q200,255 260,235 Q320,250 380,230 Q440,245 500,225 L560,240 Q620,230 680,245 Q740,235 800,250" stroke="var(--sec)" fill="none" stroke-width="1"/>' +
+      '<path d="M180,300 Q240,315 300,295 Q360,310 420,290 Q480,305 540,285 L600,300 Q660,290 720,305" stroke="var(--acc)" fill="none" stroke-width="1"/>' +
+      '<path d="M200,360 Q260,375 320,355 Q380,370 440,350 Q500,365 560,345" stroke="var(--acc)" fill="none" stroke-width="1"/>' +
+      '<path d="M250,410 Q310,425 370,405 Q430,420 490,400" stroke="var(--pri)" fill="none" stroke-width=".75"/>' +
+      '<circle cx="300" cy="130" r="3" fill="var(--pri)" opacity=".3"/><circle cx="500" cy="140" r="3" fill="var(--pri)" opacity=".3"/><circle cx="700" cy="150" r="3" fill="var(--sec)" opacity=".3"/><circle cx="250" cy="200" r="3" fill="var(--sec)" opacity=".3"/>' +
+      '</svg>' +
+      tm(18, 22, 'critical') + tm(35, 48, 'high') + tm(52, 32, 'critical') + tm(68, 55, 'medium') + tm(75, 25, 'high') + tm(28, 68, 'low') + tm(82, 42, 'critical') + tm(45, 75, 'medium') + tm(15, 45, 'high') + tm(60, 15, 'low') + tm(55, 60, 'high') +
+      '<div style="position:absolute;bottom:.75rem;left:.75rem;display:flex;gap:.75rem;flex-wrap:wrap">' +
+      '<span style="display:flex;align-items:center;gap:.375rem;font-size:.6875rem;color:var(--tm)"><span style="width:6px;height:6px;border-radius:50%;background:var(--er)"></span> Critical</span>' +
+      '<span style="display:flex;align-items:center;gap:.375rem;font-size:.6875rem;color:var(--tm)"><span style="width:6px;height:6px;border-radius:50%;background:var(--wr)"></span> High</span>' +
+      '<span style="display:flex;align-items:center;gap:.375rem;font-size:.6875rem;color:var(--tm)"><span style="width:6px;height:6px;border-radius:50%;background:var(--info)"></span> Medium</span>' +
+      '<span style="display:flex;align-items:center;gap:.375rem;font-size:.6875rem;color:var(--tm)"><span style="width:6px;height:6px;border-radius:50%;background:var(--ok)"></span> Low</span>' +
+      '</div>' +
+      '<div style="position:absolute;top:.75rem;right:.75rem;font-size:.625rem;color:var(--tm);font-family:var(--mono);display:flex;align-items:center;gap:.375rem"><span class="live-dot" style="width:6px;height:6px"></span> LIVE</div>' +
+      '</div></div></div>' +
 
       '</div><div class="demo-sidebar">' +
 
       '<div class="demo-panel"><div class="demo-panel-header"><h4>' + I('pie-chart') + ' Detection Accuracy</h4></div><div class="demo-panel-body" style="text-align:center">' +
       ringChart(95, 'var(--ok)', 'Accuracy') +
-      '<div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-top:1.25rem">' +
-      '<div><div style="font-size:1.25rem;font-weight:700;color:var(--t1)">30%</div><div style="font-size:.75rem;color:var(--tm)">LSTM</div></div>' +
-      '<div><div style="font-size:1.25rem;font-weight:700;color:var(--t1)">20%</div><div style="font-size:.75rem;color:var(--tm)">SVM</div></div>' +
-      '<div><div style="font-size:1.25rem;font-weight:700;color:var(--t1)">20%</div><div style="font-size:.75rem;color:var(--tm)">Isolation Forest</div></div>' +
-      '<div><div style="font-size:1.25rem;font-weight:700;color:var(--t1)">15%</div><div style="font-size:.75rem;color:var(--tm)">UEBA</div></div>' +
+      '<div style="display:grid;grid-template-columns:1fr 1fr;gap:.625rem;margin-top:1.25rem">' +
+      '<div style="padding:.5rem;background:rgba(99,102,241,.04);border-radius:.5rem"><div style="font-size:1.125rem;font-weight:700;color:var(--pri-l)">30%</div><div style="font-size:.625rem;color:var(--tm);text-transform:uppercase;letter-spacing:.05em">LSTM</div></div>' +
+      '<div style="padding:.5rem;background:rgba(6,182,212,.04);border-radius:.5rem"><div style="font-size:1.125rem;font-weight:700;color:var(--sec)">20%</div><div style="font-size:.625rem;color:var(--tm);text-transform:uppercase;letter-spacing:.05em">SVM</div></div>' +
+      '<div style="padding:.5rem;background:rgba(139,92,246,.04);border-radius:.5rem"><div style="font-size:1.125rem;font-weight:700;color:var(--acc)">20%</div><div style="font-size:.625rem;color:var(--tm);text-transform:uppercase;letter-spacing:.05em">Iso. Forest</div></div>' +
+      '<div style="padding:.5rem;background:rgba(16,185,129,.04);border-radius:.5rem"><div style="font-size:1.125rem;font-weight:700;color:var(--ok)">15%</div><div style="font-size:.625rem;color:var(--tm);text-transform:uppercase;letter-spacing:.05em">UEBA</div></div>' +
       '</div></div></div>' +
 
       '<div class="demo-panel"><div class="demo-panel-header"><h4>' + I('activity') + ' Alert Distribution</h4></div><div class="demo-panel-body">' +
@@ -412,17 +423,16 @@ var SOCIRIS = SOCIRIS || {};
       '<div><div style="display:flex;justify-content:space-between;margin-bottom:.375rem"><span style="font-size:.8125rem">Low</span><span style="font-size:.8125rem;color:var(--ok)">15%</span></div><div class="metric-bar"><div class="metric-fill" data-width="15%" style="background:var(--ok)"></div></div></div>' +
       '</div></div>' +
 
-      '<div class="demo-panel"><div class="demo-panel-header"><h4>' + I('workflow') + ' SOAR Playbook</h4></div><div class="demo-panel-body">' +
-      '<div class="soar-playbook" id="playbook-unauth-access"><div class="sp-header"><div><h4 style="margin:0;font-size:.875rem">Unauthorized Access Response</h4><p style="margin:.25rem 0 0;font-size:.75rem;color:var(--tm)">Triggered by brute force detection</p></div><span class="tag tag-critical">ACTIVE</span></div><div class="sp-steps"><div class="sp-step"><div class="sp-step-fill"></div></div><div class="sp-step"><div class="sp-step-fill"></div></div><div class="sp-step"><div class="sp-step-fill"></div></div><div class="sp-step"><div class="sp-step-fill"></div></div><div class="sp-step"><div class="sp-step-fill"></div></div></div></div>' +
-      '<button class="btn btn-success btn-sm" style="width:100%;margin-top:.75rem" onclick="SOCIRIS.demo.soarPlaybook(this,\'playbook-unauth-access\')">Execute Playbook</button>' +
+      '<div class="demo-panel"><div class="demo-panel-header"><h4>' + I('workflow') + ' SOAR Playbook</h4><span class="tag tag-critical">READY</span></div><div class="demo-panel-body">' +
+      '<div class="soar-playbook" id="playbook-unauth-access"><div class="sp-header"><div><h4 style="margin:0;font-size:.8125rem">Unauthorized Access Response</h4><p style="margin:.25rem 0 0;font-size:.6875rem;color:var(--tm)">Triggered by brute force detection &bull; HITL required</p></div><span class="tag tag-critical">T1110</span></div><div class="sp-steps"><div class="sp-step"><div class="sp-step-fill"></div></div><div class="sp-step"><div class="sp-step-fill"></div></div><div class="sp-step"><div class="sp-step-fill"></div></div><div class="sp-step"><div class="sp-step-fill"></div></div><div class="sp-step"><div class="sp-step-fill"></div></div></div></div>' +
+      '<button class="btn btn-success btn-sm" style="width:100%;margin-top:.75rem;border-radius:.5rem;letter-spacing:.02em" onclick="SOCIRIS.demo.soarPlaybook(this,\'playbook-unauth-access\')">' + I('play') + ' Execute Playbook</button>' +
       '</div></div>' +
 
       '</div></div></section>' +
 
       '<section class="sec sec-alt"><div class="ctn"><div class="sh"><span class="slb">' + I('code') + ' Investigation Output</span><h2>Narrative <span class="gt">Reasoning</span></h2><p class="ss">SOCIRIS replaces numeric-only scores with structured investigation narratives</p></div>' +
-      '<div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem">' +
-
-      '<div class="cd fi" style="border-color:rgba(239,68,68,.2)"><h4 style="color:var(--tm);margin-bottom:.75rem">' + I('x-circle') + ' Before: Numeric Score</h4>' +
+      '<div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem">' +
+      '<div class="cd fi" style="border-color:rgba(239,68,68,.12);background:rgba(239,68,68,.02)"><div style="display:flex;align-items:center;gap:.5rem;margin-bottom:1rem"><span style="display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:rgba(239,68,68,.1)">' + I('x') + '</span><h4 style="margin:0;color:var(--tm);font-size:.8125rem;text-transform:uppercase;letter-spacing:.05em">Traditional SIEM</h4></div>' +
       codeBlock('json', [
         '<span class="code-comment">// Traditional SIEM output</span>',
         '{',
@@ -433,7 +443,7 @@ var SOCIRIS = SOCIRIS || {};
         '<span class="code-comment">// No context, no reasoning, no memory</span>',
       ]) +
       '</div>' +
-      '<div class="cd fi" style="border-color:rgba(16,185,129,.2)"><h4 style="color:var(--ok);margin-bottom:.75rem">' + I('check-circle') + ' After: SOCIRIS Narrative</h4>' +
+      '<div class="cd fi" style="border-color:rgba(16,185,129,.12);background:rgba(16,185,129,.02)"><div style="display:flex;align-items:center;gap:.5rem;margin-bottom:1rem"><span style="display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:rgba(16,185,129,.1)">' + I('check') + '</span><h4 style="margin:0;color:var(--ok);font-size:.8125rem;text-transform:uppercase;letter-spacing:.05em">SOCIRIS Narrative</h4></div>' +
       codeBlock('markdown', [
         '<span class="code-key">Investigation #1247:</span>',
         '<span class="code-key">CONTEXT:</span> <span class="code-str">prod-web-03 (crown jewel,</span>',
@@ -447,7 +457,7 @@ var SOCIRIS = SOCIRIS || {};
       ]) +
       '</div></div></div></section>' +
 
-      '<section class="sec"><div class="ctn"><div class="sh"><span class="slb">' + I('git-branch') + ' CD/CR Loop</span><h2>The <span class="gt">Self-Improving</span> Pipeline</h2></div>' +
+      '<section class="sec"><div class="ctn"><div class="sh"><span class="slb">' + I('git-branch') + ' CD/CR Loop</span><h2>The <span class="gt">Self-Improving</span> Pipeline</h2><p class="ss">Continuous Detection / Continuous Response — every incident makes the system smarter</p></div>' +
       '<div class="timeline-h">' +
       '<div class="timeline-h-step fi"><div class="th-dot">' + I('alert-circle') + '</div><div class="th-label">Detect</div><div class="th-text">Alert arrives from Wazuh, MISP, or OSINT</div></div>' +
       '<div class="timeline-h-step fi"><div class="th-dot sec">' + I('database') + '</div><div class="th-label">Context</div><div class="th-text">Context Graph lookup: asset, owner, blast radius</div></div>' +
@@ -457,8 +467,8 @@ var SOCIRIS = SOCIRIS || {};
       '<div class="timeline-h-step fi"><div class="th-dot ok">' + I('repeat') + '</div><div class="th-label">Learn</div><div class="th-text">Outcome → Context Graph → Better detection</div></div>' +
       '</div></div></section>' +
 
-      '<section class="sec sec-alt"><div class="ctn"><div class="sh"><span class="slb">' + I('network') + ' Security Context Graph</span><h2>Organizational <span class="gt">Memory</span></h2></div>' +
-      '<div class="graph-container" style="min-height:320px">' +
+      '<section class="sec sec-alt"><div class="ctn"><div class="sh"><span class="slb">' + I('network') + ' Security Context Graph</span><h2>Organizational <span class="gt">Memory</span></h2><p class="ss">Every alert enriched with asset topology, ownership, blast radius, and history</p></div>' +
+      '<div class="graph-container" style="min-height:340px">' +
       '<svg class="graph-svg" viewBox="0 0 600 320">' +
       '<line x1="100" y1="80" x2="250" y2="60"/>' +
       '<line x1="100" y1="80" x2="200" y2="180"/>' +
@@ -482,10 +492,10 @@ var SOCIRIS = SOCIRIS || {};
       '<div class="graph-node" style="top:235px;left:450px;width:56px;height:56px;font-size:.5625rem;text-align:center;line-height:1.2;padding:4px;border-color:var(--er)">' + I('zap') + '<br>APT29 IoC</div>' +
       '</div></div></section>' +
 
-      '<section class="sec"><div class="ctn"><div class="sh"><span class="slb">' + I('bar-chart-3') + ' Threat Analytics</span><h2>Platform <span class="gt">Charts</span></h2></div>' +
+      '<section class="sec"><div class="ctn"><div class="sh"><span class="slb">' + I('bar-chart-3') + ' Threat Analytics</span><h2>Platform <span class="gt">Analytics</span></h2><p class="ss">Weekly threat trends and detection category distribution</p></div>' +
       '<div class="cg2">' +
-      '<div class="cd fi"><h4 style="margin-bottom:1rem;text-align:center">' + I('trending-up') + ' Weekly Threat Trend</h4><canvas id="threat-chart" height="220"></canvas></div>' +
-      '<div class="cd fi"><h4 style="margin-bottom:1rem;text-align:center">' + I('pie-chart') + ' Detection by Category</h4><canvas id="category-chart" height="220"></canvas></div>' +
+      '<div class="cd fi" style="padding:1.5rem"><h4 style="margin-bottom:1rem;text-align:center;font-size:.8125rem;text-transform:uppercase;letter-spacing:.05em;color:var(--tm)">' + I('trending-up') + ' Weekly Threat Trend</h4><canvas id="threat-chart" height="220"></canvas></div>' +
+      '<div class="cd fi" style="padding:1.5rem"><h4 style="margin-bottom:1rem;text-align:center;font-size:.8125rem;text-transform:uppercase;letter-spacing:.05em;color:var(--tm)">' + I('pie-chart') + ' Detection by Category</h4><canvas id="category-chart" height="220"></canvas></div>' +
       '</div></div></section>' +
 
       cta('See the Full Platform', 'Request a personalized demonstration of all SOCIRIS capabilities.', 'Request Demo', 'https://www.linkedin.com/company/sociris/', 'Contact Sales', '#/contact');
