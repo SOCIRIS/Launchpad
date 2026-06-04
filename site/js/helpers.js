@@ -150,7 +150,8 @@ SOCIRIS.loreLetterCards = function() {
     '<div class="lore-letter-card fi"><div class="lore-letter-char gt3">C</div><div class="lore-letter-meaning"><strong>Center</strong><br>Centralized intelligence with Security Context Graph</div></div>' +
     '<div class="lore-letter-card fi"><div class="lore-letter-char gt">I</div><div class="lore-letter-meaning"><strong>Intelligent</strong><br>AI cascade: triage → deep analysis → HITL verification</div></div>' +
     '<div class="lore-letter-card fi"><div class="lore-letter-char gt2">R</div><div class="lore-letter-meaning"><strong>Response</strong><br>5 SOAR playbooks with human-in-the-loop gates</div></div>' +
-    '<div class="lore-letter-card fi"><div class="lore-letter-char gt3">S</div><div class="lore-letter-meaning"><strong>Surveillance</strong><br>FaceNet + MTCNN + GPS + CCTV + OSINT fusion</div></div>' +
+    '<div class="lore-letter-card fi"><div class="lore-letter-char gt3">I</div><div class="lore-letter-meaning"><strong>Intrusion</strong><br>Surveillance & intrusion detection with FaceNet + MTCNN</div></div>' +
+    '<div class="lore-letter-card fi"><div class="lore-letter-char gt">S</div><div class="lore-letter-meaning"><strong>Surveillance</strong><br>GPS + CCTV + OSINT fusion + multi-camera coordination</div></div>' +
     '</div>';
 };
 
@@ -158,11 +159,12 @@ SOCIRIS.loreVisual = function(id) {
   return '<div class="lore-visual"><div class="lore-logo-ring">' +
     '<img src="site/images/sociris-logo-dark.jpeg" alt="SOCIRIS" class="lore-logo-img" id="' + (id || 'lore-logo') + '">' +
     '<div class="lore-letter" style="top:-10px;left:50%;transform:translateX(-50%)" title="Security">S</div>' +
-    '<div class="lore-letter" style="top:20%;right:-10px" title="Operations">O</div>' +
-    '<div class="lore-letter" style="bottom:20%;right:-10px" title="Center">C</div>' +
-    '<div class="lore-letter" style="bottom:-10px;left:50%;transform:translateX(-50%)" title="Intelligent">I</div>' +
-    '<div class="lore-letter" style="bottom:20%;left:-10px" title="Response">R</div>' +
-    '<div class="lore-letter" style="top:20%;left:-10px" title="Surveillance">S</div>' +
+    '<div class="lore-letter" style="top:10%;right:-10px" title="Operations">O</div>' +
+    '<div class="lore-letter" style="top:40%;right:-14px" title="Center">C</div>' +
+    '<div class="lore-letter" style="bottom:10%;right:-10px" title="Intelligent">I</div>' +
+    '<div class="lore-letter" style="bottom:-10px;left:60%;transform:translateX(-50%)" title="Response">R</div>' +
+    '<div class="lore-letter" style="bottom:10%;left:-10px" title="Intrusion">I</div>' +
+    '<div class="lore-letter" style="top:40%;left:-14px" title="Surveillance">S</div>' +
     '</div></div>';
 };
 

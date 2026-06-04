@@ -290,11 +290,12 @@ footer { padding: 5rem 0 2rem; border-top: 1px solid var(--bd); background: line
 .lore-logo-img { width: 160px; height: 160px; border-radius: 28px; box-shadow: var(--cyber-glow-lg); animation: float 4s ease-in-out infinite; }
 .lore-letter { position: absolute; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: .875rem; border: 2px solid rgba(99, 102, 241, .3); background: var(--bgC); animation: floatBadge 5s ease-in-out infinite; transition: border-color var(--r), box-shadow var(--r); }
 .lore-letter:hover { border-color: var(--pri); box-shadow: 0 0 16px rgba(99,102,241,.3); }
-.lore-letter:nth-child(2) { animation-delay: -.8s; }
-.lore-letter:nth-child(3) { animation-delay: -1.6s; }
-.lore-letter:nth-child(4) { animation-delay: -2.4s; }
-.lore-letter:nth-child(5) { animation-delay: -3.2s; }
-.lore-letter:nth-child(6) { animation-delay: -4s; }
+.lore-letter:nth-child(2) { animation-delay: -.6s; }
+.lore-letter:nth-child(3) { animation-delay: -1.2s; }
+.lore-letter:nth-child(4) { animation-delay: -1.8s; }
+.lore-letter:nth-child(5) { animation-delay: -2.4s; }
+.lore-letter:nth-child(6) { animation-delay: -3s; }
+.lore-letter:nth-child(7) { animation-delay: -3.6s; }
 .lore-breakdown { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2rem; }
 .lore-letter-card { background: var(--bgC); border: 1px solid var(--bd); border-radius: 1rem; padding: 1.5rem; text-align: center; transition: all var(--r); position: relative; overflow: hidden; }
 .lore-letter-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--g1); transform: scaleX(0); transition: transform .5s ease; }
