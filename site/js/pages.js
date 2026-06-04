@@ -36,6 +36,7 @@ var SOCIRIS = SOCIRIS || {};
   var floatingBadge = SOCIRIS.floatingBadge;
   var irisEye = SOCIRIS.irisEye;
   var svgDecor = SOCIRIS.svgDecor;
+  var viz = SOCIRIS.viz;
 
   SOCIRIS.pages = {};
 
@@ -629,7 +630,7 @@ var SOCIRIS = SOCIRIS || {};
     },
     init: function() { SOCIRIS.demo.destroy(); SOCIRIS.demo.counters(); }
   };
-  SOCIRIS.pages.technology = {
+   SOCIRIS.pages.technology = {
     title: 'Technology — SOCIRIS Architecture & AI Engine',
     desc: 'Explore SOCIRIS technology: modular AI engine, event-driven plugin architecture, OSINT fusion pipeline, and multi-tenant enterprise platform.',
     render: function() {
@@ -641,6 +642,61 @@ var SOCIRIS = SOCIRIS || {};
       '<div class="cd fi" style="text-align:center"><div class="gt" style="font-size:2.5rem;font-weight:800;display:block" data-count="5" data-suffix="">0</div><h3>AI Models</h3><p>Weighted ensemble cascade</p></div>' +
       '<div class="cd fi" style="text-align:center"><div class="gt2" style="font-size:2.5rem;font-weight:800;display:block" data-count="14" data-suffix="">0</div><h3>Prometheus Metrics</h3><p>Real-time monitoring</p></div>' +
       '</div></div></section>' +
+
+      '<section class="sec sec-alt"><div class="ctn"><div class="sh"><span class="slb">' + I('layers') + ' 38-Service Stack</span><h2>Full Architecture <span class="gt">Diagram</span></h2><p class="ss">Three Docker network tiers with monitoring and observability</p></div>' +
+      viz.architectureDiagram() +
+      '</div></section>' +
+
+      '<section class="sec"><div class="ctn"><div class="sh"><span class="slb">' + I('workflow') + ' Data Pipeline</span><h2>End-to-End <span class="gt">Data Flow</span></h2><p class="ss">From data ingestion to automated response — the complete event-driven pipeline</p></div>' +
+      viz.dataFlowDiagram() +
+      '</div></section>' +
+
+      '<section class="sec sec-alt"><div class="ctn"><div class="sh"><span class="slb">' + I('monitor') + ' Screen Gallery</span><h2>What You\'d <span class="gt">Actually See</span></h2><p class="ss">Grounded in the repo\'s code — every screen renders from real components and demo data</p></div>' +
+
+      '<div style="margin-bottom:2.5rem">' +
+        '<div class="sh"><span class="slb">' + I('star') + ' Generation 2</span><h3>The Situation Room <span class="gt">(Next.js 16)</span></h3><p class="ss">Modern three-panel operations console — MapLibre map, asset tracking, live threat feed</p></div>' +
+        viz.gen2SituationRoom() +
+      '</div>' +
+
+      '<div style="margin-bottom:2.5rem">' +
+        '<div class="sh"><span class="slb">' + I('layout-dashboard') + ' Generation 1</span><h3>Legacy SOC Console <span class="gt">(:8080)</span></h3><p class="ss">The dense, Chart.js-powered multi-page dashboard — face recognition, access control, AI models</p></div>' +
+        '<div class="viz-gallery">' +
+          viz.gen1Dashboard() +
+          viz.gen1HIDS() +
+        '</div>' +
+      '</div>' +
+
+      '<div style="margin-bottom:2.5rem">' +
+        '<div class="viz-gallery">' +
+          viz.gen1AI() +
+          viz.gen1UEBA() +
+        '</div>' +
+      '</div>' +
+
+      '<div style="margin-bottom:2.5rem">' +
+        '<div class="viz-gallery">' +
+          viz.gen1ThreatIntel() +
+          viz.gen1SOAR() +
+        '</div>' +
+      '</div>' +
+
+      '<div style="margin-bottom:2.5rem">' +
+        viz.gen1NetScan() +
+      '</div>' +
+
+      '</div></section>' +
+
+      '<section class="sec"><div class="ctn"><div class="sh"><span class="slb">' + I('puzzle') + ' Third-Party Consoles</span><h2>Bundled <span class="gt">Web Apps</span></h2><p class="ss">Each service ships with its own full web console — all started by the Docker Compose stack</p></div>' +
+      '<div class="viz-gallery">' +
+        viz.grafanaMock() +
+        viz.wazuhMock() +
+        viz.shuffleMock() +
+        viz.traccarMock() +
+      '</div>' +
+      '<div style="margin-top:1.5rem">' +
+        viz.apiEngineMock() +
+      '</div>' +
+      '</div></section>' +
 
       '<section class="sec sec-alt"><div class="ctn"><div class="sh"><span class="slb">' + I('git-branch') + ' Evolution</span><h2>Six Phases of <span class="gt">Evolution</span></h2><p class="ss">From foundation to ecosystem — a complete security intelligence platform</p></div><div style="display:grid;gap:1.5rem">' +
       pc('p0', 'Phase 0 — Foundation', 'Modular AI engine (core/routers, models, schemas), Next.js 16 dashboard with MapLibre + CesiumJS, Keycloak SSO, Vault secrets management, event-driven plugin architecture (EventBus + 4 plugins), Alembic migrations, WebSocket bridge, resource ID scheme.', 'ai-engine', 'FastAPI', 'SQLAlchemy', 'Alembic', 'EventBus', 'Next.js', 'Keycloak', 'Vault') +
