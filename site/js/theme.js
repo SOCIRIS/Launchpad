@@ -11,16 +11,24 @@ SOCIRIS.theme = {
     document.documentElement.setAttribute('data-theme', t);
     try { localStorage.setItem(SOCIRIS.theme.TK, t); } catch(e) {}
 
-    var n = document.getElementById('logo-img');
-    var f = document.getElementById('footer-logo');
-    var fs = document.getElementById('footer-shield');
-    if (n) n.src = 'site/images/sociris-logo-' + (t === 'light' ? 'light' : 'dark') + '.jpeg';
-    if (f) f.src = 'site/images/sociris-wide-logo-' + (t === 'light' ? 'light' : 'dark') + '.jpeg';
-    if (fs) fs.src = 'site/images/sociris-logo-' + (t === 'light' ? 'light' : 'dark') + '.jpeg';
-    var heroLogo = document.getElementById('hero-center-logo');
-    if (heroLogo) heroLogo.src = 'site/images/sociris-logo-' + (t === 'light' ? 'light' : 'dark') + '.jpeg';
-    var loreLogo = document.getElementById('lore-logo');
-    if (loreLogo) loreLogo.src = 'site/images/sociris-logo-' + (t === 'light' ? 'light' : 'dark') + '.jpeg';
+    var suffix = t === 'light' ? 'light' : 'dark';
+    var logoIds = ['logo-img', 'footer-logo', 'footer-shield', 'hero-center-logo', 'lore-logo', 'about-lore-logo', 'pricing-logo'];
+    logoIds.forEach(function(id) {
+      var el = document.getElementById(id);
+      if (el) {
+        if (id === 'footer-logo') {
+          el.src = 'site/images/sociris-wide-logo-' + suffix + '.jpeg';
+        } else {
+          el.src = 'site/images/sociris-logo-' + suffix + '.jpeg';
+        }
+      }
+    });
+    document.querySelectorAll('[data-theme-logo]').forEach(function(el) {
+      el.src = 'site/images/sociris-logo-' + suffix + '.jpeg';
+    });
+    document.querySelectorAll('[data-theme-wide-logo]').forEach(function(el) {
+      el.src = 'site/images/sociris-wide-logo-' + suffix + '.jpeg';
+    });
     SOCIRIS.theme.refreshIcons();
   },
 

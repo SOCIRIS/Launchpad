@@ -13,6 +13,9 @@ SOCIRIS.router = {
 
     SOCIRIS.demo.destroy();
 
+    var loader = document.getElementById('page-loader');
+    if (loader) loader.classList.add('active');
+
     window.scrollTo({ top: 0, behavior: 'instant' });
     var pg = SOCIRIS.pages[route];
     if (!pg || typeof pg.render !== 'function') return;
@@ -24,10 +27,15 @@ SOCIRIS.router = {
     SOCIRIS.router.updateNav(route);
     SOCIRIS.theme.refreshIcons();
     SOCIRIS.router.observeFade();
+    SOCIRIS.router.initGSAP();
 
     document.title = pg.title || 'SOCIRIS';
     var md = document.querySelector('meta[name="description"]');
     if (md && pg.desc) md.setAttribute('content', pg.desc);
+
+    setTimeout(function() {
+      if (loader) loader.classList.remove('active');
+    }, 300);
   },
 
   updateNav: function(r) {
@@ -50,5 +58,45 @@ SOCIRIS.router = {
       });
     }, { threshold: .1, rootMargin: '0px 0px -40px 0px' });
     els.forEach(function(el) { obs.observe(el); });
+  },
+
+  initGSAP: function() {
+    if (!window.gsap || !window.ScrollTrigger) return;
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.utils.toArray('.gsap-fade').forEach(function(el) {
+      gsap.from(el, {
+        opacity: 0, y: 40, duration: 0.8, ease: 'power2.out',
+        scrollTrigger: { trigger: el, start: 'top 85%', toggleActions: 'play none none none' }
+      });
+    });
+
+    gsap.utils.toArray('.gsap-slide-left').forEach(function(el) {
+      gsap.from(el, {
+        opacity: 0, x: -60, duration: 0.8, ease: 'power2.out',
+        scrollTrigger: { trigger: el, start: 'top 85%' }
+      });
+    });
+
+    gsap.utils.toArray('.gsap-slide-right').forEach(function(el) {
+      gsap.from(el, {
+        opacity: 0, x: 60, duration: 0.8, ease: 'power2.out',
+        scrollTrigger: { trigger: el, start: 'top 85%' }
+      });
+    });
+
+    gsap.utils.toArray('.gsap-scale').forEach(function(el) {
+      gsap.from(el, {
+        opacity: 0, scale: 0.8, duration: 0.8, ease: 'back.out(1.2)',
+        scrollTrigger: { trigger: el, start: 'top 85%' }
+      });
+    });
+
+    gsap.utils.toArray('.parallax-bg').forEach(function(el) {
+      gsap.to(el, {
+        yPercent: -20, ease: 'none',
+        scrollTrigger: { trigger: el, start: 'top bottom', end: 'bottom top', scrub: true }
+      });
+    });
   }
 };

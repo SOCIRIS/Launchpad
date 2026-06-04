@@ -31,7 +31,7 @@
 <title>SOCIRIS — AI-Powered Security Intelligence Platform</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="site/css/variables.css">
 <link rel="stylesheet" href="site/css/base.css">
 <link rel="stylesheet" href="site/css/components.css">
@@ -73,6 +73,9 @@
 <li><a href="#/solutions" class="nl">Solutions</a></li>
 <li><a href="#/technology" class="nl">Technology</a></li>
 <li><a href="#/demo" class="nl">Demo</a></li>
+<li><a href="#/pricing" class="nl">Pricing</a></li>
+<li><a href="#/cases" class="nl">Cases</a></li>
+<li><a href="#/resources" class="nl">Resources</a></li>
 <li><a href="#/about" class="nl">About</a></li>
 <li><a href="#/contact" class="nl">Contact</a></li>
 <li><button class="tt" id="tt" aria-label="Toggle theme"><i data-lucide="sun"></i></button></li>
@@ -84,22 +87,27 @@
 
 <button class="btt" id="btt" aria-label="Back to top"><i data-lucide="arrow-up"></i></button>
 
+<div id="page-loader" class="page-loader"><div class="loader-content"><div class="loader-spinner"></div><span>SOCIRIS</span></div></div>
+
 <footer>
 <div class="ctn">
 <div class="fw">
 <div>
 <img src="site/images/sociris-wide-logo-dark.jpeg" alt="SOCIRIS" class="flg" id="footer-logo">
 <img src="site/images/sociris-logo-dark.jpeg" alt="SOCIRIS Shield" class="footer-shield" id="footer-shield">
-<p>AI-powered autonomous security intelligence platform. Security Operations Center — Intelligent Response & Intrusion Surveillance.</p>
+<p>AI-powered autonomous security intelligence platform.</p>
+<p style="font-size:.8125rem;color:var(--pri-l);margin-top:.5rem"><strong>SOC</strong> = Security Operations Center &bull; <strong>IRIS</strong> = The eye that sees all</p>
+<p style="font-size:.75rem;color:var(--tm)">Like the iris of the eye that controls light and focus, SOCIRIS brings clarity to the chaos of security operations.</p>
 <div class="soc">
 <a href="https://www.linkedin.com/company/sociris/" target="_blank" rel="noopener" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
 <a href="https://github.com/SOCIRIS" target="_blank" rel="noopener" aria-label="GitHub"><i data-lucide="github"></i></a>
 <a href="mailto:info@sociris.com" aria-label="Email"><i data-lucide="mail"></i></a>
+<a href="#/resources" aria-label="Blog"><i data-lucide="book-open"></i></a>
 </div>
 </div>
 <div class="fls">
-<div class="fc"><h4>Platform</h4><a href="#/platform">Capabilities</a><a href="#/solutions">Solutions</a><a href="#/technology">Technology</a><a href="#/demo">Live Demo</a></div>
-<div class="fc"><h4>Company</h4><a href="#/mission">Mission</a><a href="#/about">About</a><a href="#/contact">Contact</a><a href="https://www.linkedin.com/company/sociris/" target="_blank">LinkedIn</a></div>
+<div class="fc"><h4>Platform</h4><a href="#/platform">Capabilities</a><a href="#/solutions">Solutions</a><a href="#/technology">Technology</a><a href="#/demo">Live Demo</a><a href="#/pricing">Pricing</a><a href="#/integrations">Integrations</a></div>
+<div class="fc"><h4>Company</h4><a href="#/mission">Mission</a><a href="#/about">About</a><a href="#/cases">Case Studies</a><a href="#/resources">Resources</a><a href="#/changelog">Changelog</a><a href="#/contact">Contact</a></div>
 <div class="fc"><h4>Legal</h4><a href="#/">Privacy Policy</a><a href="#/">Terms of Service</a><a href="#/">Security</a><a href="https://github.com/SOCIRIS" target="_blank">GitHub</a></div>
 </div>
 </div>
@@ -108,6 +116,9 @@
 </footer>
 
 <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <script src="site/js/particles.js"></script>
 <script src="site/js/helpers.js"></script>
 <script src="site/js/demo.js"></script>
