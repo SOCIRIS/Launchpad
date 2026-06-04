@@ -21,28 +21,44 @@ SOCIRIS.router = {
     if (!pg || typeof pg.render !== 'function') return;
 
     SOCIRIS.router.curPage = route;
-    app.innerHTML = '<div class="page-in">' + pg.render() + '</div>';
-
-    if (typeof pg.init === 'function') pg.init();
-    SOCIRIS.router.updateNav(route);
-    SOCIRIS.theme.refreshIcons();
-    SOCIRIS.router.observeFade();
-    SOCIRIS.router.initGSAP();
-
-    document.title = pg.title || 'SOCIRIS';
-    var md = document.querySelector('meta[name="description"]');
-    if (md && pg.desc) md.setAttribute('content', pg.desc);
 
     setTimeout(function() {
-      if (loader) loader.classList.remove('active');
-    }, 300);
+      app.style.opacity = '0';
+      app.style.transform = 'translateY(8px)';
+      setTimeout(function() {
+        app.innerHTML = '<div class="page-in">' + pg.render() + '</div>';
+        app.style.transition = 'opacity .35s cubic-bezier(.25,.46,.45,.94), transform .35s cubic-bezier(.25,.46,.45,.94)';
+        app.style.opacity = '1';
+        app.style.transform = 'translateY(0)';
+
+        if (typeof pg.init === 'function') pg.init();
+        SOCIRIS.router.updateNav(route);
+        SOCIRIS.theme.refreshIcons();
+        SOCIRIS.router.observeFade();
+        SOCIRIS.router.initGSAP();
+
+        document.title = pg.title || 'SOCIRIS';
+        var md = document.querySelector('meta[name="description"]');
+        if (md && pg.desc) md.setAttribute('content', pg.desc);
+
+        setTimeout(function() {
+          if (loader) loader.classList.remove('active');
+        }, 200);
+      }, 80);
+    }, 0);
   },
 
   updateNav: function(r) {
-    document.querySelectorAll('.nl').forEach(function(l) {
+    document.querySelectorAll('.nm > li > a.nl, .nd-menu a.nd-item').forEach(function(l) {
       var h = (l.getAttribute('href') || '').replace('#/', '').replace('#', '') || 'home';
       if (h === r) l.classList.add('ac');
       else l.classList.remove('ac');
+    });
+    document.querySelectorAll('.nm > li.nd').forEach(function(d) {
+      var hasActive = d.querySelector('.nd-item.ac') !== null;
+      var mainLink = d.querySelector(':scope > a.nl');
+      if (hasActive && mainLink) mainLink.classList.add('ac');
+      else if (mainLink && !mainLink.classList.contains('ac')) { /* no change */ }
     });
   },
 

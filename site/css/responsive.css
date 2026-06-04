@@ -1,16 +1,20 @@
 @media (max-width: 968px) {
   .mt { display: flex; }
-  .nm { position: fixed; top: 0; right: -100%; width: 280px; height: 100vh; background: var(--bg2); border-left: 1px solid var(--bd); flex-direction: column; align-items: flex-start; padding: 5rem 1.5rem 2rem; gap: .25rem; transition: right var(--r); z-index: 999; overflow-y: auto; }
+  .nm { position: fixed; top: 0; right: -100%; width: 300px; height: 100vh; background: var(--glass); backdrop-filter: blur(24px) saturate(180%); border-left: 1px solid var(--glass-border); flex-direction: column; align-items: flex-start; padding: 5rem 1.75rem 2rem; gap: .125rem; transition: right var(--r); z-index: 999; overflow-y: auto; }
   .nm.on { right: 0; }
   .nl { width: 100%; padding: .75rem 1rem; }
+  .nd { width: 100%; }
+  .nd-menu { position: static; transform: none; opacity: 1; visibility: visible; box-shadow: none; background: transparent; backdrop-filter: none; border: none; padding: 0 0 0 1.25rem; min-width: 0; display: none; }
+  .nd.on .nd-menu { display: block; }
+  .nd > a.nl { display: flex; justify-content: space-between; align-items: center; }
   .cpg, .ctg, .vmg, .fw { grid-template-columns: 1fr; }
   .fls { grid-template-columns: repeat(2, 1fr); }
   .sfg { grid-template-columns: 1fr; }
   .fr { grid-template-columns: 1fr; }
-  .ctaw { flex-direction: column; text-align: center; }
+  .ctaw { flex-direction: column; text-align: center; padding: 2.5rem; }
   .ctaa { justify-content: center; }
   .sdc { padding: 1.5rem; }
-  .sec { padding: 4rem 0; }
+  .sec { padding: 5rem 0; }
   .lore-grid { grid-template-columns: 1fr; }
   .lore-visual { min-height: 300px; }
   .feature-showcase { grid-template-columns: 1fr; }
@@ -18,14 +22,14 @@
   .integration-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 640px) {
-  .ctn { padding: 0 1rem; }
+  .ctn { padding: 0 1.25rem; }
   .hstats { grid-template-columns: 1fr; }
   .fls { grid-template-columns: 1fr; }
   .fb { flex-direction: column; gap: .5rem; text-align: center; }
   .ht { font-size: clamp(2rem, 8vw, 3rem); }
-  .sec { padding: 3rem 0; }
-  .hero { min-height: auto; padding: 6rem 0 3rem; }
-  .ph { padding: 6rem 0 3rem; }
+  .sec { padding: 3.5rem 0; }
+  .hero { min-height: auto; padding: 7rem 0 3rem; }
+  .ph { padding: 7rem 0 3rem; }
   .cg2, .cg3, .cg4, .cg5, .cg6 { grid-template-columns: 1fr; }
   .cd { padding: 1.5rem; }
   .impact-grid { grid-template-columns: 1fr; }

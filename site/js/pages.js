@@ -44,8 +44,8 @@ var SOCIRIS = SOCIRIS || {};
     desc: 'SOCIRIS — AI-powered autonomous security intelligence platform with context-driven threat detection, OSINT fusion, and SOAR automation.',
     render: function() {
       return '<section class="hero"><div class="hbg"></div><div class="ctn">' +
-      '<div class="hb">' + I('zap') + ' AI-Native Security Intelligence Platform</div>' +
-      '<h1 class="ht">Intelligent <span class="gt">Security</span><br>For a Safer Tomorrow</h1>' +
+      '<div class="hb">' + I('zap') + ' Next-Gen Security Intelligence</div>' +
+      '<h1 class="ht">Intelligent <span class="gt">Security</span><br>For a Safer <span class="gt2">World</span></h1>' +
       '<p class="hs">SOCIRIS delivers context-driven threat detection, OSINT intelligence fusion, automated incident response, and enterprise-grade security operations — all powered by an AI ensemble engine with a Security Context Graph that remembers.</p>' +
       '<div class="hcta"><a href="#/demo" class="btn bp bl"><span>Live Demo</span>' + I('play') + '</a><a href="#/about" class="btn bs bl"><span>Discover SOCIRIS</span>' + I('arrow-right') + '</a></div>' +
       '<div class="hstats">' +
@@ -125,7 +125,7 @@ var SOCIRIS = SOCIRIS || {};
       '<div class="qc fi hover-lift" onclick="location.hash=\'#/platform\'"><div class="qci c6">' + I('users') + '</div><h3>Analyst Empowerment</h3><p>Investigation replay, reasoning chain explorer, AI coaching scenarios, skill gap analysis — junior analysts operate at senior levels within months.</p><span class="la">' + I('arrow-right') + '</span></div>' +
       '</div></div></section>' +
 
-      '<section class="sec"><div class="ctn"><div class="sh"><span class="slb">' + I('git-compare') + ' Competitive Edge</span><h2>How SOCIRIS <span class="gt">Compares</span></h2></div>' +
+      '<section class="sec"><div class="ctn"><div class="sh"><span class="slb">' + I('git-compare') + ' Competitive Edge</span><h2>Why SOCIRIS <span class="gt">Wins</span></h2></div>' +
       '<div class="comparison-grid">' +
       '<div class="comp-card fi"><h3>Traditional SIEM/SOAR</h3><div class="comp-price" style="color:var(--tm)">Legacy</div><ul class="comp-features">' +
       '<li>' + I('x') + ' Rules decay, manual tuning required</li>' +
@@ -156,7 +156,7 @@ var SOCIRIS = SOCIRIS || {};
       '</ul></div>' +
       '</div></div></section>' +
 
-      '<section class="sec sec-alt"><div class="ctn"><div class="sh"><span class="slb">' + I('globe') + ' Global Reach</span><h2>Trusted by Organizations <span class="gt">Worldwide</span></h2><p class="ss">From Karachi to the world — securing governments, enterprises, and communities</p></div>' +
+      '<section class="sec sec-alt"><div class="ctn"><div class="sh"><span class="slb">' + I('globe') + ' Global Reach</span><h2>Trusted Across <span class="gt">Industries & Borders</span></h2><p class="ss">From Karachi to the world — securing governments, enterprises, and communities globally</p></div>' +
       '<div class="cg4">' +
       '<div class="cd fi hover-lift" style="text-align:center"><div class="ci c1">' + I('landmark') + '</div><h3>Government</h3><p>Air-gapped deployments for ministries, courts, and defense with local LLM</p></div>' +
       '<div class="cd fi hover-lift" style="text-align:center"><div class="ci c2">' + I('graduation-cap') + '</div><h3>Education</h3><p>Campus security with face recognition attendance and exam integrity</p></div>' +
@@ -262,12 +262,12 @@ var SOCIRIS = SOCIRIS || {};
       '<div class="vc fi hover-lift"><div class="ci c5" style="margin:0 auto 1.25rem">' + I('globe') + '</div><h3>Global Reach</h3><p>Air-gapped deployment for government/defense, edge sensors for remote sites, and multi-channel messaging (6 channels).</p></div>' +
       '</div></div></section>' +
 
-      '<section class="sec sec-alt"><div class="ctn"><div class="sh"><span class="slb">' + I('award') + ' Platform Scale</span><h2>Built for <span class="gt">Enterprise</span></h2></div>' +
+      '<section class="sec sec-alt"><div class="ctn"><div class="sh"><span class="slb">' + I('award') + ' Platform Scale</span><h2>Built for <span class="gt">Enterprise Scale</span></h2></div>' +
       '<div class="cg4">' +
       '<div class="cd fi" style="text-align:center"><div class="number-highlight gt" data-count="25" data-suffix="+">0</div><h3>Microservices</h3><p>Containerized across 3 network tiers</p></div>' +
       '<div class="cd fi" style="text-align:center"><div class="number-highlight gt2" data-count="5" data-suffix="">0</div><h3>AI Models</h3><p>Weighted ensemble with cascade architecture</p></div>' +
       '<div class="cd fi" style="text-align:center"><div class="number-highlight gt" data-count="13" data-suffix="">0</div><h3>Integrations</h3><p>Pre-built connectors in marketplace</p></div>' +
-      '<div class="cd fi" style="text-align:center"><div class="number-highlight gt2" data-count="3" data-suffix="">0</div><h3>Deployment Models</h3><p>SaaS, Self-hosted, Air-gapped</p></div>' +
+      '<div class="cd fi" style="text-align:center"><div class="number-highlight gt2" data-count="4" data-suffix="">0</div><h3>Deployment Models</h3><p>SaaS, Self-hosted, Air-gapped, Edge</p></div>' +
       '</div></div></section>' +
 
       '<section class="sec"><div class="ctn"><div class="sh"><span class="slb">' + I('code') + ' Tech Stack</span><h2>Powered by <span class="gt">Modern Technology</span></h2></div>' +

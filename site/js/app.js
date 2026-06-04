@@ -19,11 +19,19 @@ var SOCIRIS = SOCIRIS || {};
       nm.classList.toggle('on');
       document.body.style.overflow = nm.classList.contains('on') ? 'hidden' : '';
     });
-    nm.querySelectorAll('.nl').forEach(function(l) {
+    nm.querySelectorAll('.nl, .nd-item').forEach(function(l) {
       l.addEventListener('click', function() {
         mt.classList.remove('on');
         nm.classList.remove('on');
         document.body.style.overflow = '';
+      });
+    });
+    nm.querySelectorAll('.nd > a.nl').forEach(function(d) {
+      d.addEventListener('click', function(e) {
+        if (window.innerWidth <= 968) {
+          e.preventDefault();
+          d.parentElement.classList.toggle('on');
+        }
       });
     });
     document.addEventListener('click', function(e) {
