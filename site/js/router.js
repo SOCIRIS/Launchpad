@@ -15,6 +15,12 @@ SOCIRIS.router = {
 
     var loader = document.getElementById('page-loader');
     if (loader) loader.classList.add('active');
+    var safetyTimeout = setTimeout(function() {
+      if (loader && loader.classList.contains('active')) {
+        console.warn('SOCIRIS: Force-removing stuck loader');
+        loader.classList.remove('active');
+      }
+    }, 5000);
 
     window.scrollTo({ top: 0, behavior: 'instant' });
     var pg = SOCIRIS.pages[route];
@@ -22,30 +28,18 @@ SOCIRIS.router = {
 
     SOCIRIS.router.curPage = route;
 
-    var currentContent = app.querySelector('.page-in');
-    if (currentContent) {
-      currentContent.classList.add('page-exit');
-      setTimeout(function() {
+    function renderPage() {
+      try {
         app.innerHTML = '<div class="page-in">' + pg.render() + '</div>';
-        if (typeof pg.init === 'function') pg.init();
-        SOCIRIS.router.updateNav(route);
-        SOCIRIS.theme.refreshIcons();
-        SOCIRIS.router.observeFade();
-        SOCIRIS.router.initGSAP();
-
-        document.title = pg.title || 'SOCIRIS';
-        var md = document.querySelector('meta[name="description"]');
-        if (md && pg.desc) md.setAttribute('content', pg.desc);
-
-        setTimeout(function() {
-          if (loader) loader.classList.remove('active');
-        }, 200);
-      }, 200);
-    } else {
-      app.innerHTML = '<div class="page-in">' + pg.render() + '</div>';
-      if (typeof pg.init === 'function') pg.init();
+      } catch(e) {
+        console.error('SOCIRIS render error:', e);
+        app.innerHTML = '<div class="page-in" style="padding:8rem 2rem;text-align:center"><h2>Page Error</h2><p style="color:var(--tm)">' + e.message + '</p><a href="#/" class="btn bp" style="margin-top:1rem">Go Home</a></div>';
+      }
+      if (typeof pg.init === 'function') {
+        try { pg.init(); } catch(e) { console.error('SOCIRIS init error:', e); }
+      }
       SOCIRIS.router.updateNav(route);
-      SOCIRIS.theme.refreshIcons();
+      if (SOCIRIS.theme && SOCIRIS.theme.refreshIcons) SOCIRIS.theme.refreshIcons();
       SOCIRIS.router.observeFade();
       SOCIRIS.router.initGSAP();
 
@@ -55,7 +49,16 @@ SOCIRIS.router = {
 
       setTimeout(function() {
         if (loader) loader.classList.remove('active');
+        clearTimeout(safetyTimeout);
       }, 200);
+    }
+
+    var currentContent = app.querySelector('.page-in');
+    if (currentContent) {
+      currentContent.classList.add('page-exit');
+      setTimeout(renderPage, 200);
+    } else {
+      renderPage();
     }
   },
 
