@@ -52,6 +52,7 @@ var SOCIRIS = SOCIRIS || {};
 
 SOCIRIS.viz.gen1Dashboard = function() {
   var v = SOCIRIS.viz;
+  var I = SOCIRIS.I;
   return v.screenMock('SOCIRIS Dashboard — Legacy Console', 'SOCIRIS v3.0 Enhanced &bull; ILMA University FYP 2025', [
     '<div class="viz-dash-nav">',
       '<div style="display:flex;align-items:center;gap:.5rem"><span style="font-weight:800;color:var(--ok);font-size:.75rem">&#9679;</span><span style="font-size:.6875rem;font-weight:700">SOCIRIS</span></div>',
@@ -136,6 +137,7 @@ SOCIRIS.viz.gen1Dashboard = function() {
 
 SOCIRIS.viz.gen1HIDS = function() {
   var v = SOCIRIS.viz;
+  var I = SOCIRIS.I;
   return v.screenMock('HIDS — Wazuh Host Intrusion Detection', null, [
     v.statRow([
       { value: '3', label: 'Total Agents', cls: 'viz-c-pri' },
@@ -166,6 +168,7 @@ SOCIRIS.viz.gen1HIDS = function() {
 
 SOCIRIS.viz.gen1AI = function() {
   var v = SOCIRIS.viz;
+  var I = SOCIRIS.I;
   return v.screenMock('AI Engine — Model Management', null, [
     v.statRow([
       { value: '4', label: 'Active Models', cls: 'viz-c-pri' },
@@ -191,6 +194,7 @@ SOCIRIS.viz.gen1AI = function() {
 
 SOCIRIS.viz.gen1UEBA = function() {
   var v = SOCIRIS.viz;
+  var I = SOCIRIS.I;
   return v.screenMock('UEBA — User Behavior Analytics', null, [
     v.statRow([
       { value: '45', label: 'Monitored Users', cls: 'viz-c-pri' },
@@ -221,6 +225,7 @@ SOCIRIS.viz.gen1UEBA = function() {
 
 SOCIRIS.viz.gen1ThreatIntel = function() {
   var v = SOCIRIS.viz;
+  var I = SOCIRIS.I;
   return v.screenMock('Threat Intelligence — OSINT Hub', null, [
     v.statRow([
       { value: '12', label: 'Active Feeds', cls: 'viz-c-pri' },
@@ -267,6 +272,7 @@ SOCIRIS.viz.gen1ThreatIntel = function() {
 
 SOCIRIS.viz.gen1SOAR = function() {
   var v = SOCIRIS.viz;
+  var I = SOCIRIS.I;
   return v.screenMock('SOAR — Security Orchestration & Automation', null, [
     v.statRow([
       { value: '5', label: 'Playbooks', cls: 'viz-c-pri' },
@@ -300,6 +306,7 @@ SOCIRIS.viz.gen1SOAR = function() {
 
 SOCIRIS.viz.gen1NetScan = function() {
   var v = SOCIRIS.viz;
+  var I = SOCIRIS.I;
   return v.screenMock('Network Scans — Nmap + Topology', null, [
     v.statRow([
       { value: '24', label: 'Hosts Found', cls: 'viz-c-pri' },
