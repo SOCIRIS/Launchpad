@@ -575,7 +575,8 @@ var SOCIRIS = SOCIRIS || {};
       '</div></div></section>' +
 
       cta('Ready to Enhance Your Security?', 'Discover how SOCIRIS can protect your organization.', 'Live Demo', '#/demo', 'Contact Sales', '#/contact');
-    }
+    },
+    init: function() { SOCIRIS.demo.destroy(); SOCIRIS.demo.counters(); }
   };
   SOCIRIS.pages.solutions = {
     title: 'Solutions — SOCIRIS Security for Every Industry',
@@ -625,7 +626,8 @@ var SOCIRIS = SOCIRIS || {};
       '</div></div></section>' +
 
       cta('Ready to Transform Your Security?', 'Join organizations across every sector in securing operations with SOCIRIS.', 'Live Demo', '#/demo', 'Contact Sales', '#/contact');
-    }
+    },
+    init: function() { SOCIRIS.demo.destroy(); SOCIRIS.demo.counters(); }
   };
   SOCIRIS.pages.technology = {
     title: 'Technology — SOCIRIS Architecture & AI Engine',
@@ -907,7 +909,8 @@ var SOCIRIS = SOCIRIS || {};
       '</div></div></section>' +
 
       cta('Ready to Write Your Success Story?', 'Join these organizations in transforming security with SOCIRIS.', 'Request Demo', 'https://www.linkedin.com/company/sociris/', 'View Pricing', '#/pricing');
-    }
+    },
+    init: function() { SOCIRIS.demo.destroy(); SOCIRIS.demo.counters(); }
   };
   SOCIRIS.pages.resources = {
     title: 'Resources — SOCIRIS Security Intelligence Hub',

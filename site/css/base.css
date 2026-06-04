@@ -203,6 +203,6 @@ img { max-width: 100%; height: auto; display: block; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
   .fi { opacity: 1; transform: none; transition: none; }
-  .stats-marquee .sm-track { animation: none; }
+  .stats-marquee-track { animation: none; flex-wrap: wrap; justify-content: center; width: auto !important; }
   .scroll-indicator { transition: none; }
 }
