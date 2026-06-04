@@ -7,11 +7,19 @@ var SOCIRIS = SOCIRIS || {};
     var theme = stored || (window.matchMedia('(prefers-color-scheme:light)').matches ? 'light' : 'dark');
     SOCIRIS.theme.set(theme);
 
-    var nb = document.getElementById('navbar');
+    var nb = document.getElementById('navbar'), btt = document.getElementById('btt'), ticking = false;
     window.addEventListener('scroll', function() {
-      if (window.pageYOffset > 80) nb.classList.add('sc');
-      else nb.classList.remove('sc');
-    });
+      if (!ticking) {
+        requestAnimationFrame(function() {
+          if (window.pageYOffset > 80) nb.classList.add('sc');
+          else nb.classList.remove('sc');
+          if (window.pageYOffset > 500) btt.classList.add('vis');
+          else btt.classList.remove('vis');
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
 
     var mt = document.getElementById('mt'), nm = document.getElementById('nm');
     mt.addEventListener('click', function() {
@@ -51,11 +59,6 @@ var SOCIRIS = SOCIRIS || {};
       SOCIRIS.theme.refreshIcons();
     });
 
-    var btt = document.getElementById('btt');
-    window.addEventListener('scroll', function() {
-      if (window.pageYOffset > 500) btt.classList.add('vis');
-      else btt.classList.remove('vis');
-    });
     btt.addEventListener('click', function() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });

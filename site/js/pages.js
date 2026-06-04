@@ -238,12 +238,12 @@ var SOCIRIS = SOCIRIS || {};
       '</div></div></section>' +
 
       '<section class="sec sec-alt"><div class="ctn"><div class="sh"><span class="slb">' + I('book-open') + ' Our Story</span><h2>The SOCIRIS Journey</h2><p class="ss">From a research project to a full-scale security intelligence platform</p></div>' +
-      '<div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start"><div>' +
+      '<div class="vmg" style="align-items:start"><div class="fi">' +
       '<h3 style="margin-bottom:1rem">' + I('lightbulb') + ' Born from Innovation</h3><p>SOCIRIS began as a research project in 2024. The platform has since evolved through six engineering phases into a production-grade security intelligence platform with 25+ containerized microservices.</p>' +
       '<h3 style="margin:1.5rem 0 1rem">' + I('alert-triangle') + ' The Problem</h3><p>Traditional security operations face critical challenges: reactive rather than proactive detection, alert fatigue from high false-positive rates, siloed data sources, and enterprise-grade solutions that remain financially inaccessible to most organizations. 70% of organizations cannot afford enterprise security.</p>' +
       '<h3 style="margin:1.5rem 0 1rem">' + I('rocket') + ' Our Solution</h3><p>SOCIRIS addresses these with a context-driven approach: a Security Context Graph that enriches every alert with organizational memory, an ensemble AI engine for accurate detection, OSINT fusion for global intelligence, SOAR automation for rapid response, and multi-tenant enterprise architecture — all deployable SaaS, self-hosted, or air-gapped.</p>' +
       '<h3 style="margin:1.5rem 0 1rem">' + I('map-pin') + ' Built in Karachi</h3><p>SOCIRIS is proudly engineered in Karachi, Pakistan — a city rapidly emerging as a hub for cybersecurity innovation in South Asia. Our team combines deep security expertise with cutting-edge AI research to deliver a platform that competes globally.</p>' +
-      '</div><div class="tl">' +
+      '</div><div class="tl fi">' +
       '<div class="ti"><div class="tm">' + I('lightbulb') + '</div><div class="td">Early 2024</div><h4>Research & Inception</h4><p>Threat detection research, AI model prototyping with LSTM/SVM/Isolation Forest, and platform vision.</p></div>' +
       '<div class="ti"><div class="tm">' + I('code') + '</div><div class="td">Mid 2024</div><h4>Phase 0 — Foundation Refactor</h4><p>Modular FastAPI engine (routers + services), Next.js 16 dashboard with MapLibre + CesiumJS, Keycloak SSO, Vault secrets, event-driven plugin architecture.</p></div>' +
       '<div class="ti"><div class="tm">' + I('git-branch') + '</div><div class="td">Late 2024</div><h4>Phase 1 — Context Graph + CD/CR</h4><p>Security Context Graph (Neo4j/AGE), InvestigationEngine, AI cascade (triage → deep → HITL), DetectionCompressionEngine, ShadowModeTracker, federated queries.</p></div>' +
@@ -264,10 +264,10 @@ var SOCIRIS = SOCIRIS || {};
 
       '<section class="sec sec-alt"><div class="ctn"><div class="sh"><span class="slb">' + I('award') + ' Platform Scale</span><h2>Built for <span class="gt">Enterprise Scale</span></h2></div>' +
       '<div class="cg4">' +
-      '<div class="cd fi" style="text-align:center"><div class="number-highlight gt" data-count="25" data-suffix="+">0</div><h3>Microservices</h3><p>Containerized across 3 network tiers</p></div>' +
-      '<div class="cd fi" style="text-align:center"><div class="number-highlight gt2" data-count="5" data-suffix="">0</div><h3>AI Models</h3><p>Weighted ensemble with cascade architecture</p></div>' +
-      '<div class="cd fi" style="text-align:center"><div class="number-highlight gt" data-count="13" data-suffix="">0</div><h3>Integrations</h3><p>Pre-built connectors in marketplace</p></div>' +
-      '<div class="cd fi" style="text-align:center"><div class="number-highlight gt2" data-count="4" data-suffix="">0</div><h3>Deployment Models</h3><p>SaaS, Self-hosted, Air-gapped, Edge</p></div>' +
+      '<div class="cd fi hover-lift" style="text-align:center"><div class="number-highlight gt" data-count="25" data-suffix="+">0</div><h3>Microservices</h3><p>Containerized across 3 network tiers</p></div>' +
+      '<div class="cd fi hover-lift" style="text-align:center"><div class="number-highlight gt2" data-count="5" data-suffix="">0</div><h3>AI Models</h3><p>Weighted ensemble with cascade architecture</p></div>' +
+      '<div class="cd fi hover-lift" style="text-align:center"><div class="number-highlight gt" data-count="13" data-suffix="">0</div><h3>Integrations</h3><p>Pre-built connectors in marketplace</p></div>' +
+      '<div class="cd fi hover-lift" style="text-align:center"><div class="number-highlight gt2" data-count="4" data-suffix="">0</div><h3>Deployment Models</h3><p>SaaS, Self-hosted, Air-gapped, Edge</p></div>' +
       '</div></div></section>' +
 
       '<section class="sec"><div class="ctn"><div class="sh"><span class="slb">' + I('code') + ' Tech Stack</span><h2>Powered by <span class="gt">Modern Technology</span></h2></div>' +
@@ -303,7 +303,7 @@ var SOCIRIS = SOCIRIS || {};
       impactCard('$4.45M', 'gt2', 'Average cost of a data breach') +
       '</div></div></section>' +
 
-      '<section class="sec sec-alt"><div class="ctn"><div class="mission-quote"><p>Every organization deserves the same security intelligence capabilities that the largest enterprises have. The gap between what exists and what is needed is not a technology problem — it is an accessibility problem. SOCIRIS exists to close that gap.</p><cite>SOCIRIS Founding Vision, 2024</cite></div></div></section>' +
+      '<section class="sec sec-alt"><div class="ctn"><div class="mission-quote fi"><p>Every organization deserves the same security intelligence capabilities that the largest enterprises have. The gap between what exists and what is needed is not a technology problem — it is an accessibility problem. SOCIRIS exists to close that gap.</p><cite>SOCIRIS Founding Vision, 2024</cite></div></div></section>' +
 
       '<section class="sec"><div class="ctn"><div class="sh"><span class="slb">' + I('compass') + ' Strategic Pillars</span><h2>Six Pillars of <span class="gt">Our Mission</span></h2></div>' +
       '<div class="mission-grid">' +
@@ -742,7 +742,7 @@ var SOCIRIS = SOCIRIS || {};
       '<div class="fr"><div class="fg"><label>Email</label><input type="email" placeholder="john@example.com"></div><div class="fg"><label>Organization</label><input type="text" placeholder="Acme Corp"></div></div>' +
       '<div class="fg"><label>Subject</label><select><option>Request a Demo</option><option>Partnership Inquiry</option><option>Security Consulting</option><option>General Inquiry</option></select></div>' +
       '<div class="fg"><label>Message</label><textarea placeholder="Tell us about your security needs..."></textarea></div>' +
-      '<button class="btn bp" style="width:100%" onclick="this.textContent=\'Message Sent!\';this.style.background=\'#10b981\';setTimeout(function(){this.textContent=\'Send Message\';this.style.background=\'\'}.bind(this),2500)">Send Message</button>' +
+      '<button class="btn bp" style="width:100%;border-radius:.5rem" onclick="SOCIRIS.contactSubmit(this)">Send Message</button>' +
       '</div></div></div></section>' +
 
       '<section class="sec sec-alt"><div class="ctn"><div class="sh"><span class="slb">' + I('help-circle') + ' FAQ</span><h2>Frequently Asked <span class="gt">Questions</span></h2></div><div style="max-width:720px;margin:0 auto">' +
@@ -1339,7 +1339,17 @@ var SOCIRIS = SOCIRIS || {};
       statCard('c4', 'check-circle', '99.97%', 'Overall Uptime', 'Last 90 days', 'up') +
       statCard('c2', 'clock', '<30s', 'Avg Response Time', 'API Gateway', 'up') +
       statCard('c1', 'zap', '0', 'Security Incidents', 'Last 90 days', 'up') +
-      '</div></div></section>' +
+      '</div>' +
+      '<div style="margin-top:2rem"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.75rem"><span style="font-size:.8125rem;color:var(--tm)">90 days ago</span><span style="font-size:.8125rem;color:var(--tm)">Today</span></div>' +
+      '<div class="uptime-bar">' +
+      (function() { var bars = ''; for (var d = 0; d < 90; d++) { var cls = d === 45 ? 'degraded' : ''; bars += '<div class="uptime-day ' + cls + '" data-tip="Day ' + (90 - d) + ': ' + (cls === 'degraded' ? '99.2%' : '100%') + '"></div>'; } return bars; })() +
+      '</div>' +
+      '<div style="display:flex;gap:1.5rem;margin-top:.75rem;justify-content:flex-end">' +
+      '<span style="display:flex;align-items:center;gap:.375rem;font-size:.6875rem;color:var(--tm)"><span style="width:8px;height:8px;border-radius:2px;background:var(--ok)"></span> Operational</span>' +
+      '<span style="display:flex;align-items:center;gap:.375rem;font-size:.6875rem;color:var(--tm)"><span style="width:8px;height:8px;border-radius:2px;background:var(--wr)"></span> Degraded</span>' +
+      '<span style="display:flex;align-items:center;gap:.375rem;font-size:.6875rem;color:var(--tm)"><span style="width:8px;height:8px;border-radius:2px;background:var(--er)"></span> Outage</span>' +
+      '</div></div>' +
+      '</div></section>' +
 
       '<section class="sec"><div class="ctn"><div class="sh"><span class="slb">' + I('history') + ' Incident History</span><h2>Recent <span class="gt">Incidents</span></h2></div>' +
       '<div style="max-width:800px;margin:0 auto">' +

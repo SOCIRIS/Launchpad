@@ -1,5 +1,42 @@
 var SOCIRIS = SOCIRIS || {};
 
+SOCIRIS.contactSubmit = function(btn) {
+  var form = btn.closest('.cfm');
+  if (!form) return;
+  var inputs = form.querySelectorAll('input, textarea, select');
+  var valid = true;
+  inputs.forEach(function(inp) {
+    if (inp.type === 'email' && inp.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(inp.value)) {
+      inp.style.borderColor = 'var(--er)';
+      valid = false;
+    } else if (inp.required && !inp.value.trim()) {
+      inp.style.borderColor = 'var(--er)';
+      valid = false;
+    } else {
+      inp.style.borderColor = '';
+    }
+  });
+  if (!valid) return;
+  var orig = btn.innerHTML;
+  btn.disabled = true;
+  btn.innerHTML = '<span style="display:inline-flex;align-items:center;gap:.5rem">' + SOCIRIS.I('loader') + ' Sending...</span>';
+  btn.querySelector('[data-lucide]') && (btn.querySelector('[data-lucide]').style.animation = 'spin .8s linear infinite');
+  if (window.lucide) window.lucide.createIcons();
+  setTimeout(function() {
+    btn.innerHTML = '<span style="display:inline-flex;align-items:center;gap:.5rem">' + SOCIRIS.I('check-circle') + ' Message Sent!</span>';
+    btn.style.background = 'var(--ok)';
+    btn.style.borderColor = 'var(--ok)';
+    if (window.lucide) window.lucide.createIcons();
+    setTimeout(function() {
+      btn.innerHTML = orig;
+      btn.disabled = false;
+      btn.style.background = '';
+      btn.style.borderColor = '';
+      if (window.lucide) window.lucide.createIcons();
+    }, 2500);
+  }, 1200);
+};
+
 SOCIRIS.I = function(n) { return '<i data-lucide="' + n + '"></i>'; };
 
 SOCIRIS.ph = function(bc, t, st) {

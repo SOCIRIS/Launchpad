@@ -22,15 +22,11 @@ SOCIRIS.router = {
 
     SOCIRIS.router.curPage = route;
 
-    setTimeout(function() {
-      app.style.opacity = '0';
-      app.style.transform = 'translateY(8px)';
+    var currentContent = app.querySelector('.page-in');
+    if (currentContent) {
+      currentContent.classList.add('page-exit');
       setTimeout(function() {
         app.innerHTML = '<div class="page-in">' + pg.render() + '</div>';
-        app.style.transition = 'opacity .35s cubic-bezier(.25,.46,.45,.94), transform .35s cubic-bezier(.25,.46,.45,.94)';
-        app.style.opacity = '1';
-        app.style.transform = 'translateY(0)';
-
         if (typeof pg.init === 'function') pg.init();
         SOCIRIS.router.updateNav(route);
         SOCIRIS.theme.refreshIcons();
@@ -44,8 +40,23 @@ SOCIRIS.router = {
         setTimeout(function() {
           if (loader) loader.classList.remove('active');
         }, 200);
-      }, 80);
-    }, 0);
+      }, 200);
+    } else {
+      app.innerHTML = '<div class="page-in">' + pg.render() + '</div>';
+      if (typeof pg.init === 'function') pg.init();
+      SOCIRIS.router.updateNav(route);
+      SOCIRIS.theme.refreshIcons();
+      SOCIRIS.router.observeFade();
+      SOCIRIS.router.initGSAP();
+
+      document.title = pg.title || 'SOCIRIS';
+      var md = document.querySelector('meta[name="description"]');
+      if (md && pg.desc) md.setAttribute('content', pg.desc);
+
+      setTimeout(function() {
+        if (loader) loader.classList.remove('active');
+      }, 200);
+    }
   },
 
   updateNav: function(r) {
