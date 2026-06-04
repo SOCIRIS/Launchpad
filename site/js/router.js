@@ -79,6 +79,16 @@ SOCIRIS.router = {
     var obs = new IntersectionObserver(function(entries) {
       entries.forEach(function(e) {
         if (e.isIntersecting) {
+          var parent = e.target.parentElement;
+          if (parent) {
+            var siblings = parent.querySelectorAll(':scope > .fi');
+            for (var i = 0; i < siblings.length; i++) {
+              if (siblings[i] === e.target) {
+                e.target.style.transitionDelay = (i * .08) + 's';
+                break;
+              }
+            }
+          }
           e.target.classList.add('vis');
           obs.unobserve(e.target);
         }

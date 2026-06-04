@@ -1,4 +1,6 @@
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+.skip-link { position: absolute; top: -100%; left: 1rem; padding: .75rem 1.25rem; background: var(--g1); color: #fff; border-radius: 0 0 .5rem .5rem; font-weight: 600; z-index: 100000; transition: top .2s; }
+.skip-link:focus { top: 0; color: #fff; }
 html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-rendering: optimizeLegibility; }
 body { font-family: var(--ff); background: var(--bg); color: var(--t1); line-height: 1.6; overflow-x: hidden; transition: background var(--r), color var(--r); }
 body::after { content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 0; opacity: .015; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"); }

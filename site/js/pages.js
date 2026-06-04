@@ -851,7 +851,8 @@ var SOCIRIS = SOCIRIS || {};
       '</tbody></table></div></div></section>' +
 
       cta('Ready to Get Started?', 'Start your 14-day free trial of SOCIRIS Professional.', 'Start Free Trial', '#/contact', 'Contact Sales', '#/contact');
-    }
+    },
+    init: function() { SOCIRIS.demo.destroy(); SOCIRIS.demo.counters(); }
   };
   SOCIRIS.pages.cases = {
     title: 'Case Studies — SOCIRIS Security Intelligence',
@@ -1186,9 +1187,9 @@ var SOCIRIS = SOCIRIS || {};
       '</div></div></section>' +
 
       cta('Stay Updated', 'Get notified about new SOCIRIS releases and features.', 'Request Demo', '#/demo', 'Contact Us', '#/contact');
-    }
+    },
+    init: function() { SOCIRIS.demo.destroy(); }
   };
-
   SOCIRIS.pages.team = {
     title: 'Team — SOCIRIS Security Intelligence',
     desc: 'Meet the team behind SOCIRIS — cybersecurity experts, AI researchers, and engineers building the future of security intelligence.',
@@ -1220,7 +1221,8 @@ var SOCIRIS = SOCIRIS || {};
       '</div></div></section>' +
 
       cta('Join Our Team', 'We\'re always looking for talented security engineers and researchers.', 'View Openings', '#/contact', 'Learn More', '#/about');
-    }
+    },
+    init: function() { SOCIRIS.demo.destroy(); }
   };
 
   SOCIRIS.pages.docs = {
@@ -1298,9 +1300,9 @@ var SOCIRIS = SOCIRIS || {};
       '</div></div></section>' +
 
       cta('Need Help?', 'Our team is ready to help you deploy and configure SOCIRIS.', 'Contact Support', '#/contact', 'View Resources', '#/resources');
-    }
+    },
+    init: function() { SOCIRIS.demo.destroy(); }
   };
-
   SOCIRIS.pages.community = {
     title: 'Community — SOCIRIS Security Intelligence',
     desc: 'Join the SOCIRIS community — contribute detection rules, share threat intel, and help build the future of security intelligence.',
@@ -1333,7 +1335,8 @@ var SOCIRIS = SOCIRIS || {};
       '</div></div></section>' +
 
       cta('Join the Community', 'Start contributing to the future of security intelligence.', 'GitHub', 'https://github.com/SOCIRIS', 'Contact Us', '#/contact');
-    }
+    },
+    init: function() { SOCIRIS.demo.destroy(); SOCIRIS.demo.counters(); }
   };
 
   SOCIRIS.pages.status = {
@@ -1382,7 +1385,8 @@ var SOCIRIS = SOCIRIS || {};
       '</div></div></section>' +
 
       cta('Need Help?', 'Contact our support team for any system status questions.', 'Contact Support', '#/contact', 'View Changelog', '#/changelog');
-    }
+    },
+    init: function() { SOCIRIS.demo.destroy(); }
   };
 
   SOCIRIS.pages.lab = {
@@ -1455,7 +1459,8 @@ var SOCIRIS = SOCIRIS || {};
       '</div></div></section>' +
 
       cta('Ready to Go Hands-On?', 'Start exploring SOCIRIS capabilities with a live demo.', 'Launch Demo', '#/demo', 'View Docs', '#/docs');
-    }
+    },
+    init: function() { SOCIRIS.demo.destroy(); }
   };
 
 })();
