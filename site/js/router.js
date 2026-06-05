@@ -44,6 +44,8 @@ SOCIRIS.router = {
       SOCIRIS.router.observeFade();
       SOCIRIS.router.initGSAP();
 
+      if (SOCIRIS.effects && SOCIRIS.effects.init) SOCIRIS.effects.init();
+
       document.title = pg.title || 'SOCIRIS';
       var md = document.querySelector('meta[name="description"]');
       if (md && pg.desc) md.setAttribute('content', pg.desc);

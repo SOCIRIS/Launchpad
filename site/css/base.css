@@ -200,6 +200,51 @@ img { max-width: 100%; height: auto; display: block; }
 .hover-scale { transition: transform var(--r); }
 .hover-scale:hover { transform: scale(1.03); }
 
+@keyframes energyPulse { 0%, 100% { opacity: .05; transform: scale(1); } 50% { opacity: .12; transform: scale(1.02); } }
+@keyframes borderTraceFast { 0% { background-position: 0% 0%; } 25% { background-position: 100% 0%; } 50% { background-position: 100% 100%; } 75% { background-position: 0% 100%; } 100% { background-position: 0% 0%; } }
+@keyframes chromatic { 0% { filter: hue-rotate(0deg) saturate(1.2); } 50% { filter: hue-rotate(15deg) saturate(1.5); } 100% { filter: hue-rotate(0deg) saturate(1.2); } }
+@keyframes wavePath { 0% { d: path("M0,50 Q25,30 50,50 T100,50"); } 50% { d: path("M0,50 Q25,70 50,50 T100,50"); } 100% { d: path("M0,50 Q25,30 50,50 T100,50"); } }
+@keyframes electricArc { 0%, 100% { opacity: .06; } 10% { opacity: .15; } 20% { opacity: .04; } 50% { opacity: .1; } 80% { opacity: .02; } }
+@keyframes dataScroll { 0% { background-position: 0 0; } 100% { background-position: 0 100vh; } }
+
+.energy-pulse { animation: energyPulse 4s ease-in-out infinite; }
+.chromatic-shift { animation: chromatic 8s ease-in-out infinite; }
+
+.sec { overflow: hidden; }
+
+.cd::after { content: ''; position: absolute; inset: 0; border-radius: inherit; background: radial-gradient(600px circle at var(--card-x, 50%) var(--card-y, 50%), rgba(99,102,241,.04) 0%, transparent 60%); pointer-events: none; opacity: 0; transition: opacity .3s ease; }
+.cd:hover::after { opacity: 1; }
+
+.sdc { overflow: hidden; }
+.sdc::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 60%; background: linear-gradient(to top, rgba(99,102,241,.02) 0%, transparent 100%); pointer-events: none; opacity: 0; transition: opacity .5s ease; }
+.sdc:hover::after { opacity: 1; }
+
+.hero { overflow: hidden; }
+.hero .hbg::before { filter: blur(80px) saturate(1.5); }
+.hero .hbg::after { mix-blend-mode: screen; }
+
+.sec-alt::after { filter: blur(100px); opacity: .5; }
+
+.ph { overflow: hidden; }
+.ph::before { filter: blur(60px); }
+
+@keyframes gridFlow {
+  0% { background-position: 0 0; }
+  100% { background-position: 60px 60px; }
+}
+.hero-mesh { animation: meshMove 20s linear infinite, gridFlow 3s linear infinite; }
+
+.ctaw { position: relative; }
+.ctaw::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, transparent 30%, rgba(255,255,255,.05) 50%, transparent 70%); background-size: 200% 100%; animation: shimmerBg 3s linear infinite; pointer-events: none; }
+
+.stats-marquee { position: relative; }
+.stats-marquee-track .stats-marquee-item { transition: all .3s ease; }
+.stats-marquee-track .stats-marquee-item:hover { transform: scale(1.05); border-color: var(--pri); box-shadow: 0 0 20px rgba(99,102,241,.15); }
+
+.breathe-lg { animation: breathe 6s ease-in-out infinite; }
+@keyframes glowPulse { 0%, 100% { box-shadow: 0 0 20px rgba(99,102,241,.2); } 50% { box-shadow: 0 0 40px rgba(99,102,241,.4), 0 0 80px rgba(99,102,241,.1); } }
+.glow-pulse { animation: glowPulse 3s ease-in-out infinite; }
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
   .fi { opacity: 1; transform: none; transition: none; }
