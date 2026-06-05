@@ -684,6 +684,35 @@ var SOCIRIS = SOCIRIS || {};
         viz.gen1NetScan() +
       '</div>' +
 
+      '<div style="margin-bottom:2.5rem">' +
+        '<div class="sh"><span class="slb">' + I('server') + ' Gen2 Console Panels</span><h3>Third-Party Dashboards <span class="gt">(:3002 Stack)</span></h3><p class="ss">Every open-source tool in the SOCIRIS stack — branded, integrated, and accessible from the Situation Room. Wazuh for HIDS, Grafana for metrics, Traccar for GPS, Shuffle for SOAR, TheHive for cases, MISP for threat intel, Keycloak for identity, Cortex for enrichment.</p></div>' +
+        '<div class="viz-gallery">' +
+          viz.gen2Wazuh() +
+          viz.gen2Grafana() +
+        '</div>' +
+      '</div>' +
+
+      '<div style="margin-bottom:2.5rem">' +
+        '<div class="viz-gallery">' +
+          viz.gen2Traccar() +
+          viz.gen2Shuffle() +
+        '</div>' +
+      '</div>' +
+
+      '<div style="margin-bottom:2.5rem">' +
+        '<div class="viz-gallery">' +
+          viz.gen2TheHive() +
+          viz.gen2Cortex() +
+        '</div>' +
+      '</div>' +
+
+      '<div style="margin-bottom:2.5rem">' +
+        '<div class="viz-gallery">' +
+          viz.gen2MISP() +
+          viz.gen2Keycloak() +
+        '</div>' +
+      '</div>' +
+
       '</div></section>' +
 
       '<section class="sec"><div class="ctn"><div class="sh"><span class="slb">' + I('puzzle') + ' Interactive Simulations</span><h2>Try It <span class="gt">Yourself</span></h2><p class="ss">These simulations run entirely in your browser — step through the AI cascade, explore the network, build a playbook, or use the CLI</p></div>' +
