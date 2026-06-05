@@ -654,12 +654,12 @@ var SOCIRIS = SOCIRIS || {};
       '<section class="sec sec-alt"><div class="ctn"><div class="sh"><span class="slb">' + I('monitor') + ' Screen Gallery</span><h2>What You\'d <span class="gt">Actually See</span></h2><p class="ss">Grounded in the repo\'s code — every screen renders from real components and demo data</p></div>' +
 
       '<div style="margin-bottom:2.5rem">' +
-        '<div class="sh"><span class="slb">' + I('star') + ' Generation 2</span><h3>The Situation Room <span class="gt">(Next.js 16)</span></h3><p class="ss">Modern three-panel operations console — MapLibre map, asset tracking, live threat feed</p></div>' +
+        '<div class="sh"><span class="slb">' + I('layout-dashboard') + ' Unified Console</span><h3>The SOCIRIS Situation Room</h3><p class="ss">Gen1 (:8080) was the static multi-page dashboard. Gen2 (:3002) evolved it into a single Situation Room with live MapLibre map, asset tracking, AI cascade pipeline, SOAR playbooks, MITRE coverage, compliance, and system health — all in one view.</p></div>' +
         viz.gen2SituationRoom() +
       '</div>' +
 
       '<div style="margin-bottom:2.5rem">' +
-        '<div class="sh"><span class="slb">' + I('layout-dashboard') + ' Generation 1</span><h3>Legacy SOC Console <span class="gt">(:8080)</span></h3><p class="ss">The dense, Chart.js-powered multi-page dashboard — face recognition, access control, AI models</p></div>' +
+        '<div class="sh"><span class="slb">' + I('layers') + ' Gen1 Panels</span><h3>Legacy Console <span class="gt">(:8080)</span></h3><p class="ss">The Chart.js-powered multi-page dashboard — still running alongside the Situation Room, provides dense detailed views for HIDS, AI models, UEBA, threat intel, SOAR, and network topology.</p></div>' +
         '<div class="viz-gallery">' +
           viz.gen1Dashboard() +
           viz.gen1HIDS() +
@@ -686,7 +686,36 @@ var SOCIRIS = SOCIRIS || {};
 
       '</div></section>' +
 
-      '<section class="sec"><div class="ctn"><div class="sh"><span class="slb">' + I('puzzle') + ' Third-Party Consoles</span><h2>Bundled <span class="gt">Web Apps</span></h2><p class="ss">Each service ships with its own full web console — all started by the Docker Compose stack</p></div>' +
+      '<section class="sec"><div class="ctn"><div class="sh"><span class="slb">' + I('puzzle') + ' Interactive Simulations</span><h2>Try It <span class="gt">Yourself</span></h2><p class="ss">These simulations run entirely in your browser — step through the AI cascade, explore the network, build a playbook, or use the CLI</p></div>' +
+
+      '<div style="margin-bottom:2rem">' +
+        '<div class="sh"><span class="slb">' + I('activity') + ' Sim 1</span><h3>AI Cascade <span class="gt">Simulator</span></h3><p class="ss">Step through the full detection pipeline — from alert ingestion to automated response. Click "Run Simulation" then "Next Alert" to cycle through different threat types.</p></div>' +
+        '<div id="sim-cascade"></div>' +
+      '</div>' +
+
+      '<div style="margin-bottom:2rem">' +
+        '<div class="sh"><span class="slb">' + I('terminal') + ' Sim 2</span><h3>CLI <span class="gt">Terminal</span></h3><p class="ss">Browse pre-recorded CLI sessions — health checks, threat queries, investigation cascade, context graph, and SOAR playbooks. Use arrows to navigate.</p></div>' +
+        '<div id="sim-terminal"></div>' +
+      '</div>' +
+
+      '<div class="viz-gallery" style="margin-bottom:2rem">' +
+        '<div><div class="sh"><span class="slb">' + I('network') + ' Sim 3</span><h3>Network <span class="gt">Topology</span></h3><p class="ss">Click any node to inspect — live status, connections, alerts, and details.</p></div><div id="sim-topo"></div></div>' +
+        '<div><div class="sh"><span class="slb">' + I('globe') + ' Sim 4</span><h3>Threat <span class="gt">Map</span></h3><p class="ss">Hover or click threat markers to view intelligence details.</p></div><div id="sim-threatmap"></div></div>' +
+      '</div>' +
+
+      '<div style="margin-bottom:2rem">' +
+        '<div class="sh"><span class="slb">' + I('workflow') + ' Sim 5</span><h3>SOAR Playbook <span class="gt">Builder</span></h3><p class="ss">Select a playbook, toggle steps on/off, then execute to see the live log output.</p></div>' +
+        '<div id="sim-soar"></div>' +
+      '</div>' +
+
+      '<div style="margin-bottom:2rem">' +
+        '<div class="sh"><span class="slb">' + I('server') + ' Sim 6</span><h3>Architecture <span class="gt">Explorer</span></h3><p class="ss">Click any service across the three tiers to expand its technology stack and description.</p></div>' +
+        '<div id="sim-arch"></div>' +
+      '</div>' +
+
+      '</div></section>' +
+
+      '<section class="sec sec-alt"><div class="ctn"><div class="sh"><span class="slb">' + I('puzzle') + ' Third-Party Consoles</span><h2>Bundled <span class="gt">Web Apps</span></h2><p class="ss">Each service ships with its own full web console — all started by the Docker Compose stack</p></div>' +
       '<div class="viz-gallery">' +
         viz.grafanaMock() +
         viz.wazuhMock() +
@@ -781,7 +810,14 @@ var SOCIRIS = SOCIRIS || {};
     },
     init: function() {
       SOCIRIS.demo.destroy();
+      SOCIRIS.sim.destroy();
       SOCIRIS.demo.counters();
+      SOCIRIS.sim.cascade('sim-cascade');
+      SOCIRIS.sim.terminal('sim-terminal');
+      SOCIRIS.sim.networkTopo('sim-topo');
+      SOCIRIS.sim.threatMap('sim-threatmap');
+      SOCIRIS.sim.soarBuilder('sim-soar');
+      SOCIRIS.sim.archExplorer('sim-arch');
     }
   };
   SOCIRIS.pages.contact = {

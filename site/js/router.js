@@ -12,6 +12,7 @@ SOCIRIS.router = {
     if (!app) return;
 
     SOCIRIS.demo.destroy();
+    if (SOCIRIS.sim && SOCIRIS.sim.destroy) SOCIRIS.sim.destroy();
 
     var loader = document.getElementById('page-loader');
     if (loader) loader.classList.add('active');
