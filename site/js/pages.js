@@ -1349,31 +1349,21 @@ var SOCIRIS = SOCIRIS || {};
     render: function() {
       return ph('Team', 'Meet the <span class="gt">Team</span>', 'The people building the future of security intelligence') +
 
-      '<section class="sec"><div class="ctn"><div class="sh"><span class="slb">' + I('users') + ' Leadership</span><h2>Our <span class="gt">Team</span></h2><p class="ss">Cybersecurity experts, AI researchers, and engineers from Karachi to the world</p></div>' +
-      '<div class="cg3">' +
-      teamCard('AK', 'Ahmed Khan', 'Founder & CEO', 'Cybersecurity researcher with 10+ years in threat detection, SIEM architecture, and AI-powered security operations. Built SOCIRIS from a research project to an enterprise platform.', 'var(--g1)') +
-      teamCard('SF', 'Sarah Fatima', 'CTO', 'AI/ML engineer specializing in ensemble models, anomaly detection, and NLP. Architected the AI cascade pipeline and weighted ensemble detection engine.', 'var(--g2)') +
-      teamCard('HR', 'Hassan Raza', 'VP Engineering', 'Full-stack architect with expertise in distributed systems, microservices, and Kubernetes. Designed the 25+ containerized microservice architecture.', 'var(--g3)') +
-      teamCard('MZ', 'Maria Zainab', 'Head of OSINT', 'Open-source intelligence specialist with backgrounds in geopolitics, satellite imagery analysis, and data fusion. Built the 16+ OSINT data layer pipeline.', 'var(--g5)') +
-      teamCard('OA', 'Omar Ali', 'Security Architect', 'Enterprise security architect with SOC 2, ISO 27001, and GDPR expertise. Designed the multi-tenant schema-per-tenant isolation and compliance engines.', 'var(--g7)') +
-      teamCard('NK', 'Nadia Khalil', 'Head of Design', 'UX/UI designer specializing in security dashboards, data visualization, and analyst workflows. Created the SOCIRIS Situation Room interface.', 'var(--g9)') +
+      '<section class="sec"><div class="ctn"><div class="sh"><span class="slb">' + I('users') + ' Founders</span><h2>Our <span class="gt">Team</span></h2><p class="ss">Two brothers building the future of security intelligence</p></div>' +
+      '<div class="cg3" style="max-width:700px;margin:0 auto">' +
+      teamCard('MA', 'Muhammad Abdullah Tariq', 'Co-Founder', 'Cybersecurity researcher and engineer. Building SOCIRIS to make advanced security intelligence accessible to organizations everywhere.', 'var(--g1)') +
+      teamCard('MH', 'Muhammad Huzaifa Tariq', 'Co-Founder', 'Engineer and security enthusiast. Co-building SOCIRIS from the ground up — turning ambitious ideas into a real, working platform.', 'var(--g2)') +
       '</div></div></section>' +
 
-      '<section class="sec sec-alt"><div class="ctn"><div class="sh"><span class="slb">' + I('map-pin') + ' Location</span><h2>Built in <span class="gt">Karachi</span></h2></div>' +
-      '<div class="cg2">' +
-      '<div class="cd fi"><div class="ci c1">' + I('building') + '</div><h3>Our Headquarters</h3><p>Karachi, Pakistan — the financial hub and fastest-growing tech city in South Asia. Our team combines deep security expertise with cutting-edge AI research, delivering a platform that competes globally from the heart of Pakistan.</p></div>' +
-      '<div class="cd fi"><div class="ci c2">' + I('globe') + '</div><h3>Global Vision</h3><p>While rooted in Karachi, our vision is global. SOCIRIS serves organizations across government, education, healthcare, enterprise, and defense — from the Middle East to Southeast Asia, from Europe to the Americas.</p></div>' +
-      '</div></div></section>' +
-
-      '<section class="sec"><div class="ctn"><div class="sh"><span class="slb">' + I('heart') + ' Culture</span><h2>How We <span class="gt">Work</span></h2></div>' +
+      '<section class="sec sec-alt"><div class="ctn"><div class="sh"><span class="slb">' + I('heart') + ' Culture</span><h2>How We <span class="gt">Work</span></h2></div>' +
       '<div class="cg4">' +
       '<div class="cd fi" style="text-align:center"><div class="ci c1">' + I('brain') + '</div><h3>Research First</h3><p>Every feature starts with research. We prototype, validate, and iterate before shipping.</p></div>' +
       '<div class="cd fi" style="text-align:center"><div class="ci c2">' + I('shield') + '</div><h3>Security Obsessed</h3><p>We eat our own dog food. SOCIRIS monitors SOCIRIS — every commit, every deploy.</p></div>' +
-      '<div class="cd fi" style="text-align:center"><div class="ci c3">' + I('rocket') + '</div><h3>Ship Fast</h3><p>Six phases in two years. We move fast without breaking things — CI/CD gates ensure quality.</p></div>' +
+      '<div class="cd fi" style="text-align:center"><div class="ci c3">' + I('rocket') + '</div><h3>Ship Fast</h3><p>We move fast without breaking things — CI/CD gates ensure quality.</p></div>' +
       '<div class="cd fi" style="text-align:center"><div class="ci c4">' + I('users') + '</div><h3>Open Source</h3><p>We believe in open source. Community detection rules, public APIs, and transparent reasoning.</p></div>' +
       '</div></div></section>' +
 
-      cta('Join Our Team', 'We\'re always looking for talented security engineers and researchers.', 'View Openings', '#/contact', 'Learn More', '#/about');
+      cta('Get In Touch', 'Want to learn more about SOCIRIS or work with us?', 'Contact Us', '#/contact', 'Learn More', '#/about');
     },
     init: function() { SOCIRIS.demo.destroy(); }
   };
