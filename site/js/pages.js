@@ -713,6 +713,35 @@ var SOCIRIS = SOCIRIS || {};
         '</div>' +
       '</div>' +
 
+      '<div style="margin-bottom:2.5rem">' +
+        '<div class="sh"><span class="slb">' + I('gauge') + ' Infrastructure & Observability</span><h3>Monitoring, Logging, Containers, Cache</h3><p class="ss">The backbone services that keep the SOCIRIS platform observable and performant — Prometheus scrapes everything, Loki aggregates logs, Portainer manages containers, Redis caches AI responses, MLflow tracks model experiments, Ollama runs local LLMs, NetBox manages IPAM, and Nginx routes it all.</p></div>' +
+        '<div class="viz-gallery">' +
+          viz.gen2Prometheus() +
+          viz.gen2Loki() +
+        '</div>' +
+      '</div>' +
+
+      '<div style="margin-bottom:2.5rem">' +
+        '<div class="viz-gallery">' +
+          viz.gen2Portainer() +
+          viz.gen2Redis() +
+        '</div>' +
+      '</div>' +
+
+      '<div style="margin-bottom:2.5rem">' +
+        '<div class="viz-gallery">' +
+          viz.gen2Ollama() +
+          viz.gen2MLflow() +
+        '</div>' +
+      '</div>' +
+
+      '<div style="margin-bottom:2.5rem">' +
+        '<div class="viz-gallery">' +
+          viz.gen2NetBox() +
+          viz.gen2Nginx() +
+        '</div>' +
+      '</div>' +
+
       '</div></section>' +
 
       '<section class="sec"><div class="ctn"><div class="sh"><span class="slb">' + I('puzzle') + ' Interactive Simulations</span><h2>Try It <span class="gt">Yourself</span></h2><p class="ss">These simulations run entirely in your browser — step through the AI cascade, explore the network, build a playbook, or use the CLI</p></div>' +

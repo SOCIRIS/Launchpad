@@ -1143,8 +1143,369 @@ SOCIRIS.viz.gen2Cortex = function() {
       '<span class="viz-tp-module" style="background:rgba(244,114,182,.08);border-color:rgba(244,114,182,.15)">Shodan</span>',
       '<span class="viz-tp-module" style="background:rgba(244,114,182,.08);border-color:rgba(244,114,182,.15)">AbuseDB</span>',
       '<span class="viz-tp-module" style="background:rgba(244,114,182,.08);border-color:rgba(244,114,182,.15)">HybridAnalysis</span>',
-      '<span class="viz-tp-module">PassiveTotal</span>',
-      '<span class="viz-tp-module">DNS</span>',
+       '<span class="viz-tp-module">PassiveTotal</span>',
+       '<span class="viz-tp-module">DNS</span>',
+     '</div>',
+   ].join(''), { port: '9001' });
+};
+
+SOCIRIS.viz.gen2Prometheus = function() {
+  var v = SOCIRIS.viz;
+  var I = SOCIRIS.I;
+  return v.screenMock('SOCIRIS Metrics Collector — Prometheus (:9090)', 'Scrape targets, TSDB, PromQL queries, alerts, service discovery', [
+    '<div class="viz-tp-header" style="background:linear-gradient(135deg,#1a0a2e,#0d1117);padding:.5rem .75rem;border-radius:.375rem;margin-bottom:.5rem">',
+      '<div style="display:flex;justify-content:space-between;align-items:center">',
+        '<div style="display:flex;align-items:center;gap:.5rem">',
+          '<span style="font-size:.6875rem;font-weight:800;color:#e8524a">PROMETHEUS</span>',
+          '<span style="font-size:.5rem;color:var(--tm)">v2.48.0</span>',
+        '</div>',
+        '<div style="display:flex;gap:.5rem;font-size:.5rem;color:var(--tm)">',
+          '<span>TSDB: 2.4 GB</span>',
+          '<span style="color:var(--ok)">&#9679; 14 targets UP</span>',
+        '</div>',
+      '</div>',
     '</div>',
-  ].join(''), { port: '9001' });
+    v.statRow([
+      { value: '14', label: 'Targets', cls: 'viz-c-ok' },
+      { value: '48.2K', label: 'Active Series', cls: 'viz-c-pri' },
+      { value: '1.2M', label: 'Samples/s', cls: 'viz-c-sec' },
+      { value: '6', label: 'Alert Rules', cls: 'viz-c-wr' }
+    ]),
+    '<div class="viz-panel" style="margin-top:.5rem">',
+      '<div class="viz-panel-head">' + I('target') + ' Scrape Targets</div>',
+      v.tableRow(['Target', 'Endpoint', 'Status', 'Last Scrape'], true),
+      v.tableRow(['sociris-ai-engine', ':8000/metrics', v.statusDot('online') + ' UP', '0.8s ago']),
+      v.tableRow(['sociris-web-app', ':3002/metrics', v.statusDot('online') + ' UP', '1.2s ago']),
+      v.tableRow(['wazuh-manager', ':5500/metrics', v.statusDot('online') + ' UP', '0.5s ago']),
+      v.tableRow(['postgres-db', ':5432/metrics', v.statusDot('online') + ' UP', '2.1s ago']),
+      v.tableRow(['redis-cache', ':6379/metrics', v.statusDot('online') + ' UP', '0.3s ago']),
+      v.tableRow(['nginx-proxy', ':9113/metrics', v.statusDot('online') + ' UP', '1.0s ago']),
+      v.tableRow(['node-exporter', ':9100/metrics', v.statusDot('online') + ' UP', '0.4s ago']),
+      v.tableRow(['cadvisor', ':8080/metrics', v.statusDot('online') + ' UP', '1.5s ago']),
+      v.tableRow(['loki', ':3100/metrics', v.statusDot('online') + ' UP', '0.9s ago']),
+      v.tableRow(['grafana', ':3000/metrics', v.statusDot('online') + ' UP', '0.7s ago']),
+    '</div>',
+    '<div class="viz-panel" style="margin-top:.5rem">',
+      '<div class="viz-panel-head">' + I('code') + ' PromQL Query</div>',
+      '<div style="background:rgba(255,255,255,.03);padding:.5rem;border-radius:.375rem;font-family:monospace;font-size:.5625rem;color:var(--pri-l)">rate(http_requests_total{job="sociris-ai-engine"}[5m])</div>',
+      '<div style="margin-top:.25rem;font-size:.5rem;color:var(--tm)">Result: 3 series, 120 samples returned in 12ms</div>',
+    '</div>',
+  ].join(''), { port: '9090' });
+};
+
+SOCIRIS.viz.gen2Redis = function() {
+  var v = SOCIRIS.viz;
+  var I = SOCIRIS.I;
+  return v.screenMock('SOCIRIS Cache — Redis Commander (:8081)', 'In-memory cache — keys, memory, pub/sub, AI model response cache', [
+    '<div class="viz-tp-header" style="background:linear-gradient(135deg,#1a0a0a,#0d1117);padding:.5rem .75rem;border-radius:.375rem;margin-bottom:.5rem">',
+      '<div style="display:flex;justify-content:space-between;align-items:center">',
+        '<span style="font-size:.6875rem;font-weight:800;color:#dc382d">REDIS</span>',
+        '<span style="font-size:.5rem;color:var(--ok)">&#9679; Connected — db0</span>',
+      '</div>',
+    '</div>',
+    v.statRow([
+      { value: '1,247', label: 'Keys', cls: 'viz-c-er' },
+      { value: '128', label: 'MB Used', cls: 'viz-c-pri' },
+      { value: '2.4K', label: 'Ops/s', cls: 'viz-c-ok' },
+      { value: '99.8%', label: 'Hit Rate', cls: 'viz-c-sec' }
+    ]),
+    '<div style="display:grid;grid-template-columns:1fr 1fr;gap:.375rem;margin-top:.5rem">',
+      '<div class="viz-panel">',
+        '<div class="viz-panel-head">' + I('database') + ' Key Distribution</div>',
+        v.miniBar('ai:responses:*', 62, 'var(--pri)'),
+        v.miniBar('ai:models:*', 24, 'var(--sec)'),
+        v.miniBar('session:*', 28, 'var(--acc)'),
+        v.miniBar('threat:cache:*', 15, 'var(--er)'),
+        v.miniBar('geofence:*', 8, 'var(--ok)'),
+      '</div>',
+      '<div class="viz-panel">',
+        '<div class="viz-panel-head">' + I('activity') + ' Memory Usage</div>',
+        v.lineChart('redis-mem', 70),
+        '<div style="font-size:.5rem;color:var(--tm);margin-top:.25rem">Peak: 142 MB / Max: 512 MB</div>',
+      '</div>',
+    '</div>',
+    '<div class="viz-panel" style="margin-top:.375rem">',
+      '<div class="viz-panel-head">' + I('terminal') + ' CLI</div>',
+      '<div style="background:rgba(255,255,255,.02);padding:.375rem .5rem;border-radius:.375rem;font-family:monospace;font-size:.5rem;color:var(--ok)">127.0.0.1:6379> GET ai:responses:latest<br>"{\'model\':\'qwen3\',\'verdict\':\'threat\',\'confidence\':0.94}"<br><br>127.0.0.1:6379> TTL ai:responses:latest<br>(integer) 347<br><br>127.0.0.1:6379> PUBSUB CHANNELS<br>1) "sociris:alerts"<br>2) "sociris:ai:cascade"</div>',
+    '</div>',
+  ].join(''), { port: '8081' });
+};
+
+SOCIRIS.viz.gen2Portainer = function() {
+  var v = SOCIRIS.viz;
+  var I = SOCIRIS.I;
+  return v.screenMock('SOCIRIS Containers — Portainer (:9443)', 'Docker management — stacks, containers, images, volumes, networks', [
+    '<div class="viz-tp-header" style="background:linear-gradient(135deg,#0d2137,#0d1117);padding:.5rem .75rem;border-radius:.375rem;margin-bottom:.5rem">',
+      '<div style="display:flex;justify-content:space-between;align-items:center">',
+        '<span style="font-size:.6875rem;font-weight:800;color:#41b6e6">PORTAINER</span>',
+        '<span style="font-size:.5rem;color:var(--ok)">Environment: local-docker</span>',
+      '</div>',
+    '</div>',
+    v.statRow([
+      { value: '24', label: 'Containers', cls: 'viz-c-pri' },
+      { value: '3', label: 'Stacks', cls: 'viz-c-ok' },
+      { value: '12', label: 'Images', cls: 'viz-c-sec' },
+      { value: '5', label: 'Networks', cls: 'viz-c-acc' }
+    ]),
+    '<div class="viz-panel" style="margin-top:.5rem">',
+      '<div class="viz-panel-head">' + I('box') + ' Stack: sociris-platform</div>',
+      v.tableRow(['Container', 'Image', 'Status', 'CPU / RAM'], true),
+      v.tableRow(['sociris-ai-engine', 'sociris/ai:latest', v.statusDot('online') + ' Running', '12% / 1.2 GB']),
+      v.tableRow(['sociris-web-app', 'sociris/web:latest', v.statusDot('online') + ' Running', '3% / 256 MB']),
+      v.tableRow(['sociris-ollama', 'ollama/ollama:latest', v.statusDot('online') + ' Running', '45% / 6.4 GB']),
+      v.tableRow(['wazuh-manager', 'wazuh/wazuh:4.7', v.statusDot('online') + ' Running', '8% / 512 MB']),
+      v.tableRow(['wazuh-dashboard', 'wazuh/dashboard:4.7', v.statusDot('online') + ' Running', '5% / 384 MB']),
+      v.tableRow(['shuffle-orborus', 'shuffle/shuffle:latest', v.statusDot('online') + ' Running', '6% / 256 MB']),
+      v.tableRow(['postgres-db', 'postgres:15-alpine', v.statusDot('online') + ' Running', '2% / 128 MB']),
+      v.tableRow(['redis-cache', 'redis:7-alpine', v.statusDot('online') + ' Running', '1% / 64 MB']),
+      v.tableRow(['grafana', 'grafana/grafana:10.2', v.statusDot('online') + ' Running', '4% / 192 MB']),
+      v.tableRow(['prometheus', 'prom/prometheus:latest', v.statusDot('online') + ' Running', '3% / 256 MB']),
+      v.tableRow(['loki', 'grafana/loki:latest', v.statusDot('online') + ' Running', '2% / 128 MB']),
+      v.tableRow(['thehive', 'strangebee/thehive:5.2', v.statusDot('online') + ' Running', '7% / 320 MB']),
+      v.tableRow(['cortex', 'strangebee/cortex:latest', v.statusDot('online') + ' Running', '4% / 192 MB']),
+      v.tableRow(['misp-core', 'harvarditsecurity/misp:latest', v.statusDot('online') + ' Running', '9% / 448 MB']),
+      v.tableRow(['keycloak', 'quay.io/keycloak:22', v.statusDot('online') + ' Running', '5% / 256 MB']),
+      v.tableRow(['traccar', 'traccar/traccar:latest', v.statusDot('online') + ' Running', '2% / 128 MB']),
+      v.tableRow(['nginx-proxy', 'nginx:alpine', v.statusDot('online') + ' Running', '1% / 32 MB']),
+      v.tableRow(['portainer-agent', 'portainer/agent:latest', v.statusDot('online') + ' Running', '1% / 48 MB']),
+    '</div>',
+    '<div style="margin-top:.375rem;display:flex;flex-wrap:wrap;gap:.25rem">',
+      '<span class="viz-tp-module" style="background:rgba(65,182,230,.08);border-color:rgba(65,182,230,.15)">sociris-platform</span>',
+      '<span class="viz-tp-module">monitoring</span>',
+      '<span class="viz-tp-module">threat-intel</span>',
+    '</div>',
+  ].join(''), { port: '9443' });
+};
+
+SOCIRIS.viz.gen2Loki = function() {
+  var v = SOCIRIS.viz;
+  var I = SOCIRIS.I;
+  return v.screenMock('SOCIRIS Logs — Loki + Promtail (:3100)', 'Log aggregation — LogQL queries, label index, stream discovery', [
+    '<div class="viz-tp-header" style="background:linear-gradient(135deg,#0d1a2e,#0d1117);padding:.5rem .75rem;border-radius:.375rem;margin-bottom:.5rem">',
+      '<div style="display:flex;justify-content:space-between;align-items:center">',
+        '<span style="font-size:.6875rem;font-weight:800;color:#f5a623">LOKI</span>',
+        '<span style="font-size:.5rem;color:var(--ok)">Ingest: 4.2K logs/s</span>',
+      '</div>',
+    '</div>',
+    v.statRow([
+      { value: '14', label: 'Streams', cls: 'viz-c-er' },
+      { value: '847K', label: 'Entries/hr', cls: 'viz-c-pri' },
+      { value: '3.1', label: 'GB Total', cls: 'viz-c-sec' },
+      { value: '28', label: 'Labels', cls: 'viz-c-ok' }
+    ]),
+    '<div class="viz-panel" style="margin-top:.5rem">',
+      '<div class="viz-panel-head">' + I('search') + ' LogQL Query</div>',
+      '<div style="background:rgba(255,255,255,.03);padding:.375rem .5rem;border-radius:.375rem;font-family:monospace;font-size:.5rem;color:var(--acc)">{job="sociris-ai-engine"} |= "error" | json | level="ERROR"</div>',
+    '</div>',
+    '<div class="viz-panel" style="margin-top:.375rem">',
+      '<div class="viz-panel-head">' + I('list') + ' Log Streams</div>',
+      v.tableRow(['Stream', 'Labels', 'Rate'], true),
+      v.tableRow(['sociris-ai-engine', 'level=INFO, ver=v3', '1.2K/s']),
+      v.tableRow(['sociris-web-app', 'level=INFO, env=prod', '800/s']),
+      v.tableRow(['wazuh-manager', 'type=alert, sev=medium', '340/s']),
+      v.tableRow(['shuffle-soar', 'action=execute, status=ok', '120/s']),
+      v.tableRow(['nginx-proxy', 'method=GET, code=200', '1.8K/s']),
+      v.tableRow(['postgres-db', 'query=SELECT, db=sociris', '45/s']),
+      v.tableRow(['keycloak', 'event=LOGIN, realm=sociris', '12/s']),
+    '</div>',
+    '<div class="viz-panel" style="margin-top:.375rem">',
+      '<div class="viz-panel-head">' + I('file-text') + ' Recent Log Entries</div>',
+      '<div style="background:rgba(255,255,255,.02);padding:.375rem .5rem;border-radius:.375rem;font-family:monospace;font-size:.4375rem;line-height:1.6">',
+        '<div style="color:var(--ok)">2024-12-15T10:23:41Z [INFO] ai-engine: Cascade verdict=threat confidence=0.94 model=qwen3 alert_id=ALT-1147</div>',
+        '<div style="color:var(--wr)">2024-12-15T10:23:39Z [WARN] wazuh: Rule 5710 fired — 3rd auth failure from 185.234.72.x</div>',
+        '<div style="color:var(--ok)">2024-12-15T10:23:38Z [INFO] shuffle: Playbook unauthorized_access triggered, run_id=PLB-482</div>',
+        '<div style="color:var(--pri-l)">2024-12-15T10:23:35Z [DEBUG] traccar: Device Patrol Alpha update lat=40.7128 lng=-74.006</div>',
+        '<div style="color:var(--ok)">2024-12-15T10:23:33Z [INFO] keycloak: User sarah.analyst logged in from 10.0.1.42</div>',
+      '</div>',
+    '</div>',
+  ].join(''), { port: '3100' });
+};
+
+SOCIRIS.viz.gen2Ollama = function() {
+  var v = SOCIRIS.viz;
+  var I = SOCIRIS.I;
+  return v.screenMock('SOCIRIS LLM — Ollama (:11434)', 'Local LLM inference — model management, GPU stats, inference logs', [
+    '<div class="viz-tp-header" style="background:linear-gradient(135deg,#0d1117,#1a2e0d);padding:.5rem .75rem;border-radius:.375rem;margin-bottom:.5rem">',
+      '<div style="display:flex;justify-content:space-between;align-items:center">',
+        '<span style="font-size:.6875rem;font-weight:800;color:#4ade80">OLLAMA</span>',
+        '<span style="font-size:.5rem;color:var(--ok)">&#9679; CUDA Available</span>',
+      '</div>',
+    '</div>',
+    v.statRow([
+      { value: '5', label: 'Models', cls: 'viz-c-ok' },
+      { value: '8', label: 'GPU GB', cls: 'viz-c-pri' },
+      { value: '47ms', label: 'Avg TTFT', cls: 'viz-c-sec' },
+      { value: '1.2K', label: 'Inferences/hr', cls: 'viz-c-acc' }
+    ]),
+    '<div class="viz-panel" style="margin-top:.5rem">',
+      '<div class="viz-panel-head">' + I('cpu') + ' Loaded Models</div>',
+      v.tableRow(['Model', 'Size', 'Quant', 'GPU', 'Status'], true),
+      v.tableRow(['qwen3:8b', '4.7 GB', 'Q4_K_M', v.tag('Loaded', 'ok'), v.statusDot('online') + ' Active']),
+      v.tableRow(['llama3.1:8b', '4.5 GB', 'Q4_K_M', v.tag('Loaded', 'ok'), v.statusDot('online') + ' Standby']),
+      v.tableRow(['mistral:7b', '4.1 GB', 'Q4_0', v.tag('Cached', 'default'), v.statusDot('idle') + ' Idle']),
+      v.tableRow(['gemma2:9b', '5.2 GB', 'Q4_K_M', v.tag('Available', 'default'), v.statusDot('idle') + ' Cold']),
+      v.tableRow(['nomic-embed', '274 MB', 'F16', v.tag('Loaded', 'ok'), v.statusDot('online') + ' Active']),
+    '</div>',
+    '<div style="display:grid;grid-template-columns:1fr 1fr;gap:.375rem;margin-top:.375rem">',
+      '<div class="viz-panel">',
+        '<div class="viz-panel-head">GPU Memory</div>',
+        v.miniBar('VRAM Used', 72, 'var(--sec)'),
+        v.miniBar('Model Weights', 58, 'var(--pri)'),
+        v.miniBar('KV Cache', 14, 'var(--acc)'),
+        '<div style="font-size:.4375rem;color:var(--tm);margin-top:.25rem">NVIDIA RTX 4060 — 8 GB VRAM</div>',
+      '</div>',
+      '<div class="viz-panel">',
+        '<div class="viz-panel-head">Inference Rate</div>',
+        v.lineChart('ollama-rate', 60),
+      '</div>',
+    '</div>',
+    '<div class="viz-panel" style="margin-top:.375rem">',
+      '<div class="viz-panel-head">' + I('terminal') + ' Recent Inferences</div>',
+      '<div style="font-size:.5rem;color:var(--t2);padding:.25rem .375rem;border-bottom:1px solid rgba(255,255,255,.03)">qwen3:8b &rarr; "Analyze alert ALT-1147..." &rarr; 34 tokens, 847ms</div>',
+      '<div style="font-size:.5rem;color:var(--t2);padding:.25rem .375rem;border-bottom:1px solid rgba(255,255,255,.03)">qwen3:8b &rarr; "Enrich context for 185.234..." &rarr; 52 tokens, 1.2s</div>',
+      '<div style="font-size:.5rem;color:var(--t2);padding:.25rem .375rem">nomic-embed &rarr; "Embed: unauthorized access pattern..." &rarr; 768d, 23ms</div>',
+    '</div>',
+  ].join(''), { port: '11434' });
+};
+
+SOCIRIS.viz.gen2MLflow = function() {
+  var v = SOCIRIS.viz;
+  var I = SOCIRIS.I;
+  return v.screenMock('SOCIRIS ML — MLflow (:5000)', 'AI model experiment tracking — runs, metrics, artifacts, model registry', [
+    '<div class="viz-tp-header" style="background:linear-gradient(135deg,#0d1117,#1a1a2e);padding:.5rem .75rem;border-radius:.375rem;margin-bottom:.5rem">',
+      '<div style="display:flex;justify-content:space-between;align-items:center">',
+        '<span style="font-size:.6875rem;font-weight:800;color:#0198e1">MLFLOW</span>',
+        '<span style="font-size:.5rem;color:var(--tm)">Tracking URI: http://mlflow:5000</span>',
+      '</div>',
+    '</div>',
+    v.statRow([
+      { value: '5', label: 'Experiments', cls: 'viz-c-pri' },
+      { value: '47', label: 'Runs', cls: 'viz-c-ok' },
+      { value: '3', label: 'Registered', cls: 'viz-c-sec' },
+      { value: '94.2%', label: 'Best F1', cls: 'viz-c-acc' }
+    ]),
+    '<div class="viz-panel" style="margin-top:.5rem">',
+      '<div class="viz-panel-head">' + I('flask-conical') + ' Experiment: threat-detection-cascade</div>',
+      v.tableRow(['Run', 'Model', 'Precision', 'Recall', 'F1', 'Status'], true),
+      v.tableRow(['Run #47', 'qwen3-8b-finetuned', '0.952', '0.938', v.tag('0.942', 'ok'), v.tag('Production', 'ok')]),
+      v.tableRow(['Run #46', 'qwen3-8b-finetuned', '0.948', '0.931', v.tag('0.939', 'default'), v.tag('Staging', 'default')]),
+      v.tableRow(['Run #45', 'llama3.1-8b-ft', '0.931', '0.927', v.tag('0.929', 'default'), v.tag('Archived', 'default')]),
+      v.tableRow(['Run #44', 'mistral-7b-ft', '0.912', '0.921', v.tag('0.916', 'default'), v.tag('Archived', 'default')]),
+      v.tableRow(['Run #43', 'gemma2-9b-ft', '0.908', '0.915', v.tag('0.911', 'default'), v.tag('Archived', 'default')]),
+    '</div>',
+    '<div style="display:grid;grid-template-columns:1fr 1fr;gap:.375rem;margin-top:.375rem">',
+      '<div class="viz-panel">',
+        '<div class="viz-panel-head">F1 Score Over Runs</div>',
+        v.lineChart('mlflow-f1', 60),
+      '</div>',
+      '<div class="viz-panel">',
+        '<div class="viz-panel-head">Loss Curve (Latest)</div>',
+        v.lineChart('mlflow-loss', 60),
+      '</div>',
+    '</div>',
+    '<div class="viz-panel" style="margin-top:.375rem">',
+      '<div class="viz-panel-head">' + I('box') + ' Model Registry</div>',
+      '<div style="display:flex;flex-wrap:wrap;gap:.375rem">',
+        '<div style="flex:1;min-width:120px;padding:.375rem;background:rgba(16,185,129,.04);border:1px solid rgba(16,185,129,.12);border-radius:.375rem"><div style="font-size:.5625rem;font-weight:700;color:var(--ok)">Production</div><div style="font-size:.5rem;color:var(--tm)">qwen3-8b-ft v3</div></div>',
+        '<div style="flex:1;min-width:120px;padding:.375rem;background:rgba(99,102,241,.04);border:1px solid rgba(99,102,241,.12);border-radius:.375rem"><div style="font-size:.5625rem;font-weight:700;color:var(--pri)">Staging</div><div style="font-size:.5rem;color:var(--tm)">qwen3-8b-ft v2</div></div>',
+        '<div style="flex:1;min-width:120px;padding:.375rem;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);border-radius:.375rem"><div style="font-size:.5625rem;font-weight:700;color:var(--tm)">Archived</div><div style="font-size:.5rem;color:var(--tm)">4 versions</div></div>',
+      '</div>',
+    '</div>',
+  ].join(''), { port: '5000' });
+};
+
+SOCIRIS.viz.gen2NetBox = function() {
+  var v = SOCIRIS.viz;
+  var I = SOCIRIS.I;
+  return v.screenMock('SOCIRIS IPAM — NetBox (:8001)', 'Infrastructure management — sites, devices, IPs, VLANs, circuits', [
+    '<div class="viz-tp-header" style="background:linear-gradient(135deg,#0d1117,#1e0d17);padding:.5rem .75rem;border-radius:.375rem;margin-bottom:.5rem">',
+      '<div style="display:flex;justify-content:space-between;align-items:center">',
+        '<span style="font-size:.6875rem;font-weight:800;color:#ce0814">NETBOX</span>',
+        '<span style="font-size:.5rem;color:var(--ok)">DCIM + IPAM</span>',
+      '</div>',
+    '</div>',
+    v.statRow([
+      { value: '2', label: 'Sites', cls: 'viz-c-pri' },
+      { value: '14', label: 'Devices', cls: 'viz-c-ok' },
+      { value: '6', label: 'VLANs', cls: 'viz-c-sec' },
+      { value: '348', label: 'IPs', cls: 'viz-c-acc' }
+    ]),
+    '<div class="viz-panel" style="margin-top:.5rem">',
+      '<div class="viz-panel-head">' + I('map-pin') + ' Sites</div>',
+      '<div style="display:grid;grid-template-columns:1fr 1fr;gap:.375rem">',
+        '<div style="padding:.375rem;background:rgba(99,102,241,.04);border:1px solid rgba(99,102,241,.12);border-radius:.375rem"><div style="font-size:.5625rem;font-weight:700;color:var(--pri)">HQ — Primary</div><div style="font-size:.5rem;color:var(--tm)">12 devices &bull; 2 VLANs &bull; 192.168.0.0/16</div></div>',
+        '<div style="padding:.375rem;background:rgba(16,185,129,.04);border:1px solid rgba(16,185,129,.12);border-radius:.375rem"><div style="font-size:.5625rem;font-weight:700;color:var(--ok)">DC — Cloud</div><div style="font-size:.5rem;color:var(--tm)">2 devices &bull; 4 VLANs &bull; 10.0.0.0/8</div></div>',
+      '</div>',
+    '</div>',
+    '<div class="viz-panel" style="margin-top:.375rem">',
+      '<div class="viz-panel-head">' + I('server') + ' Device Inventory</div>',
+      v.tableRow(['Device', 'Role', 'Site', 'IP Address', 'Status'], true),
+      v.tableRow(['sociris-hq-srv01', 'Server', 'HQ', '192.168.1.10', v.tag('Active', 'ok')]),
+      v.tableRow(['sociris-hq-srv02', 'Server', 'HQ', '192.168.1.11', v.tag('Active', 'ok')]),
+      v.tableRow(['sociris-ai-gpu01', 'GPU Server', 'HQ', '192.168.1.20', v.tag('Active', 'ok')]),
+      v.tableRow(['edge-router-01', 'Router', 'HQ', '192.168.1.1', v.tag('Active', 'ok')]),
+      v.tableRow(['core-switch-01', 'Switch', 'HQ', '192.168.1.2', v.tag('Active', 'ok')]),
+      v.tableRow(['ap-indoor-01', 'Wireless AP', 'HQ', '192.168.1.50', v.tag('Active', 'ok')]),
+      v.tableRow(['cam-perimeter-01', 'Camera', 'HQ', '192.168.2.100', v.tag('Active', 'ok')]),
+      v.tableRow(['cam-parking-02', 'Camera', 'HQ', '192.168.2.101', v.tag('Active', 'ok')]),
+      v.tableRow(['sensor-gps-01', 'GPS Tracker', 'HQ', '10.0.5.22', v.tag('Active', 'ok')]),
+      v.tableRow(['cloud-proxy-01', 'Load Balancer', 'DC', '10.0.0.5', v.tag('Active', 'ok')]),
+    '</div>',
+    '<div class="viz-panel" style="margin-top:.375rem">',
+      '<div class="viz-panel-head">' + I('network') + ' VLANs</div>',
+      v.tableRow(['VLAN', 'Name', 'Prefix', 'Devices'], true),
+      v.tableRow(['100', 'Management', '192.168.1.0/24', '8']),
+      v.tableRow(['200', 'Cameras', '192.168.2.0/24', '4']),
+      v.tableRow(['300', 'IoT / Sensors', '192.168.3.0/24', '6']),
+      v.tableRow(['400', 'DMZ', '10.0.4.0/24', '2']),
+      v.tableRow(['500', 'VPN Clients', '10.0.5.0/24', '12']),
+      v.tableRow(['600', 'GPU Cluster', '192.168.1.16/28', '2']),
+    '</div>',
+  ].join(''), { port: '8001' });
+};
+
+SOCIRIS.viz.gen2Nginx = function() {
+  var v = SOCIRIS.viz;
+  var I = SOCIRIS.I;
+  return v.screenMock('SOCIRIS Proxy — Nginx (:8099)', 'Reverse proxy & load balancer — upstream status, SSL, access logs, rate limiting', [
+    '<div class="viz-tp-header" style="background:linear-gradient(135deg,#0d1a0d,#0d1117);padding:.5rem .75rem;border-radius:.375rem;margin-bottom:.5rem">',
+      '<div style="display:flex;justify-content:space-between;align-items:center">',
+        '<span style="font-size:.6875rem;font-weight:800;color:#4dc629">NGINX</span>',
+        '<span style="font-size:.5rem;color:var(--ok)">SSL: Let\'s Encrypt &bull; A+ rating</span>',
+      '</div>',
+    '</div>',
+    v.statRow([
+      { value: '8', label: 'Upstreams', cls: 'viz-c-ok' },
+      { value: '4.2K', label: 'Req/s', cls: 'viz-c-pri' },
+      { value: '99.8%', label: 'Success', cls: 'viz-c-sec' },
+      { value: '12ms', label: 'Avg Latency', cls: 'viz-c-acc' }
+    ]),
+    '<div class="viz-panel" style="margin-top:.5rem">',
+      '<div class="viz-panel-head">' + I('arrow-right-left') + ' Upstream Servers</div>',
+      v.tableRow(['Upstream', 'Backend', 'Weight', 'Fails', 'Status'], true),
+      v.tableRow(['/api/v3/*', 'ai-engine:8000', '5', '0', v.tag('UP', 'ok')]),
+      v.tableRow(['/app/*', 'web-app:3002', '3', '0', v.tag('UP', 'ok')]),
+      v.tableRow(['/dashboard/*', 'wazuh:5601', '2', '0', v.tag('UP', 'ok')]),
+      v.tableRow(['/grafana/*', 'grafana:3000', '2', '0', v.tag('UP', 'ok')]),
+      v.tableRow(['/soar/*', 'shuffle:3001', '1', '0', v.tag('UP', 'ok')]),
+      v.tableRow(['/cases/*', 'thehive:9000', '1', '0', v.tag('UP', 'ok')]),
+      v.tableRow(['/threats/*', 'misp:8090', '1', '0', v.tag('UP', 'ok')]),
+      v.tableRow(['/auth/*', 'keycloak:8080', '2', '0', v.tag('UP', 'ok')]),
+    '</div>',
+    '<div class="viz-panel" style="margin-top:.375rem">',
+      '<div class="viz-panel-head">' + I('shield') + ' Security Headers</div>',
+      '<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:.25rem">',
+        '<div style="text-align:center;padding:.25rem;background:rgba(16,185,129,.04);border-radius:.25rem"><div style="font-size:.5rem;font-weight:700;color:var(--ok)">HSTS</div><div style="font-size:.4375rem;color:var(--tm)">max-age=31536000</div></div>',
+        '<div style="text-align:center;padding:.25rem;background:rgba(16,185,129,.04);border-radius:.25rem"><div style="font-size:.5rem;font-weight:700;color:var(--ok)">CSP</div><div style="font-size:.4375rem;color:var(--tm)">default-src self</div></div>',
+        '<div style="text-align:center;padding:.25rem;background:rgba(16,185,129,.04);border-radius:.25rem"><div style="font-size:.5rem;font-weight:700;color:var(--ok)">X-Frame</div><div style="font-size:.4375rem;color:var(--tm)">DENY</div></div>',
+      '</div>',
+    '</div>',
+    '<div class="viz-panel" style="margin-top:.375rem">',
+      '<div class="viz-panel-head">' + I('activity') + ' Rate Limiting</div>',
+      v.miniBar('/api/v3/threats — 100/min', 68, 'var(--wr)'),
+      v.miniBar('/api/v3/enrich — 50/min', 34, 'var(--ok)'),
+      v.miniBar('/auth/token — 10/min', 12, 'var(--ok)'),
+      v.miniBar('/api/v3/cascade — 30/min', 45, 'var(--sec)'),
+    '</div>',
+  ].join(''), { port: '8099' });
 };
